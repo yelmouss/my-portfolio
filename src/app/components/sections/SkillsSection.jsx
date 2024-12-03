@@ -15,24 +15,23 @@ import { useTheme } from "@emotion/react";
 
 const World = dynamic(() => import("../ui/globe").then((mod) => mod.World), {
   loading: () => <p>Loading...</p>,
-
   ssr: false,
 });
 const { languages, frameworks, databases } = technologies;
 
 const globeConfig = {
-  pointSize: 4,
-  globeColor: "#393E46",
+  pointSize: 8,
+  globeColor: "#1282a2",
   showAtmosphere: true,
-  atmosphereColor: "#FFFFFF",
+  atmosphereColor: "#00ADB5",
   atmosphereAltitude: 0.1,
   emissive: "#062056",
   emissiveIntensity: 0.1,
   shininess: 0.9,
   polygonColor: "rgba(0, 173, 181, 0.7)",
-  ambientLight: "#38bdf8",
+  ambientLight: "#00ADB5",
   directionalLeftLight: "#ffffff",
-  directionalTopLight: "#ffffff",
+  directionalTopLight: "#00ADB5",
   pointLight: "#222831",
   arcTime: 1000,
   arcLength: 0.9,
@@ -74,6 +73,7 @@ export default function SkillsSection() {
               variant="h5"
               sx={{ maxWidth: 800, mb: 4 }}
               color="secondary.main"
+              textAlign={"justify"}
             >
               <TypeAnimation
                 sequence={[t("hero.description"), 1000]}

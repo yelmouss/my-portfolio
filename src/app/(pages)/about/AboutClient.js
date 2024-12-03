@@ -212,7 +212,7 @@ const AboutClient = () => {
                   {t("about.intro")}
                 </Typography>
 
-                <Grid container spacing={3}>
+                {/* <Grid container spacing={3}>
                   {personalInfo.map((info) => (
                     <Grid item xs={12} sm={6} key={info.key}>
                       <Box
@@ -235,7 +235,7 @@ const AboutClient = () => {
                       </Box>
                     </Grid>
                   ))}
-                </Grid>
+                </Grid> */}
               </motion.div>
             </Paper>
           </ContainerScroll>
