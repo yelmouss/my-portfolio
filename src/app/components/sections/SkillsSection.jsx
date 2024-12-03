@@ -9,6 +9,7 @@ import technologies from "@/data/technologies.json";
 import dynamic from "next/dynamic";
 import { sampleArcs } from "@/data/sampleArcs";
 import { Container, Divider } from "@mui/material";
+import ActionButon from "./ActionButon";
 
 const World = dynamic(() => import("../ui/globe").then((mod) => mod.World), {
   loading: () => <p>Loading...</p>,
@@ -72,6 +73,8 @@ export default function SkillsSection() {
             <Box width={{xs : 200, md : 350}} height={{xs : 200, md : 400}}>
               <World data={sampleArcs} globeConfig={globeConfig} />
             </Box>
+
+            <ActionButon />
           </Box>
         </Grid2>
         <Grid2 size={{ xs: 12, md: 5 }}>

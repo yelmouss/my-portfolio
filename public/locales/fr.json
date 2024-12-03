@@ -19,5 +19,20 @@
         "title": "Technologies de Base de Données",
         "description": "Systèmes de bases de données que je maîtrise:"
       }
+    },
+    "works": {
+      "title": "Projets Récents",
+      "subtitle": "Découvrez mes dernières réalisations",
+      "categories": {
+        "all": "Tous les Projets",
+        "web": "Applications Web",
+        "mobile": "Apps Mobiles",
+        "desktop": "Apps Bureau"
+      },
+      "viewMore": "Voir Tous les Projets →",
+      "buttons": {
+        "code": "Voir le Code",
+        "demo": "Voir le Site"
+      }
     }
   }

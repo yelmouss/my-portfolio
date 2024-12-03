@@ -19,5 +19,20 @@
         "title": "Database Technologies",
         "description": "Database systems I'm proficient with:"
       }
+    },
+    "works": {
+      "title": "Recent Projects",
+      "subtitle": "Take a look at my latest works",
+      "categories": {
+        "all": "All Projects",
+        "web": "Web Apps",
+        "mobile": "Mobile Apps",
+        "desktop": "Desktop Apps"
+      },
+      "viewMore": "View All Projects →",
+      "buttons": {
+        "code": "View Code",
+        "demo": "Live Demo"
+      }
     }
   }
