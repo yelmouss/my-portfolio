@@ -1,0 +1,23 @@
+{
+    "hero": {
+      "greeting": "Hi, I'm Yassine ELMOUSS",
+      "title": "Software Developer",
+      "description": "Passionate about creating innovative solutions and turning complex problems into elegant applications. Specializing in full-stack development with modern technologies.",
+      "learnMore": "Learn More About Me →"
+    },
+    "skills": {
+      "toolbelt": "There is my toolbelt for success.",
+      "languages": {
+        "title": "Programming Languages",
+        "description": "Core technologies I work with daily:"
+      },
+      "frameworks": {
+        "title": "Frameworks & Libraries",
+        "description": "Modern tools I use to build robust applications:"
+      },
+      "databases": {
+        "title": "Database Technologies",
+        "description": "Database systems I'm proficient with:"
+      }
+    }
+  }

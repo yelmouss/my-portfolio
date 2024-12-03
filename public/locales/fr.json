@@ -1,0 +1,23 @@
+{
+    "hero": {
+      "greeting": "Bonjour, je suis Yassine ELMOUSS",
+      "title": "Développeur Logiciel",
+      "description": "Passionné par la création de solutions innovantes et la transformation de problèmes complexes en applications élégantes. Spécialisé dans le développement full-stack avec des technologies modernes.",
+      "learnMore": "En savoir plus sur moi →"
+    },
+    "skills": {
+      "toolbelt": "Voici ma boîte à outils pour réussir.",
+      "languages": {
+        "title": "Langages de Programmation",
+        "description": "Technologies principales que j'utilise quotidiennement:"
+      },
+      "frameworks": {
+        "title": "Frameworks & Bibliothèques",
+        "description": "Outils modernes que j'utilise pour créer des applications robustes:"
+      },
+      "databases": {
+        "title": "Technologies de Base de Données",
+        "description": "Systèmes de bases de données que je maîtrise:"
+      }
+    }
+  }

@@ -16,7 +16,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        py: 3,
+        py: 2,
         px: 2,
         mt: 'auto',
         width: '100%',
@@ -38,7 +38,7 @@ const Footer = () => {
             color="text.secondary"
             align="center"
           >
-            © {currentYear} YELMOUSS. All rights reserved.
+            © {currentYear} Yelmouss. All rights reserved.
           </Typography>
           
           <Box>

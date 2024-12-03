@@ -2,6 +2,30 @@
 import { Roboto, Poppins } from 'next/font/google';
 import { createTheme } from "@mui/material/styles";
 
+import { Fira_Code, Space_Grotesk, Inter } from 'next/font/google';
+
+// Modern monospace font for code-like elements
+const firaCode = Fira_Code({
+  weight: ['400', '600'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+// Clean, modern display font for headings
+const spaceGrotesk = Space_Grotesk({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+// Highly readable font for body text
+const inter = Inter({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+
 const myCustomColors = {
     one: "#222831",
     two: "#393E46",
@@ -11,51 +35,58 @@ const myCustomColors = {
     gradient: 'linear-gradient(45deg, #0a1128 30%,#001f54 90%)'
 };
 
-const poppins = Poppins({
-    weight: ['300', '400', '500', '700'],
-    subsets: ['latin'],
-    display: 'swap',
-});
-
-const roboto = Roboto({
-    weight: ['300', '400', '500', '700'],
-    subsets: ['latin'],
-    display: 'swap',
-});
 
 const commonThemeSettings = {
     typography: {
-        fontFamily: roboto.style.fontFamily,
+        fontFamily: inter.style.fontFamily,
         button: {
-            fontFamily: poppins.style.fontFamily,
+          fontFamily: spaceGrotesk.style.fontFamily,
+          textTransform: 'none',
+          fontWeight: 500,
         },
-        p: {
-            fontFamily: poppins.style.fontFamily,
+        body1: {
+          fontFamily: inter.style.fontFamily,
+          lineHeight: 1.7,
+        },
+        body2: {
+          fontFamily: inter.style.fontFamily,
+          lineHeight: 1.7,
         },
         h1: {
-            fontFamily: poppins.style.fontFamily,
-            fontSize: '4rem',
-            fontWeight: 400,
+          fontFamily: spaceGrotesk.style.fontFamily,
+          fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+          fontWeight: 700,
+          letterSpacing: '-0.02em',
         },
         h2: {
-            fontFamily: poppins.style.fontFamily,
-            fontSize: '1.8rem',
+          fontFamily: spaceGrotesk.style.fontFamily,
+          fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+          fontWeight: 600,
+          letterSpacing: '-0.01em',
         },
         h3: {
-            fontFamily: poppins.style.fontFamily,
-            fontSize: '1.6rem',
+          fontFamily: spaceGrotesk.style.fontFamily,
+          fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+          fontWeight: 500,
         },
         h4: {
-            fontFamily: poppins.style.fontFamily,
-            fontSize: '1.4rem',
+          fontFamily: spaceGrotesk.style.fontFamily,
+          fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)',
+          fontWeight: 500,
         },
         h5: {
-            fontFamily: poppins.style.fontFamily,
-            fontSize: '1.2rem',
+          fontFamily: spaceGrotesk.style.fontFamily,
+          fontSize: '1.25rem',
+          fontWeight: 500,
         },
         h6: {
-            fontFamily: poppins.style.fontFamily,
-            fontSize: '1rem',
+          fontFamily: spaceGrotesk.style.fontFamily,
+          fontSize: '1rem',
+          fontWeight: 500,
+        },
+        code: {
+          fontFamily: firaCode.style.fontFamily,
+          fontWeight: 400,
         },
     },
     one: {

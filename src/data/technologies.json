@@ -1,0 +1,98 @@
+{
+  "languages": [
+    {
+      "id": 1,
+      "name": "Javascript",
+      "designation": "Programming language",
+      "image": "/stack/Unofficial_JavaScript_logo_2.svg.png"
+    },
+    {
+      "id": 2,
+      "name": "PHP",
+      "designation": "Programming language",
+      "image": "/stack/PHP_logo.png"
+    },
+    {
+      "id": 3,
+      "name": "HTML",
+      "designation": "Markup language",
+      "image": "/stack/html5.webp"
+    },
+    {
+      "id": 4,
+      "name": "CSS",
+      "designation": "Style language",
+      "image": "/stack/css.webp"
+    }
+  ],
+  "frameworks": [
+    {
+      "id": 1,
+      "name": "React",
+      "designation": "JavaScript library",
+      "image": "/stack/react.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Next",
+      "designation": "React framework",
+      "image": "/stack/next.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Tailwind",
+      "designation": "CSS framework",
+      "image": "/stack/tailwind.webp"
+    },
+    {
+      "id": 4,
+      "name": "Bootstrap",
+      "designation": "CSS framework",
+      "image": "/stack/bootstrap.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Expo",
+      "designation": "React Native framework",
+      "image": "/stack/expo.webp"
+    },
+    {
+      "id": 5,
+      "name": "Laravel",
+      "designation": "PHP framework",
+      "image": "/stack/laravel.webp"
+    },
+    {
+      "id": 6,
+      "name": "Express",
+      "designation": "Node.js framework",
+      "image": "/stack/express.png"
+    }
+  ],
+  "databases": [
+    {
+      "id": 1,
+      "name": "MySQL",
+      "designation": "Database",
+      "image": "/stack/mysql.jpg"
+    },
+    {
+      "id": 2,
+      "name": "PostgreSQL",
+      "designation": "Database",
+      "image": "/stack/postgre.png"
+    },
+    {
+      "id": 3,
+      "name": "MongoDB",
+      "designation": "Database",
+      "image": "/stack/mongodb.svg"
+    },
+    {
+      "id": 4,
+      "name": "Firebase",
+      "designation": "Database",
+      "image": "/stack/firebase.png"
+    }
+  ]
+}
