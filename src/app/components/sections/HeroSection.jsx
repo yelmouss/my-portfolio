@@ -40,7 +40,7 @@ export default function HeroSection() {
           priority
         />
       </Box>
-      {/* <Typography
+      <Typography
         variant="h1"
         color="text.secondary"
         component="h1"
@@ -48,7 +48,7 @@ export default function HeroSection() {
         // gutterBottom
       >
         {t("hero.greeting")}
-      </Typography> */}
+      </Typography>
     </motion.div>
   );
 }
