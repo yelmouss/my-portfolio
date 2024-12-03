@@ -43,7 +43,11 @@ export default function SkillsSection() {
   const { t } = useTranslation();
 
   return (
-    <Container>
+    <Container
+      sx={{
+        p: 4,
+      }}
+    >
       <Grid2 container spacing={4}>
         <Grid2 size={{ xs: 12, md: 7 }}>
           {/* Hero Section */}
@@ -62,20 +66,17 @@ export default function SkillsSection() {
             <Typography variant="h2" color="info.main" gutterBottom>
               {t("hero.title")}
             </Typography>
-            <Typography
-              variant="h5"
-              color="text.secondary"
-              sx={{  mb: 4 }}
-            >
+            <Typography variant="h5" color="text.secondary" sx={{ mb: 4 }}>
               {t("hero.description")}
             </Typography>
-            <Box width={420} height={400}>
+            <Box width={{xs : 200, md : 350}} height={{xs : 200, md : 400}}>
               <World data={sampleArcs} globeConfig={globeConfig} />
             </Box>
           </Box>
         </Grid2>
         <Grid2 size={{ xs: 12, md: 5 }}>
           {/* Skills Section */}
+
           <Box
             component={motion.div}
             initial={{ opacity: 0 }}
@@ -85,60 +86,61 @@ export default function SkillsSection() {
             sx={{ py: 4 }}
             className="flex flex-col justify-center h-full"
           >
-            <Box mt={"auto"}>
-              <Typography variant="h3" gutterBottom color="text.secondary">
-                {t("skills.toolbelt")}
-              </Typography>
+            <Container>
+              <Box mt={"auto"}>
+                <Typography variant="h3" gutterBottom color="text.secondary">
+                  {t("skills.toolbelt")}
+                </Typography>
 
-              <Box>
-                <Typography variant="h4" color="info.main" gutterBottom>
-                  {t("skills.languages.title")}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  color="text.secondary"
-                  sx={{ mb: 3 }}
-                >
-                  {t("skills.languages.description")}
-                </Typography>
-                <div className="flex flex-row w-full">
-                  <AnimatedTooltip items={languages} />
-                </div>
+                <Box>
+                  <Typography variant="h4" color="info.main" gutterBottom>
+                    {t("skills.languages.title")}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="text.secondary"
+                    sx={{ mb: 3 }}
+                  >
+                    {t("skills.languages.description")}
+                  </Typography>
+                  <Container className="flex flex-row flex-wrap">
+                    <AnimatedTooltip items={languages} />
+                  </Container>
+                </Box>
+                <Divider sx={{ my: 4 }} />
+                <Box>
+                  <Typography variant="h4" color="info.main" gutterBottom>
+                    {t("skills.frameworks.title")}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="text.secondary"
+                    sx={{ mb: 3 }}
+                  >
+                    {t("skills.frameworks.description")}
+                  </Typography>
+                  <Container className="flex flex-row flex-wrap">
+                    <AnimatedTooltip items={frameworks} />
+                  </Container> 
+                </Box>
+                <Divider sx={{ my: 4 }} />
+                <Box>
+                  <Typography variant="h4" color="info.main" gutterBottom>
+                    {t("skills.databases.title")}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="text.secondary"
+                    sx={{ mb: 3 }}
+                  >
+                    {t("skills.databases.description")}
+                  </Typography>
+                  <Container className="flex flex-row flex-wrap">
+                    <AnimatedTooltip items={databases} />
+                  </Container> 
+                </Box>
               </Box>
-              <Divider sx={{ my: 4 }} />
-              <Box>
-                <Typography variant="h4" color="info.main" gutterBottom>
-                  {t("skills.frameworks.title")}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  color="text.secondary"
-                  sx={{ mb: 3 }}
-                >
-                  {t("skills.frameworks.description")}
-                </Typography>
-                <div className="flex flex-row w-full">
-                  <AnimatedTooltip items={frameworks} />
-                </div>
-              </Box>
-              <Divider sx={{ my: 4 }} />
-              <Box>
-                <Typography variant="h4" color="info.main" gutterBottom>
-                  {t("skills.databases.title")}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  color="text.secondary"
-                  sx={{ mb: 3 }}
-                >
-                  {t("skills.databases.description")}
-                </Typography>
-                <div className="flex flex-row w-full">
-                  <AnimatedTooltip items={databases} />
-                </div>
-              </Box>
-            </Box>
-            {/* Add About Button */}
+            </Container>
           </Box>
         </Grid2>
       </Grid2>

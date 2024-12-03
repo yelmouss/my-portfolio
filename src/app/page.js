@@ -19,7 +19,7 @@ const ActionButon = dynamic(() => import("./components/sections/ActionButon"), {
 export default function Home() {
   return (
     <main>
-      <Container  className="flex flex-col items-center py-5 ">
+      <Container  className="flex flex-col items-center p-5 ">
         <HeroSection />
         <SkillsSection />
         <Divider sx={{ my: 4 }} />
