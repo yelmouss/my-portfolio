@@ -70,17 +70,17 @@ export default function SkillsSection() {
             <Typography variant="h2" color="info.main" gutterBottom>
               {t("hero.title")}
             </Typography>
-            <Typography variant="h5" sx={{ maxWidth: 800, mb: 4 }}>
+            <Typography
+              variant="h5"
+              sx={{ maxWidth: 800, mb: 4 }}
+              color="secondary.main"
+            >
               <TypeAnimation
                 sequence={[t("hero.description"), 1000]}
                 wrapper="span"
                 speed={50}
                 repeat={0}
-                cursor={false}
-                style={{
-                  display: "inline-block",
-                  color: theme.palette.text.secondary,
-                }}
+                cursor={false}               
               />
             </Typography>
             <Box width={{ xs: 200, md: 350 }} height={{ xs: 200, md: 400 }}>
@@ -115,7 +115,7 @@ export default function SkillsSection() {
                       wrapper="span"
                       speed={100}
                       repeat={0}
-                      cursor={false}                     
+                      cursor={false}
                     />
                   </Typography>
                   <Typography
@@ -132,15 +132,13 @@ export default function SkillsSection() {
                 <Divider sx={{ my: 4 }} />
                 <Box>
                   <Typography variant="h4" color="info.main" gutterBottom>
-
-                  <TypeAnimation
+                    <TypeAnimation
                       sequence={[t("skills.frameworks.title"), 1000]}
                       wrapper="span"
                       speed={50}
                       repeat={0}
-                      cursor={false}                     
+                      cursor={false}
                     />
-                  
                   </Typography>
                   <Typography
                     variant="body1"
@@ -156,12 +154,12 @@ export default function SkillsSection() {
                 <Divider sx={{ my: 4 }} />
                 <Box>
                   <Typography variant="h4" color="info.main" gutterBottom>
-                  <TypeAnimation
+                    <TypeAnimation
                       sequence={[t("skills.databases.title"), 1000]}
                       wrapper="span"
                       speed={50}
                       repeat={0}
-                      cursor={false}                     
+                      cursor={false}
                     />
                   </Typography>
                   <Typography
