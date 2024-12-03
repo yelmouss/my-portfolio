@@ -78,9 +78,9 @@ export default function SkillsSection() {
               <TypeAnimation
                 sequence={[t("hero.description"), 1000]}
                 wrapper="span"
-                speed={50}
+                speed={15}
                 repeat={0}
-                cursor={false}               
+                cursor            
               />
             </Typography>
             <Box width={{ xs: 200, md: 350 }} height={{ xs: 200, md: 400 }}>
