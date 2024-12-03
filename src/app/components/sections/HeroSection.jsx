@@ -25,17 +25,17 @@ export default function HeroSection() {
           overflow: "hidden",
           mb: 4,
           boxShadow: 6,
-          border: `5px solid ${theme.palette.secondary.main}`,
+          border: `2px solid ${theme.palette.secondary.main}`,
         }}
       >
         <Image
-          src="/yass.jpg" // Add your photo path here
+          src="/IMG_0161.jpg" // Add your photo path here
           alt="Yassine ELMOUSS"
           fill
           style={{
             objectFit: "cover",
-            filter: "bluescale(0.9)",
-            objectPosition: "top",
+            // filter: "bluescale(0.5)",
+            objectPosition: "right",
           }}
           priority
         />

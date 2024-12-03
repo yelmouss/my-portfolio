@@ -141,7 +141,7 @@ const WorksSection = () => {
   );
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" className="py-10">
       <Box sx={{ mb: 6, textAlign: "center" }}>
         <Typography variant="h2" color="info.main" gutterBottom>
           {t("works.title")}

@@ -34,5 +34,69 @@
         "code": "View Code",
         "demo": "Live Demo"
       }
+    },
+    "about": {
+      "title": "About Me",
+      "subtitle": "Journey, Skills & Experience",
+      "role": "Full-Stack Developer & Tech Enthusiast",
+      "intro": "From writing my first line of code in middle school to building complex web applications, my journey in tech has been driven by curiosity and innovation. I thrive on turning challenges into elegant solutions and staying at the forefront of web development technologies.",
+      "personalInfo": {
+        "title": "Personal Details",
+        "birthday": "Birthday",
+        "phone": "Phone",
+        "city": "City",
+        "age": "Age",
+        "degree": "Degree",
+        "email": "Email",
+        "freelance": "Freelance Status"
+      },
+      "education": {
+        "title": "Educational Journey",
+        "webdev": {
+          "title": "Professional Web Development",
+          "period": "2020 - 2023",
+          "description": "Mastered full-stack development at OpenClassrooms, specializing in modern web technologies and agile methodologies. Created multiple production-ready applications, from concept to deployment."
+        },
+        "bachelor": {
+          "title": "Business Economics & Management",
+          "period": "2011 - 2014",
+          "description": "Built a strong foundation in analytical thinking and business strategy at Science City. Combined technical expertise with business acumen to deliver value-driven solutions."
+        }
+      },
+      "experience": {
+        "title": "Professional Journey",
+        "positions": [
+          {
+            "year": "2023",
+            "role": "Software Instructor",
+            "company": "GoMyCode"
+          },
+          {
+            "year": "2022",
+            "role": "Workforce Manager",
+            "company": "Sitel Group"
+          },
+          {
+            "year": "2020",
+            "role": "Web Developer",
+            "company": "Intelcia"
+          },
+          {
+            "year": "2019",
+            "role": "Resource Planner",
+            "company": "Intelcia"
+          },
+          {
+            "year": "2017",
+            "role": "Analytics Specialist",
+            "company": "Intelcia"
+          },
+          {
+            "year": "2015",
+            "role": "Real-Time Analyst",
+            "company": "Webhelp Maroc"
+          }
+        ]
+      }
     }
   }

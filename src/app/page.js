@@ -19,8 +19,7 @@ export default function Home() {
       <Container className="flex flex-col items-center p-5 ">
         <HeroSection />
         <SkillsSection />
-        <Divider sx={{ my: 4, color: "secondary.main" }} />
-       
+        <Divider sx={{ my: 4, color: "secondary.main" }} />       
       </Container>
     </main>
   );

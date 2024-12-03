@@ -34,5 +34,69 @@
         "code": "Voir le Code",
         "demo": "Voir le Site"
       }
+    },
+    "about": {
+      "title": "À Propos",
+      "subtitle": "Parcours, Compétences & Expérience",
+      "role": "Développeur Full-Stack & Passionné de Tech",
+      "intro": "De mes premiers pas en programmation au collège jusqu'à la création d'applications web complexes, mon parcours dans la tech a toujours été guidé par la curiosité et l'innovation. Je transforme les défis en solutions élégantes tout en restant à la pointe des technologies web.",
+      "personalInfo": {
+        "title": "Informations Personnelles",
+        "birthday": "Date de naissance",
+        "phone": "Téléphone",
+        "city": "Ville",
+        "age": "Âge",
+        "degree": "Diplôme",
+        "email": "Email",
+        "freelance": "Statut Freelance"
+      },
+      "education": {
+        "title": "Parcours Académique",
+        "webdev": {
+          "title": "Développement Web Professionnel",
+          "period": "2020 - 2023",
+          "description": "Formation approfondie en développement full-stack chez OpenClassrooms, spécialisation en technologies web modernes et méthodologies agiles. Création de multiples applications professionnelles, de la conception au déploiement."
+        },
+        "bachelor": {
+          "title": "Économie & Gestion d'Entreprise",
+          "period": "2011 - 2014",
+          "description": "Acquisition d'une solide base en analyse et stratégie commerciale à Science City. Alliance de l'expertise technique et de la vision business pour des solutions à forte valeur ajoutée."
+        }
+      },
+      "experience": {
+        "title": "Parcours Professionnel",
+        "positions": [
+          {
+            "year": "2023",
+            "role": "Formateur en Développement",
+            "company": "GoMyCode"
+          },
+          {
+            "year": "2022",
+            "role": "Responsable Planification",
+            "company": "Sitel Group"
+          },
+          {
+            "year": "2020",
+            "role": "Développeur Web",
+            "company": "Intelcia"
+          },
+          {
+            "year": "2019",
+            "role": "Planificateur de Ressources",
+            "company": "Intelcia"
+          },
+          {
+            "year": "2017",
+            "role": "Spécialiste en Analyse",
+            "company": "Intelcia"
+          },
+          {
+            "year": "2015",
+            "role": "Analyste Temps Réel",
+            "company": "Webhelp Maroc"
+          }
+        ]
+      }
     }
   }
