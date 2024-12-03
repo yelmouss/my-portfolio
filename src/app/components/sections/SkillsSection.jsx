@@ -10,6 +10,8 @@ import dynamic from "next/dynamic";
 import { sampleArcs } from "@/data/sampleArcs";
 import { Container, Divider } from "@mui/material";
 import ActionButon from "./ActionButon";
+import { TypeAnimation } from "react-type-animation";
+import { useTheme } from "@emotion/react";
 
 const World = dynamic(() => import("../ui/globe").then((mod) => mod.World), {
   loading: () => <p>Loading...</p>,
@@ -41,6 +43,7 @@ const globeConfig = {
   autoRotateSpeed: 0.5,
 };
 export default function SkillsSection() {
+  const theme = useTheme();
   const { t } = useTranslation();
 
   return (
@@ -49,7 +52,7 @@ export default function SkillsSection() {
         p: 4,
       }}
     >
-      <Grid2 container spacing={4}>
+      <Grid2 container spacing={8}>
         <Grid2 size={{ xs: 12, md: 7 }}>
           {/* Hero Section */}
           <Box
@@ -67,10 +70,20 @@ export default function SkillsSection() {
             <Typography variant="h2" color="info.main" gutterBottom>
               {t("hero.title")}
             </Typography>
-            <Typography variant="h5" color="text.secondary" sx={{ mb: 4 }}>
-              {t("hero.description")}
+            <Typography variant="h5" sx={{ maxWidth: 800, mb: 4 }}>
+              <TypeAnimation
+                sequence={[t("hero.description"), 1000]}
+                wrapper="span"
+                speed={50}
+                repeat={0}
+                cursor={false}
+                style={{
+                  display: "inline-block",
+                  color: theme.palette.text.secondary,
+                }}
+              />
             </Typography>
-            <Box width={{xs : 200, md : 350}} height={{xs : 200, md : 400}}>
+            <Box width={{ xs: 200, md: 350 }} height={{ xs: 200, md: 400 }}>
               <World data={sampleArcs} globeConfig={globeConfig} />
             </Box>
 
@@ -97,7 +110,13 @@ export default function SkillsSection() {
 
                 <Box>
                   <Typography variant="h4" color="info.main" gutterBottom>
-                    {t("skills.languages.title")}
+                    <TypeAnimation
+                      sequence={[t("skills.languages.title"), 1000]}
+                      wrapper="span"
+                      speed={100}
+                      repeat={0}
+                      cursor={false}                     
+                    />
                   </Typography>
                   <Typography
                     variant="body1"
@@ -113,7 +132,15 @@ export default function SkillsSection() {
                 <Divider sx={{ my: 4 }} />
                 <Box>
                   <Typography variant="h4" color="info.main" gutterBottom>
-                    {t("skills.frameworks.title")}
+
+                  <TypeAnimation
+                      sequence={[t("skills.frameworks.title"), 1000]}
+                      wrapper="span"
+                      speed={50}
+                      repeat={0}
+                      cursor={false}                     
+                    />
+                  
                   </Typography>
                   <Typography
                     variant="body1"
@@ -124,12 +151,18 @@ export default function SkillsSection() {
                   </Typography>
                   <Container className="flex flex-row flex-wrap">
                     <AnimatedTooltip items={frameworks} />
-                  </Container> 
+                  </Container>
                 </Box>
                 <Divider sx={{ my: 4 }} />
                 <Box>
                   <Typography variant="h4" color="info.main" gutterBottom>
-                    {t("skills.databases.title")}
+                  <TypeAnimation
+                      sequence={[t("skills.databases.title"), 1000]}
+                      wrapper="span"
+                      speed={50}
+                      repeat={0}
+                      cursor={false}                     
+                    />
                   </Typography>
                   <Typography
                     variant="body1"
@@ -140,7 +173,7 @@ export default function SkillsSection() {
                   </Typography>
                   <Container className="flex flex-row flex-wrap">
                     <AnimatedTooltip items={databases} />
-                  </Container> 
+                  </Container>
                 </Box>
               </Box>
             </Container>
