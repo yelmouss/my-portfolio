@@ -78,7 +78,7 @@ export default function SkillsSection() {
               <TypeAnimation
                 sequence={[t("hero.description"), 1000]}
                 wrapper="span"
-                speed={15}
+                speed={75}
                 repeat={0}
                 cursor            
               />
