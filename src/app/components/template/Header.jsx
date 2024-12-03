@@ -109,8 +109,8 @@ const Header = ({ toggleMode, mode }) => {
       py: 1,
     },
     logo: {
-      width: { xs: 40, md: 50 },
-      height: { xs: 40, md: 50 },
+      width: { xs: 50, md: 70 },
+      height: { xs: 50, md: 70 },
     },
     nav: {
       flexGrow: 1,
