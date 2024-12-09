@@ -19,20 +19,21 @@ const World = dynamic(() => import("../ui/globe").then((mod) => mod.World), {
 });
 const { languages, frameworks, databases } = technologies;
 
+
 const globeConfig = {
-  pointSize: 8,
-  globeColor: "#1282a2",
+  pointSize: 4,
+  globeColor: "#062056",
   showAtmosphere: true,
-  atmosphereColor: "#00ADB5",
+  atmosphereColor: "#FFFFFF",
   atmosphereAltitude: 0.1,
   emissive: "#062056",
   emissiveIntensity: 0.1,
-  shininess: 0.9,
-  polygonColor: "rgba(0, 173, 181, 0.7)",
-  ambientLight: "#00ADB5",
+  shininess: 1,
+  polygonColor: "rgba(255,255,255,0.7)",
+  ambientLight: "#38bdf8",
   directionalLeftLight: "#ffffff",
-  directionalTopLight: "#00ADB5",
-  pointLight: "#222831",
+  directionalTopLight: "#ffffff",
+  pointLight: "#ffffff",
   arcTime: 1000,
   arcLength: 0.9,
   rings: 1,
@@ -84,7 +85,7 @@ export default function SkillsSection() {
               />
             </Typography>
             <Box width={{ xs: 200, md: 350 }} height={{ xs: 200, md: 400 }}>
-              <World data={sampleArcs} globeConfig={globeConfig} />
+              <World data={sampleArcs} globeConfig={globeConfig}  />
             </Box>
 
             <ActionButon />

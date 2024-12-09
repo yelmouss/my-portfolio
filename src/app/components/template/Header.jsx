@@ -142,7 +142,9 @@ const Header = ({ toggleMode, mode }) => {
   const LogoComponent = () => (
     <motion.div style={{ rotate }}>
       <Image
+        // src={"/Geek.png"}
         src={mode === "dark" ? "/logo-blank.png" : "/logo-principal.png"}
+        // c:\Users\elmou\Downloads\Geek.png
         alt="Logo"
         width={styles.logo.width.xs}
         height={styles.logo.height.xs}
