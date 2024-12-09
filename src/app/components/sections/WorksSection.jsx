@@ -35,7 +35,7 @@ const projects = [
     title: "Paylik",
     description: "Facilitate payments between employers and employees",
     image: "/projects/paylik.png",
-    tags: ["Next.js", "React", "Material UI", "Framer Motion"],
+    tags: ["Next.js", "React", "Material UI", "Framer Motion", "SEO"],
     // github: "https://github.com/yelmouss/paylik",
     demo: "https://paylik.ma",
     category: "web",
@@ -50,7 +50,21 @@ const projects = [
     demo: "https://petitiguane.com",
     category: "web",
   },
+
+  {
+    id: 3,
+    title: "Touzar.ma",
+    description: "The best traditional and modern Moroccan dishes",
+    image: "/projects/touzar.png",
+    tags: ["Next.js", "Google analytics", "Material UI", "Framer Motion", "SEO"],
+    // github: "https://github.com/yelmouss/touzarma",
+    demo: "https://touzar.ma",
+    category: "web",
+  },
   // Add more projects here
+  // https://kanapro.vercel.app/html/
+  // https://p7-yelmouss.vercel.app/
+  // https://yelmouss.github.io/Agence-la-panth-re/
 ];
 
 const categories = ["all", "web", "mobile", "desktop"];
