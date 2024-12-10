@@ -50,6 +50,9 @@
       "email": "البريد الإلكتروني",
       "freelance": "العمل الحر"
     },
+    "certifications": {
+      "title": "شهادات"
+    },
     "education": {
       "title": "المسار التعليمي",
       "webdev": {

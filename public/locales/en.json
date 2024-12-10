@@ -1,102 +1,105 @@
 {
-    "hero": {
-      "greeting": "Hi, I'm Yassine ELMOUSS",
-      "title": "Software Developer",
-      "description": "Passionate about creating innovative solutions and turning complex problems into elegant applications. Specializing in full-stack development with modern technologies.",
-      "learnMore": "Learn More About Me →"
+  "hero": {
+    "greeting": "Hi, I'm Yassine ELMOUSS",
+    "title": "Software Developer",
+    "description": "Passionate about creating innovative solutions and turning complex problems into elegant applications. Specializing in full-stack development with modern technologies.",
+    "learnMore": "Learn More About Me →"
+  },
+  "skills": {
+    "toolbelt": "There is my toolbelt for success.",
+    "languages": {
+      "title": "Programming Languages",
+      "description": "Core technologies I work with daily:"
     },
-    "skills": {
-      "toolbelt": "There is my toolbelt for success.",
-      "languages": {
-        "title": "Programming Languages",
-        "description": "Core technologies I work with daily:"
+    "frameworks": {
+      "title": "Frameworks & Libraries",
+      "description": "Modern tools I use to build robust applications:"
+    },
+    "databases": {
+      "title": "Database Technologies",
+      "description": "Database systems I'm proficient with:"
+    }
+  },
+  "works": {
+    "title": "Recent Projects",
+    "subtitle": "Take a look at my latest works",
+    "categories": {
+      "all": "All Projects",
+      "web": "Web Apps",
+      "mobile": "Mobile Apps",
+      "desktop": "Desktop Apps"
+    },
+    "viewMore": "View All Projects →",
+    "buttons": {
+      "code": "View Code",
+      "demo": "Live Demo"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Journey, Skills & Experience",
+    "role": "Full-Stack Developer & Tech Enthusiast",
+    "intro": "From writing my first line of code in middle school to building complex web applications, my journey in tech has been driven by curiosity and innovation. I thrive on turning challenges into elegant solutions and staying at the forefront of web development technologies.",
+    "personalInfo": {
+      "title": "Personal Details",
+      "birthday": "Birthday",
+      "phone": "Phone",
+      "city": "City",
+      "age": "Age",
+      "degree": "Degree",
+      "email": "Email",
+      "freelance": "Freelance Status"
+    },
+    "certifications": {
+      "title": "Certificates"
+    },
+    "education": {
+      "title": "Educational Journey",
+      "webdev": {
+        "title": "Professional Web Development",
+        "period": "2020 - 2023",
+        "description": "Mastered full-stack development at OpenClassrooms, specializing in modern web technologies and agile methodologies. Created multiple production-ready applications, from concept to deployment."
       },
-      "frameworks": {
-        "title": "Frameworks & Libraries",
-        "description": "Modern tools I use to build robust applications:"
-      },
-      "databases": {
-        "title": "Database Technologies",
-        "description": "Database systems I'm proficient with:"
+      "bachelor": {
+        "title": "Business Economics & Management",
+        "period": "2011 - 2014",
+        "description": "Built a strong foundation in analytical thinking and business strategy at Science City. Combined technical expertise with business acumen to deliver value-driven solutions."
       }
     },
-    "works": {
-      "title": "Recent Projects",
-      "subtitle": "Take a look at my latest works",
-      "categories": {
-        "all": "All Projects",
-        "web": "Web Apps",
-        "mobile": "Mobile Apps",
-        "desktop": "Desktop Apps"
-      },
-      "viewMore": "View All Projects →",
-      "buttons": {
-        "code": "View Code",
-        "demo": "Live Demo"
-      }
-    },
-    "about": {
-      "title": "About Me",
-      "subtitle": "Journey, Skills & Experience",
-      "role": "Full-Stack Developer & Tech Enthusiast",
-      "intro": "From writing my first line of code in middle school to building complex web applications, my journey in tech has been driven by curiosity and innovation. I thrive on turning challenges into elegant solutions and staying at the forefront of web development technologies.",
-      "personalInfo": {
-        "title": "Personal Details",
-        "birthday": "Birthday",
-        "phone": "Phone",
-        "city": "City",
-        "age": "Age",
-        "degree": "Degree",
-        "email": "Email",
-        "freelance": "Freelance Status"
-      },
-      "education": {
-        "title": "Educational Journey",
-        "webdev": {
-          "title": "Professional Web Development",
-          "period": "2020 - 2023",
-          "description": "Mastered full-stack development at OpenClassrooms, specializing in modern web technologies and agile methodologies. Created multiple production-ready applications, from concept to deployment."
+    "experience": {
+      "title": "Professional Journey",
+      "positions": [
+        {
+          "year": "2023",
+          "role": "Software Instructor",
+          "company": "GoMyCode"
         },
-        "bachelor": {
-          "title": "Business Economics & Management",
-          "period": "2011 - 2014",
-          "description": "Built a strong foundation in analytical thinking and business strategy at Science City. Combined technical expertise with business acumen to deliver value-driven solutions."
+        {
+          "year": "2022",
+          "role": "Workforce Manager",
+          "company": "Sitel Group"
+        },
+        {
+          "year": "2020",
+          "role": "Web Developer",
+          "company": "Intelcia"
+        },
+        {
+          "year": "2019",
+          "role": "Resource Planner",
+          "company": "Intelcia"
+        },
+        {
+          "year": "2017",
+          "role": "Analytics Specialist",
+          "company": "Intelcia"
+        },
+        {
+          "year": "2015",
+          "role": "Real-Time Analyst",
+          "company": "Webhelp Maroc"
         }
-      },
-      "experience": {
-        "title": "Professional Journey",
-        "positions": [
-          {
-            "year": "2023",
-            "role": "Software Instructor",
-            "company": "GoMyCode"
-          },
-          {
-            "year": "2022",
-            "role": "Workforce Manager",
-            "company": "Sitel Group"
-          },
-          {
-            "year": "2020",
-            "role": "Web Developer",
-            "company": "Intelcia"
-          },
-          {
-            "year": "2019",
-            "role": "Resource Planner",
-            "company": "Intelcia"
-          },
-          {
-            "year": "2017",
-            "role": "Analytics Specialist",
-            "company": "Intelcia"
-          },
-          {
-            "year": "2015",
-            "role": "Real-Time Analyst",
-            "company": "Webhelp Maroc"
-          }
-        ]
-      }
+      ]
     }
   }
+}

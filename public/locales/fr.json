@@ -50,6 +50,9 @@
         "email": "Email",
         "freelance": "Statut Freelance"
       },
+      "certifications": {
+        "title": "Certificats"
+      },
       "education": {
         "title": "Parcours Académique",
         "webdev": {
