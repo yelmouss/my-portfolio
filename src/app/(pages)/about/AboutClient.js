@@ -271,7 +271,7 @@ const AboutClient = () => {
               </Typography>
               <Grid container spacing={4}>
                 {["webdev", "bachelor"].map((edu) => (
-                  <Grid item xs={12} md={6} key={edu}>
+                  <Grid item xs={12} md={12} key={edu}>
                     <motion.div
                       whileHover={{ y: -5 }}
                       transition={{ duration: 0.3 }}
@@ -319,7 +319,7 @@ const AboutClient = () => {
                 {t("about.certifications.title")}
               </Typography>
 
-              <Carousel>
+              <Carousel >
                 {Certifs.map((certif, index) => (
                   <Card key={index} sx={{ maxWidth: 345, margin: "auto" }}>
                     <CardMedia
