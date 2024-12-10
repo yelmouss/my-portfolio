@@ -28,7 +28,7 @@ import "../../i18n";
 const pages = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "Services", path: "/services" },
+  // { name: "Services", path: "/services" },
   { name: "Works", path: "/works" },
   { name: "Contact", path: "/contact" },
 ];
