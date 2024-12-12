@@ -101,5 +101,20 @@
           }
         ]
       }
+    },
+    "contact": {
+    "title": "Contactez-moi",
+    "form": {
+      "name": "Votre Nom",
+      "email": "Votre Email",
+      "message": "Votre Message",
+      "send": "Envoyer le Message"
+    },
+    "info": {
+      "title": "Informations de Contact"
+    },
+    "social": {
+      "title": "Suivez-moi"
     }
+  }
   }
