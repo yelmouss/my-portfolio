@@ -50,9 +50,19 @@ const projects = [
     demo: "https://petitiguane.com",
     category: "web",
   },
+  {
+    id: 4,
+    title: "Edukalis",
+    description: "Formation • Orientation • Développement professionnel",
+    image: "/projects/edukalis.png",
+    tags: ["Next.js", "Google analytics", "Material UI", "Framer Motion", "SEO"],
+    github: "https://github.com/yelmouss/paylik",
+    demo: "https://edukalis.com",
+    category: "web",
+  },
 
   {
-    id: 3,
+    id: 5,
     title: "Touzar.ma",
     description: "The best traditional and modern Moroccan dishes",
     image: "/projects/touzar.png",
