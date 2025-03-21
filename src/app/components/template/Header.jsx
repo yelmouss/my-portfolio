@@ -20,10 +20,11 @@ import { useTheme } from "@emotion/react";
 import MaterialUISwitch from "./MaterialUISwitch";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import Flag from "react-world-flags";
 import "../../i18n";
+import { GlowingEffect } from "../ui/glowing-effect";
 
 const pages = [
   { name: "Home", path: "/" },
@@ -48,7 +49,7 @@ const LanguageSelector = ({ language, handleLanguageChange, isMobile }) => (
       {[
         { code: "fr", flag: "FR", label: "FR" },
         { code: "en", flag: "US", label: "EN" },
-        { code: "ar", flag: "MA", label: "AR" },
+        // { code: "ar", flag: "MA", label: "AR" },
       ].map((lang) => (
         <MenuItem key={lang.code} value={lang.code}>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -64,7 +65,7 @@ const LanguageSelector = ({ language, handleLanguageChange, isMobile }) => (
 );
 
 const Header = ({ toggleMode, mode }) => {
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const rotate = useTransform(scrollY, [0, 1000], [0, 360]);
   const theme = useTheme();
   const pathname = usePathname();
@@ -72,6 +73,12 @@ const Header = ({ toggleMode, mode }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState(i18n.language);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  // Tracking scroll progress for the progress bar
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setScrollProgress(latest);
+  });
 
   const handleLanguageChange = (event) => {
     const lng = event.target.value;
@@ -100,6 +107,9 @@ const Header = ({ toggleMode, mode }) => {
       borderBottom: trigger
         ? `1px solid ${mode === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"}`
         : "none",
+      boxShadow: "none",
+    
+      overflow: "visible",
     },
     mobileContainer: {
       width: "100%",
@@ -137,14 +147,29 @@ const Header = ({ toggleMode, mode }) => {
         width: "80%",
       },
     },
+    progressBarContainer: {
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: "3px",
+      backgroundColor: "transparent",
+      zIndex: 10,
+      overflow: "hidden",
+    },
+    progressBar: {
+      height: "100%",
+      background: theme.palette.mode === "dark" 
+        ? "linear-gradient(90deg, #00ADB5,rgb(30, 181, 0))"
+        : "linear-gradient(90deg, #00ADB5,rgb(30, 181, 0))",
+      position: "relative",
+    }
   };
 
   const LogoComponent = () => (
     <motion.div style={{ rotate }}>
       <Image
-        // src={"/Geek.png"}
-        src={mode === "dark" ? "/logo-blank.png" : "/logo-principal.png"}
-        // c:\Users\elmou\Downloads\Geek.png
+        src={mode === "dark" ? "/geeky.png" : "/geeky.png"}
         alt="Logo"
         width={styles.logo.width.xs}
         height={styles.logo.height.xs}
@@ -155,6 +180,32 @@ const Header = ({ toggleMode, mode }) => {
 
   return (
     <AppBar position="sticky" sx={styles.appBar} elevation={0}>
+      {/* Scroll Progress Bar avec GlowingEffect */}
+      <Box sx={styles.progressBarContainer}>
+        <Box
+          component={motion.div}
+          sx={{
+            ...styles.progressBar,
+            position: "relative",
+            width: `${scrollProgress * 100}%`,
+          }}
+        >
+          {/* Glowing effect pour la barre de progression */}
+          <Box sx={{ position: "absolute", top: -10, bottom: -10, left: 0, right: 0, overflow: "hidden" }}>
+            <GlowingEffect
+              blur={10}
+              borderWidth={0}
+              spread={50}
+              glow={true}
+              disabled={false}
+              proximity={0}
+              inactiveZone={0}
+              variant={theme.palette.mode === "dark" ? "default" : "white"}
+            />
+          </Box>
+        </Box>
+      </Box>
+
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Desktop Layout */}
@@ -201,7 +252,7 @@ const Header = ({ toggleMode, mode }) => {
             </IconButton>
 
             <Link href="/" passHref>
-              <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Box sx={{ display: "flex", justifyContent: "center", ml: 3 }}>
                 <LogoComponent />
               </Box>
             </Link>

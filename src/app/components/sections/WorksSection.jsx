@@ -17,6 +17,8 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
+import { useTheme } from "@emotion/react";
+
 
 const projects = [
   {
@@ -61,6 +63,35 @@ const projects = [
     demo: "https://touzar.ma",
     category: "web",
   },
+  {
+    id: 4,
+    title: "Kanap",
+    description: "Studies Project Openclassrooms",
+    image: "https://kanapro.vercel.app/images/banniere.png",
+    tags: ["JS valilla"],
+    // github: "https://github.com/yelmouss/touzarma",
+    demo: "https://kanapro.vercel.app/html/",
+    category: "web",
+  },
+  {
+    id: 5,
+    title: "P7",
+    description: "Studies Project Openclassrooms",
+    image: "https://p7-yelmouss.vercel.app/static/media/logo-kasa.bb1c78bdbf97911cf6044e13e0c4f670.svg",
+    tags: ["React JS"],
+    demo: "https://p7-yelmouss.vercel.app/",
+    // github: "
+  },
+  {
+    id: 6,
+    title: "Agence la panthère",
+    description: "Studies Project Openclassrooms",
+    image: "https://agencelapanthere.vercel.app/img/4.bmp",
+    tags: ["HTML", "CSS", "SEO"],
+    demo: "https://agencelapanthere.vercel.app/",
+    // github: "
+  },
+
   // Add more projects here
   // https://kanapro.vercel.app/html/
   // https://p7-yelmouss.vercel.app/
@@ -76,7 +107,7 @@ const ProjectCard = ({ project }) => (
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: 20 }}
     transition={{ duration: 0.3 }}
-    style={{  height: "100%" }}
+    style={{ height: "100%" }}
   >
     <Card
       sx={{
@@ -91,7 +122,7 @@ const ProjectCard = ({ project }) => (
     >
       <CardMedia
         component="img"
-       
+
         image={project.image}
         alt={project.title}
         sx={{ objectFit: "cover", height: 200 }}
@@ -149,6 +180,7 @@ const ProjectCard = ({ project }) => (
 const WorksSection = () => {
   const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("all");
+  const theme = useTheme()
 
   const filteredProjects = projects.filter(
     (project) => activeCategory === "all" || project.category === activeCategory
@@ -157,7 +189,18 @@ const WorksSection = () => {
   return (
     <Container maxWidth="xl" className="py-10">
       <Box sx={{ mb: 6, textAlign: "center" }}>
-        <Typography variant="h2" color="info.main" gutterBottom>
+        <Typography
+          variant="h1"
+          className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500"
+          sx={{
+            fontSize: { xs: "3rem", md: "4.5rem" },
+            fontWeight: 800,
+            mb: 2,
+            textShadow: theme.palette.mode === "dark"
+              ? "0 0 40px rgba(0,173,181,0.3)"
+              : "none"
+          }}
+        >
           {t("works.title")}
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ mb: 4 }}>

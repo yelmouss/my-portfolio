@@ -19,7 +19,7 @@ const Providers = ({ children }) => {
   const isDayTime = () => {
     const hours = new Date().getHours();
     console.log(hours);
-    return hours >= 6 && hours < 20;
+    return hours >= 8 && hours < 17;
   };
 
   useEffect(() => {

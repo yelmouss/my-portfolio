@@ -40,7 +40,57 @@ export default function HeroSection() {
           priority
         />
       </Box>
-      <Typography
+
+      <Box
+        sx={{
+          perspective: '1000px',
+          width: '100%',
+          textAlign: 'center',
+          mb: 4
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          {t("hero.greeting").split('').map((char, index) => (
+            <Typography
+              key={index}
+              component={motion.span}
+              variant="h1"
+              sx={{
+                display: 'inline-block',
+                color: theme.palette.info.main,
+                fontWeight: 700,
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
+                fontSize: {
+                  xs: '2rem',
+                  sm: '2.5rem',
+                  md: '3.75rem'
+                }
+              }}
+              initial={{ opacity: 0, y: -20, rotateX: -90 }}
+              animate={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.05,
+                type: 'spring',
+                stiffness: 100
+              }}
+              whileHover={{
+                scale: 1.2,
+                rotateY: 10,
+                color: theme.palette.secondary.main,
+                transition: { duration: 0.2 }
+              }}
+            >
+              {char === ' ' ? '\u00A0' : char}
+            </Typography>
+          ))}
+        </motion.div>
+      </Box>
+      {/* <Typography
         variant="h1"
         color="text.secondary"
         component="h1"
@@ -48,7 +98,7 @@ export default function HeroSection() {
         // gutterBottom
       >
         {t("hero.greeting")}
-      </Typography>
+      </Typography> */}
     </motion.div>
   );
 }

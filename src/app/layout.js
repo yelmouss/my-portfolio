@@ -4,6 +4,8 @@ import Providers from "./Providers";
 import { jsonLdScriptProps } from "react-schemaorg";
 
 export const metadata = {
+  
+  metadataBase: new URL('https://yelmouss.vercel.app'),
   title: "YELMOUSS | Full Stack Developer in Morocco",
   description: "Expert Full Stack Developer based in Morocco specializing in React, Next.js, and modern web technologies. Building innovative digital solutions with cutting-edge technology.",
   keywords: "developer morocco, full stack developer rabat, react developer morocco, web developer morocco, développeur maroc",
