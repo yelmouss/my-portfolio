@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useTheme } from "@emotion/react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { Certifs } from "../../../data/certificates";
+import { Certifs } from "../../../data/Certificates";
 import { GlowingEffect } from "../../components/ui/glowing-effect";
 import { ContainerScroll } from "../../components/ui/container-scroll-animation";
 import { LinkPreview } from "../../components/ui//link-preview";
