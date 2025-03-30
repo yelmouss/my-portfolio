@@ -29,12 +29,13 @@ export default function HeroSection() {
         }}
       >
         <Image
-          src="/IMG_0161.jpg" // Add your photo path here
+          src="/IMG_0161.jpg"
           alt="Yassine ELMOUSS"
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          quality={85}
           style={{
             objectFit: "cover",
-            // filter: "bluescale(0.5)",
             objectPosition: "right",
           }}
           priority
