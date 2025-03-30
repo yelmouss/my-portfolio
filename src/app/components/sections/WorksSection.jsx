@@ -4,13 +4,10 @@ import {
   Box,
   Typography,
   Grid,
-  Card,
-  CardMedia,
-  CardContent,
-  Chip,
   Button,
   Container,
   Stack,
+  Chip,
 } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -18,7 +15,8 @@ import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
 import { useTheme } from "@emotion/react";
-
+import { CardContainer, CardBody, CardItem } from "../ui/3d-card";
+import Image from "next/image";
 
 const projects = [
   {
@@ -119,71 +117,74 @@ const ProjectCard = ({ project }) => (
     transition={{ duration: 0.3 }}
     style={{ height: "100%" }}
   >
-    <Card
-      sx={{
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        transition: "transform 0.3s ease-in-out",
-        "&:hover": {
-          transform: "translateY(-8px)",
-        },
-      }}
-    >
-      <CardMedia
-        component="img"
-
-        image={project.image}
-        alt={project.title}
-        sx={{ objectFit: "cover", height: 200 }}
-      />
-      <CardContent sx={{ flexGrow: 1 }}>
-        <Typography variant="h5" gutterBottom component="h2">
+    <CardContainer className="inter-var">
+      <CardBody className="bg-white dark:bg-black relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+        <CardItem
+          translateZ="50"
+          className="text-xl font-bold text-neutral-600 dark:text-white"
+        >
           {project.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" paragraph>
+        </CardItem>
+        <CardItem
+          as="p"
+          translateZ="60"
+          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+        >
           {project.description}
-        </Typography>
-        <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mb: 2 }}>
-          {project.tags.map((tag) => (
-            <Chip
-              key={tag}
-              label={tag}
-              size="small"
-              sx={{ m: 0.5 }}
-              color="info"
-              variant="outlined"
-            />
-          ))}
-        </Stack>
-        <Stack direction="row" spacing={2}>
+        </CardItem>
+        <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full mt-4">
+          <Image
+            src={project.image}
+            height={400}
+            width={600}
+            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+            alt={project.title}
+          />
+        </CardItem>
+        <CardItem translateZ="40" className="w-full mt-4">
+          <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mb: 2 }}>
+            {project.tags.map((tag) => (
+              <Chip
+                key={tag}
+                label={tag}
+                size="small"
+                sx={{ m: 0.5 }}
+                color="info"
+                variant="outlined"
+              />
+            ))}
+          </Stack>
+        </CardItem>
+        <div className="flex justify-between items-center mt-8">
           {project.github && (
-            <Button
-              startIcon={<GitHubIcon />}
-              variant="outlined"
-              size="small"
-              component={Link}
-              href={project.github}
-              target="_blank"
+            <CardItem
+              translateZ={20}
+              translateX={-40}
+              as="button"
+              className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
             >
-              Code
-            </Button>
+              <Link href={project.github} target="_blank" passHref>
+                <GitHubIcon sx={{ mr: 1 }} />
+                Code
+              </Link>
+            </CardItem>
           )}
           {project.demo && (
-            <Button
-              startIcon={<LaunchIcon />}
-              variant="contained"
-              size="small"
-              component={Link}
-              href={project.demo}
-              target="_blank"
+            <CardItem
+              translateZ={20}
+              translateX={40}
+              as="button"
+              className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
             >
-              Demo
-            </Button>
+              <Link href={project.demo} target="_blank" passHref>
+                <LaunchIcon sx={{ mr: 1 }} />
+                Demo
+              </Link>
+            </CardItem>
           )}
-        </Stack>
-      </CardContent>
-    </Card>
+        </div>
+      </CardBody>
+    </CardContainer>
   </motion.div>
 );
 

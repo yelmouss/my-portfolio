@@ -20,7 +20,7 @@ import { useTheme } from "@emotion/react";
 import MaterialUISwitch from "./MaterialUISwitch";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import Flag from "react-world-flags";
 import "../../i18n";
@@ -66,7 +66,6 @@ const LanguageSelector = ({ language, handleLanguageChange, isMobile }) => (
 
 const Header = ({ toggleMode, mode }) => {
   const { scrollY, scrollYProgress } = useScroll();
-  const rotate = useTransform(scrollY, [0, 1000], [0, 360]);
   const theme = useTheme();
   const pathname = usePathname();
   const isLightMode = theme.palette.mode === "light";
@@ -95,6 +94,35 @@ const Header = ({ toggleMode, mode }) => {
     disableHysteresis: true,
   });
 
+  const LogoComponent = () => (
+    <motion.div className="logo-container">
+      <Box
+        sx={{
+          backgroundColor: 'white',
+          borderRadius: '50%',
+          padding: '8px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+          width: { xs: 50, md: 70 },
+          height: { xs: 50, md: 70 },
+        }}
+      >
+        <Image
+          src="/Geek.png"
+          alt="Logo"
+          width={40}
+          height={40}
+          priority
+          style={{
+            objectFit: 'contain',
+          }}
+        />
+      </Box>
+    </motion.div>
+  );
+
   const styles = {
     appBar: {
       bgcolor: trigger
@@ -107,8 +135,7 @@ const Header = ({ toggleMode, mode }) => {
       borderBottom: trigger
         ? `1px solid ${mode === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"}`
         : "none",
-      boxShadow: "none",
-    
+      boxShadow: trigger ? "0 4px 20px rgba(0,0,0,0.1)" : "none",
       overflow: "visible",
     },
     mobileContainer: {
@@ -119,20 +146,28 @@ const Header = ({ toggleMode, mode }) => {
       py: 1,
     },
     logo: {
-      width: { xs: 50, md: 70 },
-      height: { xs: 50, md: 70 },
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     nav: {
       flexGrow: 1,
       display: { xs: "none", md: "flex" },
       justifyContent: "center",
+      gap: 2,
     },
     button: {
       my: 2,
-      px: 2,
+      px: 3,
+      py: 1,
       color: mode === "dark" ? "white" : "black",
       position: "relative",
-      "&::after": {
+      borderRadius: '8px',
+      transition: 'all 0.3s ease',
+      '&:hover': {
+        backgroundColor: mode === "dark" ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)',
+      },
+      '&::after': {
         content: '""',
         position: "absolute",
         width: "0%",
@@ -146,6 +181,9 @@ const Header = ({ toggleMode, mode }) => {
       "&:hover::after, &.active::after": {
         width: "80%",
       },
+      "&.active": {
+        backgroundColor: mode === "dark" ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.08)',
+      }
     },
     progressBarContainer: {
       position: "absolute",
@@ -165,18 +203,6 @@ const Header = ({ toggleMode, mode }) => {
       position: "relative",
     }
   };
-
-  const LogoComponent = () => (
-    <motion.div style={{ rotate }}>
-      <Image
-        src={mode === "dark" ? "/geeky.png" : "/geeky.png"}
-        alt="Logo"
-        width={styles.logo.width.xs}
-        height={styles.logo.height.xs}
-        priority
-      />
-    </motion.div>
-  );
 
   return (
     <AppBar position="sticky" sx={styles.appBar} elevation={0}>
