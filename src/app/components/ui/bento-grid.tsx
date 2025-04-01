@@ -1,9 +1,14 @@
 import { cn } from "../../../lib/utils"
 
+interface BentoGridProps {
+  className?: string;
+  children: React.ReactNode;
+}
+
 export const BentoGrid = ({
   className,
   children
-}) => {
+}: BentoGridProps) => {
   return (
     <div
       className={cn(
@@ -15,13 +20,21 @@ export const BentoGrid = ({
   );
 };
 
+interface BentoGridItemProps {
+  className?: string;
+  title: string;
+  description: string;
+  header: React.ReactNode;
+  icon: React.ReactNode;
+}
+
 export const BentoGridItem = ({
   className,
   title,
   description,
   header,
   icon
-}) => {
+}: BentoGridItemProps) => {
   return (
     <div
       className={cn(
