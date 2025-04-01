@@ -36,7 +36,6 @@ const projects = [
     description: "Facilitate payments between employers and employees",
     image: "/projects/paylik.png",
     tags: ["Next.js", "React", "Material UI", "Framer Motion", "SEO"],
-    // github: "https://github.com/yelmouss/paylik",
     demo: "https://paylik.ma",
     category: "web",
   },
@@ -60,50 +59,40 @@ const projects = [
     demo: "https://edukalis.com",
     category: "web",
   },
-
   {
     id: 5,
     title: "Touzar.ma",
     description: "The best traditional and modern Moroccan dishes",
     image: "/projects/touzar.png",
     tags: ["Next.js", "Google analytics", "Material UI", "Framer Motion", "SEO"],
-    // github: "https://github.com/yelmouss/touzarma",
     demo: "https://touzar.ma",
     category: "web",
   },
   {
-    id: 4,
+    id: 6,
     title: "Kanap",
     description: "Studies Project Openclassrooms",
-    image: "https://kanapro.vercel.app/images/banniere.png",
+    image: "https://placehold.co/600x400/png?text=Kanap",
     tags: ["JS valilla"],
-    // github: "https://github.com/yelmouss/touzarma",
     demo: "https://kanapro.vercel.app/html/",
     category: "web",
   },
   {
-    id: 5,
+    id: 7,
     title: "P7",
     description: "Studies Project Openclassrooms",
-    image: "https://p7-yelmouss.vercel.app/static/media/logo-kasa.bb1c78bdbf97911cf6044e13e0c4f670.svg",
+    image: "https://placehold.co/600x400/png?text=P7",
     tags: ["React JS"],
     demo: "https://p7-yelmouss.vercel.app/",
-    // github: "
   },
   {
-    id: 6,
+    id: 8,
     title: "Agence la panthère",
     description: "Studies Project Openclassrooms",
-    image: "https://agencelapanthere.vercel.app/img/4.bmp",
+    image: "https://placehold.co/600x400/png?text=Agence+la+panthere",
     tags: ["HTML", "CSS", "SEO"],
     demo: "https://agencelapanthere.vercel.app/",
-    // github: "
   },
-
-  // Add more projects here
-  // https://kanapro.vercel.app/html/
-  // https://p7-yelmouss.vercel.app/
-  // https://yelmouss.github.io/Agence-la-panth-re/
 ];
 
 const categories = ["all", "web", "mobile", "desktop"];

@@ -2,7 +2,10 @@
 const nextConfig = {
     images: {
         domains: [
-            "api.microlink.io", // Microlink Image Preview
+            'kanapro.vercel.app',
+            'p7-yelmouss.vercel.app',
+            'agencelapanthere.vercel.app',
+            'placehold.co'
         ],
     },
 }
