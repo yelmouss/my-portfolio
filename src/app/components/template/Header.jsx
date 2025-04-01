@@ -105,8 +105,8 @@ const Header = ({ toggleMode, mode }) => {
           alignItems: 'center',
           justifyContent: 'center',
           boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-          width: { xs: 50, md: 70 },
-          height: { xs: 50, md: 70 },
+          width: { xs: 30, md: 50 },
+          height: { xs: 30, md: 50 },
         }}
       >
         <Image

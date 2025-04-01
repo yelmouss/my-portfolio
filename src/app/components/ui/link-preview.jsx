@@ -1,4 +1,4 @@
-"use client";;
+"use client";
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 import Image from "next/image";
 import { encode } from "qss";
@@ -18,7 +18,7 @@ export const LinkPreview = ({
   className,
   width = 200,
   height = 125,
-  quality = 50,
+  quality = 75,
   layout = "fixed",
   isStatic = false,
   imageSrc = ""
@@ -33,8 +33,8 @@ export const LinkPreview = ({
       colorScheme: "dark",
       "viewport.isMobile": true,
       "viewport.deviceScaleFactor": 1,
-      "viewport.width": width * 3,
-      "viewport.height": height * 3,
+      "viewport.width": width * 2,
+      "viewport.height": height * 2,
     });
     src = `https://api.microlink.io/?${params}`;
   } else {
@@ -42,7 +42,6 @@ export const LinkPreview = ({
   }
 
   const [isOpen, setOpen] = React.useState(false);
-
   const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -51,13 +50,12 @@ export const LinkPreview = ({
 
   const springConfig = { stiffness: 100, damping: 15 };
   const x = useMotionValue(0);
-
   const translateX = useSpring(x, springConfig);
 
   const handleMouseMove = (event) => {
     const targetRect = event.target.getBoundingClientRect();
     const eventOffsetX = event.clientX - targetRect.left;
-    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
+    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2;
     x.set(offsetFromCenter);
   };
 
@@ -71,7 +69,8 @@ export const LinkPreview = ({
             height={height}
             quality={quality}
             layout={layout}
-            priority={true}
+            priority={false}
+            loading="lazy"
             alt="hidden image" />
         </div>
       ) : null}
@@ -123,7 +122,8 @@ export const LinkPreview = ({
                     height={height}
                     quality={quality}
                     layout={layout}
-                    priority={true}
+                    priority={false}
+                    loading="lazy"
                     className="rounded-lg"
                     alt="preview image" />
                 </Link>
