@@ -137,22 +137,21 @@ const ContactPage = () => {
           {/* Header avec le GlowingEffect comme avant */}
           <Box mb={6} textAlign="center" position="relative">
         
-        
-            <Typography
-              variant="h2"
-              component="h1"
-              sx={{
-                fontWeight: 700,
-                mb: 2,
-                background: 'linear-gradient(90deg, #00ADB5, #393E46)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '0px 2px 4px rgba(0,0,0,0.1)',
-              }}
-            >
-              {t('contact.title')}
-            </Typography>
-            
+  
+             <Typography
+                      variant="h1"
+                      className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500"
+                      sx={{
+                        fontSize: { xs: "3rem", md: "4.5rem" },
+                        fontWeight: 800,
+                        mb: 2,
+                        textShadow: theme.palette.mode === "dark"
+                          ? "0 0 40px rgba(0,173,181,0.3)"
+                          : "none"
+                      }}
+                    >
+                      {t('contact.title')}
+                    </Typography>
             <Typography 
               variant="h6" 
               color="text.secondary"
