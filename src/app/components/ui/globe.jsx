@@ -41,8 +41,10 @@ export function Globe({
 
   useEffect(() => {
     if (globeRef.current) {
-      _buildData();
-      _buildMaterial();
+      if (data && data.length > 0) {
+        _buildData();
+        _buildMaterial();
+      }
     }
   }, [globeRef.current]);
 
@@ -57,25 +59,25 @@ export function Globe({
   };
 
   const _buildData = () => {
-    const arcs = data;
-    let points = [];
-    for (let i = 0; i < arcs.length; i++) {
-      const arc = arcs[i];
-      const rgb = hexToRgb(arc.color);
-      points.push({
-        size: defaultProps.pointSize,
-        order: arc.order,
-        color: (t) => `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${1 - t})`,
-        lat: arc.startLat,
-        lng: arc.startLng,
-      });
-      points.push({
-        size: defaultProps.pointSize,
-        order: arc.order,
-        color: (t) => `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${1 - t})`,
-        lat: arc.endLat,
-        lng: arc.endLng,
-      });
+    // Make sure data is valid
+    if (!data || !Array.isArray(data) || data.length === 0) {
+      console.warn('Globe: No valid data provided');
+      return;
+    }
+  
+    // Check for NaN values in your position data
+    const hasValidPositions = data.every(item => {
+      return (
+        item.lat !== undefined && 
+        item.lng !== undefined && 
+        !isNaN(item.lat) && 
+        !isNaN(item.lng)
+      );
+    });
+  
+    if (!hasValidPositions) {
+      console.warn('Globe: Data contains invalid position values');
+      return;
     }
 
     // remove duplicates for same lat and lng

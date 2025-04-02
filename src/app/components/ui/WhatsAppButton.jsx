@@ -1,13 +1,22 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, IconButton, Tooltip, Zoom } from '@mui/material';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTheme } from '@emotion/react';
-import { GlowingEffect } from './glowing-effect';
 
 const WhatsAppButton = ({ phoneNumber = "212612865681" }) => {
   const theme = useTheme();
+  const [mounted, setMounted] = useState(false);
+  
+  // Only render on client-side to prevent hydration errors
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  if (!mounted) {
+    return null;
+  }
   
   return (
     <Box
@@ -24,9 +33,8 @@ const WhatsAppButton = ({ phoneNumber = "212612865681" }) => {
         position: 'fixed',
         bottom: '20px',
         right: '20px',
-        zIndex: 999,
+        zIndex: 9999,
       }}
-      className="whatsapp-button"
     >
       <Tooltip
         title="Contact me on WhatsApp"
@@ -61,13 +69,6 @@ const WhatsAppButton = ({ phoneNumber = "212612865681" }) => {
                 style={{ objectFit: 'contain' }}
               />
             </Box>
-            <GlowingEffect
-              blur={20}
-              borderWidth={0}
-              spread={30}
-              glow={true}
-              variant="success"
-            />
           </IconButton>
           
           {/* Pulse animation effect */}

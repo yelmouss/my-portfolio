@@ -84,7 +84,7 @@ const structuredData = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
         <meta name="geo.region" content="MA" />
         <meta name="geo.placename" content="Rabat" /> 
@@ -111,7 +111,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         <Providers>{children}
 
         <WhatsAppButton />
