@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Container, Typography, Box, Chip, Stack, Grid, Paper, Divider, Card, CardContent, CardMedia, CardActionArea } from "@mui/material";
+import { Container, Typography, Box, Chip, Grid, Divider, Card, CardContent, CardMedia, CardActionArea } from "@mui/material";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@emotion/react";
@@ -9,7 +9,6 @@ import dynamic from "next/dynamic";
 import { Certifs } from "../../../data/Certificates";
 import { GlowingEffect } from "../../components/ui/glowing-effect";
 import { ContainerScroll } from "../../components/ui/container-scroll-animation";
-import { LinkPreview } from "../../components/ui//link-preview";
 
 // Lazy load Lottie
 const Lottie = dynamic(() => import("lottie-react"), {
@@ -181,6 +180,245 @@ const CertificateCard = ({ certificate, index }) => {
   );
 };
 
+// Experience Timeline Item Component
+const ExperienceItem = ({ position, index, theme }) => {
+  return (
+    <motion.div
+      custom={index}
+      variants={fadeInUp}
+      className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
+    >
+      {/* Content */}
+      <Box className="w-1/2 flex items-center justify-center">
+        <motion.div
+          whileHover={{ 
+            scale: 1.03,
+            boxShadow: theme.palette.mode === "dark" 
+              ? `0 10px 30px ${theme.palette.info.main}33` 
+              : "0 10px 30px rgba(0,0,0,0.1)"
+          }}
+          className="w-full max-w-md"
+        >
+          <Box
+            sx={{
+              p: 3,
+              borderRadius: 3,
+              backgroundColor: theme.palette.mode === "dark" 
+                ? "rgba(30,41,59,0.7)" 
+                : theme.palette.background.paper,
+              boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+              border: "1px solid",
+              borderColor: theme.palette.mode === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.05)",
+              position: "relative",
+              overflow: "hidden"
+            }}
+          >
+            {/* Accent bar */}
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 3,
+                background: `linear-gradient(90deg, ${theme.palette.info.light}, ${theme.palette.info.main})`
+              }}
+            />
+
+            {/* Content */}
+            <Box sx={{ pt: 1 }}>
+              <Typography
+                variant="h6"
+                sx={{ color: theme.palette.info.main, fontWeight: 600 }}
+              >
+                {position.role}
+              </Typography>
+
+              <Box sx={{ display: "flex", alignItems: "center", gap: 2, mt: 1, mb: 2 }}>
+                {/* Company logo - improved to show full logo */}
+                <Box 
+                  sx={{ 
+                    position: "relative", 
+                    width: 40, 
+                    height: 40, 
+                    flexShrink: 0,
+                    borderRadius: "4px",
+                    overflow: "hidden",
+                    boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#fff"
+                  }}
+                >
+                  <Image
+                    src={position.logoUrl}
+                    alt={position.company}
+                    width={35}
+                    height={35}
+                    style={{ objectFit: "contain" }}
+                  />
+                </Box>
+                <Typography variant="body2" color="text.primary" fontWeight="medium">
+                  {position.company}
+                </Typography>
+              </Box>
+              
+              {/* Position description in English */}
+              <Typography 
+                variant="body2" 
+                color="text.secondary"
+                sx={{ mb: 2 }}
+              >
+                {position.description}
+              </Typography>
+
+              <Chip
+                label={position.year}
+                size="small"
+                sx={{
+                  backgroundColor: `${theme.palette.info.main}`,
+                  color: "#fff",
+                  fontWeight: 500
+                }}
+              />
+            </Box>
+          </Box>
+        </motion.div>
+      </Box>
+
+      {/* Center dot with pulse animation */}
+      <Box className="relative">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            repeat: Infinity,
+          }}
+        >
+          <Box
+            sx={{
+              width: 16,
+              height: 16,
+              borderRadius: "50%",
+              backgroundColor: theme.palette.info.main,
+              border: "3px solid",
+              borderColor: theme.palette.background.paper,
+              position: "relative",
+              zIndex: 2
+            }}
+          >
+            <GlowingEffect
+              blur={8}
+              borderWidth={0}
+              spread={30}
+              glow={true}
+              variant="default"
+            />
+          </Box>
+        </motion.div>
+      </Box>
+
+      {/* Empty space */}
+      <Box className="w-1/2"></Box>
+    </motion.div>
+  );
+};
+
+// Education Card Component
+const EducationCard = ({ education, idx, theme, glassCardStyle }) => {
+  return (
+    <motion.div
+      key={idx}
+      custom={idx}
+      variants={fadeInUp}
+      whileHover={{ 
+        y: -8,
+        transition: { duration: 0.3 }
+      }}
+    >
+      <Box sx={{ position: "relative", height: "100%" }}>
+        <Box className="absolute inset-0 rounded-2xl -z-10">
+          <GlowingEffect
+            blur={10}
+            borderWidth={4}
+            spread={20}
+            glow={true}
+            disabled={true}
+          />
+        </Box>
+
+        <Box
+          sx={{
+            ...glassCardStyle,
+            height: "100%",
+            color: theme.palette.text.primary,
+            transition: "all 0.3s ease",
+            "&:hover": {
+              transform: "translateY(-8px)",
+              boxShadow: theme.palette.mode === "dark" 
+                ? `0 20px 30px ${theme.palette.info.main}22` 
+                : "0 20px 30px rgba(0,0,0,0.1)",
+            }
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 3 }}>
+            <Box
+              sx={{
+                width: 50,
+                height: 50,
+                borderRadius: "50%",
+                background: `linear-gradient(135deg, ${theme.palette.info.light}, ${theme.palette.info.main})`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+                boxShadow: `0 4px 10px ${theme.palette.info.main}55`,
+              }}
+            >
+              <Typography variant="h6" sx={{ color: '#fff' }}>
+                {idx + 1}
+              </Typography>
+            </Box>
+
+            <Typography
+              variant="h5"
+              sx={{ color: theme.palette.info.main, fontWeight: 600 }}
+            >
+              {education.title}
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              display: "inline-block",
+              mb: 2,
+              px: 2,
+              py: 0.5,
+              borderRadius: 50,
+              background: `linear-gradient(90deg, ${theme.palette.info.main}20, ${theme.palette.info.main}10)`
+            }}
+          >
+            <Typography
+              variant="body2"
+              sx={{ color: theme.palette.info.main, fontWeight: 500 }}
+            >
+              {education.period}
+            </Typography>
+          </Box>
+
+          <Typography variant="body1">
+            {education.description}
+          </Typography>
+        </Box>
+      </Box>
+    </motion.div>
+  );
+};
+
 const AboutClient = () => {
   const { t } = useTranslation();
   const theme = useTheme();
@@ -212,23 +450,48 @@ const AboutClient = () => {
     { key: "freelance", value: "Available", icon: "👨‍💻" },
   ];
 
-  // Transform education data
-  const educationItems = ["webdev", "bachelor"].map(edu => ({
-    title: t(`about.education.${edu}.title`),
-    period: t(`about.education.${edu}.period`),
-    description: t(`about.education.${edu}.description`)
+  // Company icons mappings
+  const companyIcons = {
+    GoMyCode: "/companies/go.jpeg",
+    "Sitel Group": "/companies/sitel.jpg",
+    Intelcia: "/companies/intelcia.png",
+    "Webhelp Maroc": "/companies/webhelp.png"
+  };
+
+  // Function to get position descriptions in English
+  function getPositionDescription(role) {
+    const descriptions = {
+      "Software Instructor": "Teaching web development technologies and mentoring students in software engineering projects.",
+      "Workforce Manager": "Managing team schedules, forecasting, and optimizing resource allocation for operational efficiency.",
+      "Web Developer": "Developing and maintaining web applications using React, Node.js, and other modern technologies.",
+      "Resource Planner": "Analyzing staffing needs, creating schedules, and optimizing workforce deployment.",
+      "Analytics Specialist": "Analyzing operational data to identify trends and provide insights for business improvement.",
+      "Real-Time Analyst": "Monitoring real-time metrics, making adjustments to staffing, and ensuring service level compliance."
+    };
+    return descriptions[role] || "Working on various projects and initiatives.";
+  }
+
+  // Process experience items with descriptions and logo URLs
+  const experienceItems = t("about.experience.positions", { returnObjects: true }).map(position => ({
+    ...position,
+    description: getPositionDescription(position.role),
+    logoUrl: companyIcons[position.company]
   }));
 
-  // Experience data
-  const experienceItems = t("about.experience.positions", { returnObjects: true });
-
-  // Company icons
-  const companyIcons = {
-    GoMyCode: { logo: "/companies/go.jpeg" },
-    "Sitel Group": { logo: "/companies/sitel.jpg" },
-    Intelcia: { logo: "/companies/intelcia.png" },
-    "Webhelp Maroc": { logo: "/companies/webhelp.png" }
-  };
+  // Ensure educationItems is always an array
+  const rawEducationItems = t("about.education.items", { returnObjects: true });
+  const educationItems = Array.isArray(rawEducationItems) ? rawEducationItems : [
+    {
+      title: "Full Stack Development",
+      period: "2021 - 2022",
+      description: "Comprehensive training in modern web development technologies including React, Node.js, and database management."
+    },
+    {
+      title: "Bachelor in Management",
+      period: "2015 - 2018",
+      description: "Studied business administration with focus on operational management and analytics."
+    }
+  ];
 
   // Glass Card Style
   const glassCardStyle = {
@@ -298,6 +561,7 @@ const AboutClient = () => {
           </Typography>
         </motion.div>
         <Divider sx={{ my: 2 }} />
+        
         {/* Animation */}
         {animationData && (
           <motion.div
@@ -316,7 +580,7 @@ const AboutClient = () => {
         )}
       </Box>
 
-      {/* Role Section */}
+      {/* Personal Info Section */}
       <Box sx={{ mb: 10 }}>
         <ContainerScroll>
           <Box
@@ -403,7 +667,7 @@ const AboutClient = () => {
         </ContainerScroll>
       </Box>
 
-      {/* Certifications Section - NEW POSITION */}
+      {/* Certifications Section */}
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -475,247 +739,47 @@ const AboutClient = () => {
           {/* Timeline items */}
           <Box className="relative z-10 space-y-12">
             {experienceItems.map((position, index) => (
-              <motion.div
+              <ExperienceItem 
                 key={index}
-                custom={index}
-                variants={fadeInUp}
-                className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
-              >
-                {/* Content */}
-                <Box className="w-1/2 flex items-center justify-center">
-                  <motion.div
-                    whileHover={{ 
-                      scale: 1.03,
-                      boxShadow: theme.palette.mode === "dark" 
-                        ? `0 10px 30px ${theme.palette.info.main}33` 
-                        : "0 10px 30px rgba(0,0,0,0.1)"
-                    }}
-                    className="w-full max-w-md"
-                  >
-                    <Box
-                      sx={{
-                        p: 3,
-                        borderRadius: 3,
-                        backgroundColor: theme.palette.mode === "dark" 
-                          ? "rgba(30,41,59,0.7)" 
-                          : theme.palette.background.paper,
-                        boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-                        border: "1px solid",
-                        borderColor: theme.palette.mode === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.05)",
-                        position: "relative",
-                        overflow: "hidden"
-                      }}
-                    >
-                      {/* Accent bar */}
-                      <Box
-                        sx={{
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          height: 3,
-                          background: `linear-gradient(90deg, ${theme.palette.info.light}, ${theme.palette.info.main})`
-                        }}
-                      />
-
-                      {/* Content */}
-                      <Box sx={{ pt: 1 }}>
-                        <Typography
-                          variant="h6"
-                          sx={{ color: theme.palette.info.main, fontWeight: 600 }}
-                        >
-                          {position.role}
-                        </Typography>
-
-                        <Box sx={{ display: "flex", alignItems: "center", gap: 1, mt: 1, mb: 2 }}>
-                          <Box 
-                            sx={{ 
-                              position: "relative", 
-                              width: 24, 
-                              height: 24, 
-                              flexShrink: 0,
-                              borderRadius: "50%",
-                              overflow: "hidden",
-                              boxShadow: "0 2px 5px rgba(0,0,0,0.2)"
-                            }}
-                          >
-                            <Image
-                              src={companyIcons[position.company].logo}
-                              alt={position.company}
-                              fill
-                              style={{ objectFit: "cover" }}
-                            />
-                          </Box>
-                          <Typography variant="body2" color="text.primary" fontWeight="medium">
-                            {position.company}
-                          </Typography>
-                        </Box>
-
-                        <Chip
-                          label={position.year}
-                          size="small"
-                          sx={{
-                            backgroundColor: `${theme.palette.info.main}`,
-                            color: "#fff",
-                            fontWeight: 500
-                          }}
-                        />
-                      </Box>
-                    </Box>
-                  </motion.div>
-                </Box>
-
-                {/* Center dot with pulse animation */}
-                <Box className="relative">
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                      duration: 2,
-                      ease: "easeInOut",
-                      repeat: Infinity,
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        width: 16,
-                        height: 16,
-                        borderRadius: "50%",
-                        backgroundColor: theme.palette.info.main,
-                        border: "3px solid",
-                        borderColor: theme.palette.background.paper,
-                        position: "relative",
-                        zIndex: 2
-                      }}
-                    >
-                      <GlowingEffect
-                        blur={8}
-                        borderWidth={0}
-                        spread={30}
-                        glow={true}
-                        variant="default"
-                      />
-                    </Box>
-                  </motion.div>
-                </Box>
-
-                {/* Empty space */}
-                <Box className="w-1/2"></Box>
-              </motion.div>
+                position={position}
+                index={index}
+                theme={theme}
+              />
             ))}
           </Box>
         </Box>
       </motion.div>
 
-      {/* Education Cards */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-        className="mb-16"
-      >
-        <Typography variant="h3" sx={sectionHeaderStyle}>
-          {t("about.education.title")}
-        </Typography>
+ {/* Education Cards */}
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={staggerContainer}
+  className="mb-16"
+>
+  <Typography variant="h3" sx={sectionHeaderStyle}>
+    {t("about.education.title")}
+  </Typography>
 
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" },
-            gap: 4
-          }}
-        >
-          {educationItems.map((education, idx) => (
-            <motion.div
-              key={idx}
-              custom={idx}
-              variants={fadeInUp}
-              whileHover={{ 
-                y: -8,
-                transition: { duration: 0.3 }
-              }}
-            >
-              <Box sx={{ position: "relative", height: "100%" }}>
-                <Box className="absolute inset-0 rounded-2xl -z-10">
-                  <GlowingEffect
-                    blur={10}
-                    borderWidth={4}
-                    spread={20}
-                    glow={true}
-                    disabled={true}
-                  />
-                </Box>
-
-                <Box
-                  sx={{
-                    ...glassCardStyle,
-                    height: "100%",
-                    color: theme.palette.text.primary,
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-8px)",
-                      boxShadow: theme.palette.mode === "dark" 
-                        ? `0 20px 30px ${theme.palette.info.main}22` 
-                        : "0 20px 30px rgba(0,0,0,0.1)",
-                    }
-                  }}
-                >
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 3 }}>
-                    <Box
-                      sx={{
-                        width: 50,
-                        height: 50,
-                        borderRadius: "50%",
-                        background: `linear-gradient(135deg, ${theme.palette.info.light}, ${theme.palette.info.main})`,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
-                        boxShadow: `0 4px 10px ${theme.palette.info.main}55`,
-                      }}
-                    >
-                      <Typography variant="h6" sx={{ color: '#fff' }}>
-                        {idx + 1}
-                      </Typography>
-                    </Box>
-
-                    <Typography
-                      variant="h5"
-                      sx={{ color: theme.palette.info.main, fontWeight: 600 }}
-                    >
-                      {education.title}
-                    </Typography>
-                  </Box>
-
-                  <Box
-                    sx={{
-                      display: "inline-block",
-                      mb: 2,
-                      px: 2,
-                      py: 0.5,
-                      borderRadius: 50,
-                      background: `linear-gradient(90deg, ${theme.palette.info.main}20, ${theme.palette.info.main}10)`
-                    }}
-                  >
-                    <Typography
-                      variant="body2"
-                      sx={{ color: theme.palette.info.main, fontWeight: 500 }}
-                    >
-                      {education.period}
-                    </Typography>
-                  </Box>
-
-                  <Typography variant="body1">
-                    {education.description}
-                  </Typography>
-                </Box>
-              </Box>
-            </motion.div>
-          ))}
-        </Box>
-      </motion.div>
+  <Box
+    sx={{
+      display: "grid",
+      gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" },
+      gap: 4
+    }}
+  >
+    {educationItems.map((education, idx) => (
+      <EducationCard
+        key={idx}
+        education={education}
+        idx={idx}
+        theme={theme}
+        glassCardStyle={glassCardStyle}
+      />
+    ))}
+  </Box>
+</motion.div>
     </Container>
   );
 };
