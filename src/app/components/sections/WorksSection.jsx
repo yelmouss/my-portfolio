@@ -25,7 +25,7 @@ const projects = [
     title: "Let'stalkJob",
     description:
       "Le 1er Podcast Emploi au Maroc avec Mehdi Griny",
-    image: "/projects/letstalk.png",
+    image: "/projects/letstalk.PNG",
     tags: ["Next.js", "React", "Material UI", "Framer Motion"],
     github: "https://github.com/yelmouss",
     demo: "https://letstalkjobs.vercel.app/",
@@ -35,7 +35,7 @@ const projects = [
     id: 0,
     title: "HOPE Maroc website",
     description: "Aide aux chercheurs d'emploi, porteurs de projets, formation et mentorat.",
-    image: "/projects/hope.png",
+    image: "/projects/hope.PNG",
     tags: ["Next.js", "React", "Material UI", "Framer Motion"],
     demo: "https://hope-three-xi.vercel.app/",
   },
