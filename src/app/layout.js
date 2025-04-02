@@ -2,6 +2,7 @@
 import "./globals.css";
 import Providers from "./Providers";
 import { jsonLdScriptProps } from "react-schemaorg";
+import WhatsAppButton from './components/ui/WhatsAppButton';
 
 export const metadata = {
   
@@ -111,7 +112,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="antialiased">
-        <Providers>{children}</Providers>
+        <Providers>{children}
+
+        <WhatsAppButton />
+        </Providers>
       </body>
     </html>
   );
