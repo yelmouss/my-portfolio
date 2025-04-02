@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Container, Typography, Box, Chip, Stack, Grid, Paper, Divider } from "@mui/material";
+import { Container, Typography, Box, Chip, Stack, Grid, Paper, Divider, Card, CardContent, CardMedia, CardActionArea } from "@mui/material";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@emotion/react";
@@ -10,7 +10,6 @@ import { Certifs } from "../../../data/Certificates";
 import { GlowingEffect } from "../../components/ui/glowing-effect";
 import { ContainerScroll } from "../../components/ui/container-scroll-animation";
 import { LinkPreview } from "../../components/ui//link-preview";
-
 
 // Lazy load Lottie
 const Lottie = dynamic(() => import("lottie-react"), {
@@ -37,8 +36,6 @@ const staggerContainer = {
     }
   }
 };
-
-
 
 // Simple tooltip component
 const SimpleTooltip = ({ children, title }) => {
@@ -75,6 +72,115 @@ const SimpleTooltip = ({ children, title }) => {
   );
 };
 
+// Certificate Card Component
+const CertificateCard = ({ certificate, index }) => {
+  const theme = useTheme();
+  const [showIframe, setShowIframe] = useState(false);
+  
+  return (
+    <motion.div
+      custom={index}
+      variants={fadeInUp}
+      whileHover={{ 
+        y: -10,
+        boxShadow: theme.palette.mode === "dark" 
+          ? "0 20px 30px rgba(0,173,181,0.2)"
+          : "0 20px 30px rgba(0,0,0,0.1)"
+      }}
+      transition={{ duration: 0.3 }}
+    >
+      <Card 
+        sx={{ 
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          borderRadius: '16px',
+          overflow: 'hidden',
+          background: theme.palette.mode === "dark"
+            ? "rgba(30,41,59,0.7)"
+            : "rgba(255,255,255,0.9)",
+          backdropFilter: "blur(10px)",
+          border: "1px solid",
+          borderColor: theme.palette.mode === "dark"
+            ? "rgba(255,255,255,0.1)"
+            : "rgba(0,0,0,0.05)"
+        }}
+      >
+        <CardActionArea onClick={() => setShowIframe(!showIframe)}>
+          {!showIframe ? (
+            <CardMedia
+              component="div"
+              sx={{ 
+                height: 180,
+                position: 'relative',
+                overflow: 'hidden',
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  background: `linear-gradient(180deg, transparent 60%, ${theme.palette.background.paper} 100%)`
+                }
+              }}
+            >
+              <Image
+                src={certificate.ImageUrl}
+                alt={certificate.title}
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </CardMedia>
+          ) : (
+            <Box sx={{ height: 350, p: 1 }}>
+              <iframe
+                src={certificate.LinkCert}
+                title={certificate.title}
+                width="100%"
+                height="100%"
+                style={{ border: 'none', borderRadius: '8px' }}
+              />
+            </Box>
+          )}
+          <CardContent>
+            <Typography 
+              variant="h6" 
+              component="h3"
+              sx={{ 
+                mb: 1, 
+                color: theme.palette.info.main,
+                fontWeight: 600,
+                display: '-webkit-box',
+                overflow: 'hidden',
+                WebkitBoxOrient: 'vertical',
+                WebkitLineClamp: 2
+              }}
+            >
+              {certificate.title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {certificate.issuer}
+            </Typography>
+            <Chip
+              label={showIframe ? "Hide Certificate" : "View Certificate"}
+              size="small"
+              sx={{
+                mt: 2,
+                bgcolor: theme.palette.info.main,
+                color: "#fff",
+                '&:hover': {
+                  bgcolor: theme.palette.info.dark,
+                }
+              }}
+            />
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </motion.div>
+  );
+};
+
 const AboutClient = () => {
   const { t } = useTranslation();
   const theme = useTheme();
@@ -82,13 +188,13 @@ const AboutClient = () => {
   const [developerAnimation, setDeveloperAnimation] = useState(null);
 
   useEffect(() => {
-    // Charge l'animation principale
+    // Load main animation
     fetch("/Animation - 1742265567636.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error("Error loading animation:", error));
 
-    // Charge l'animation du développeur
+    // Load developer animation
     fetch("/AnimationDeveloper.json")
       .then((response) => response.json())
       .then((data) => setDeveloperAnimation(data))
@@ -140,7 +246,25 @@ const AboutClient = () => {
     overflow: "hidden"
   };
 
-
+  // Section header style
+  const sectionHeaderStyle = {
+    position: 'relative', 
+    color: theme.palette.info.main, 
+    fontWeight: 700, 
+    mb: 6, 
+    textAlign: 'center',
+    '&:after': {
+      content: '""',
+      position: 'absolute',
+      bottom: '-15px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '60px',
+      height: '4px',
+      backgroundColor: theme.palette.info.main,
+      borderRadius: '2px'
+    }
+  };
 
   return (
     <Container maxWidth="xl" className="py-10">
@@ -194,48 +318,7 @@ const AboutClient = () => {
 
       {/* Role Section */}
       <Box sx={{ mb: 10 }}>
-        <ContainerScroll
-        // titleComponent={
-        //   <Box className="text-center">
-        //     <motion.div className="flex flex-wrap justify-center">
-        //       {t("about.role").split('').map((char, index) => (
-        //         <Typography
-        //           key={index}
-        //           component={motion.span}
-        //           className="inline-block"
-        //           sx={{
-        //             display: 'inline-block',
-        //             color: theme.palette.info.main,
-        //             fontWeight: 700,
-        //             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
-        //             fontSize: {
-        //               xs: '2rem',
-        //               sm: '2.5rem',
-        //               md: '3.75rem'
-        //             }
-        //           }}
-        //           initial={{ opacity: 0, y: -20, rotateX: -90 }}
-        //           animate={{ opacity: 1, y: 0, rotateX: 0 }}
-        //           transition={{
-        //             duration: 0.8,
-        //             delay: index * 0.05,
-        //             type: 'spring',
-        //             stiffness: 100
-        //           }}
-        //           whileHover={{
-        //             scale: 1.2,
-        //             rotateY: 10,
-        //             color: theme.palette.secondary.main,
-        //             transition: { duration: 0.2 }
-        //           }}
-        //         >
-        //           {char === ' ' ? '\u00A0' : char}
-        //         </Typography>
-        //       ))}
-        //     </motion.div>
-        //   </Box>
-        // }
-        >
+        <ContainerScroll>
           <Box
             sx={{
               ...glassCardStyle,
@@ -257,7 +340,7 @@ const AboutClient = () => {
             {/* Personal Info Cards */}
             <Box sx={{
               display: "grid",
-              gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+              gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" },
               gap: 3,
               mt: 4
             }}>
@@ -279,22 +362,30 @@ const AboutClient = () => {
                       gap: 2,
                       p: 2,
                       borderRadius: 2,
-                      backgroundColor: theme.palette.background.paper,
-                      height: "100%"
+                      backgroundColor: theme.palette.mode === "dark" 
+                        ? "rgba(30,41,59,0.7)" 
+                        : theme.palette.background.paper,
+                      height: "100%",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+                      border: "1px solid",
+                      borderColor: theme.palette.mode === "dark"
+                        ? "rgba(255,255,255,0.1)"
+                        : "rgba(0,0,0,0.03)",
                     }}
                   >
                     <Box
                       sx={{
                         width: 50,
                         height: 50,
-                        borderRadius: 2,
+                        borderRadius: "50%",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        background: `linear-gradient(135deg, ${theme.palette.info.main}22, ${theme.palette.info.main}44)`
+                        background: `linear-gradient(135deg, ${theme.palette.info.light}, ${theme.palette.info.main})`,
+                        boxShadow: `0 4px 20px ${theme.palette.info.main}33`,
                       }}
                     >
-                      <Typography variant="h6">{info.icon}</Typography>
+                      <Typography variant="h6" sx={{ color: "#fff" }}>{info.icon}</Typography>
                     </Box>
                     <Box>
                       <Typography variant="body2" color="text.secondary">
@@ -312,6 +403,54 @@ const AboutClient = () => {
         </ContainerScroll>
       </Box>
 
+      {/* Certifications Section - NEW POSITION */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+        className="mb-16"
+      >
+        <Typography variant="h3" sx={sectionHeaderStyle}>
+          {t("about.certifications.title")}
+        </Typography>
+
+        <Typography 
+          variant="h6" 
+          color="text.secondary" 
+          align="center" 
+          sx={{ mb: 5 }}
+        >
+          {t("about.certifications.subtitle")}
+        </Typography>
+
+        {/* Developer animation above certificates */}
+        {developerAnimation && (
+          <Box sx={{ maxWidth: "750px", mx: "auto", mb: 6, position: "relative" }}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <Lottie
+                animationData={developerAnimation}
+                loop={true}
+                style={{ width: "100%", height: "280px" }}
+              />
+            </motion.div>
+          </Box>
+        )}
+
+        {/* Certificate Cards Grid */}
+        <Grid container spacing={3}>
+          {Certifs.map((cert, idx) => (
+            <Grid item xs={12} sm={6} md={4} key={idx}>
+              <CertificateCard certificate={cert} index={idx} />
+            </Grid>
+          ))}
+        </Grid>
+      </motion.div>
+
       {/* Experience Timeline */}
       <motion.div
         initial="hidden"
@@ -320,11 +459,7 @@ const AboutClient = () => {
         variants={staggerContainer}
         className="mb-16"
       >
-        <Typography
-          variant="h3"
-          align="center"
-          sx={{ color: theme.palette.info.main, fontWeight: 700, mb: 6 }}
-        >
+        <Typography variant="h3" sx={sectionHeaderStyle}>
           {t("about.experience.title")}
         </Typography>
 
@@ -349,14 +484,21 @@ const AboutClient = () => {
                 {/* Content */}
                 <Box className="w-1/2 flex items-center justify-center">
                   <motion.div
-                    whileHover={{ scale: 1.03 }}
+                    whileHover={{ 
+                      scale: 1.03,
+                      boxShadow: theme.palette.mode === "dark" 
+                        ? `0 10px 30px ${theme.palette.info.main}33` 
+                        : "0 10px 30px rgba(0,0,0,0.1)"
+                    }}
                     className="w-full max-w-md"
                   >
                     <Box
                       sx={{
                         p: 3,
                         borderRadius: 3,
-                        backgroundColor: theme.palette.background.paper,
+                        backgroundColor: theme.palette.mode === "dark" 
+                          ? "rgba(30,41,59,0.7)" 
+                          : theme.palette.background.paper,
                         boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
                         border: "1px solid",
                         borderColor: theme.palette.mode === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.05)",
@@ -372,7 +514,7 @@ const AboutClient = () => {
                           left: 0,
                           right: 0,
                           height: 3,
-                          backgroundColor: theme.palette.info.main
+                          background: `linear-gradient(90deg, ${theme.palette.info.light}, ${theme.palette.info.main})`
                         }}
                       />
 
@@ -386,12 +528,22 @@ const AboutClient = () => {
                         </Typography>
 
                         <Box sx={{ display: "flex", alignItems: "center", gap: 1, mt: 1, mb: 2 }}>
-                          <Box sx={{ position: "relative", width: 24, height: 24, flexShrink: 0 }}>
+                          <Box 
+                            sx={{ 
+                              position: "relative", 
+                              width: 24, 
+                              height: 24, 
+                              flexShrink: 0,
+                              borderRadius: "50%",
+                              overflow: "hidden",
+                              boxShadow: "0 2px 5px rgba(0,0,0,0.2)"
+                            }}
+                          >
                             <Image
                               src={companyIcons[position.company].logo}
                               alt={position.company}
                               fill
-                              style={{ objectFit: "contain", borderRadius: "50%" }}
+                              style={{ objectFit: "cover" }}
                             />
                           </Box>
                           <Typography variant="body2" color="text.primary" fontWeight="medium">
@@ -403,7 +555,7 @@ const AboutClient = () => {
                           label={position.year}
                           size="small"
                           sx={{
-                            backgroundColor: theme.palette.info.main,
+                            backgroundColor: `${theme.palette.info.main}`,
                             color: "#fff",
                             fontWeight: 500
                           }}
@@ -413,27 +565,39 @@ const AboutClient = () => {
                   </motion.div>
                 </Box>
 
-                {/* Center dot */}
+                {/* Center dot with pulse animation */}
                 <Box className="relative">
-                  <Box
-                    sx={{
-                      width: 16,
-                      height: 16,
-                      borderRadius: "50%",
-                      backgroundColor: theme.palette.info.main,
-                      border: "3px solid",
-                      borderColor: theme.palette.background.paper,
-                      position: "relative"
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.2, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      ease: "easeInOut",
+                      repeat: Infinity,
                     }}
                   >
-                    <GlowingEffect
-                      blur={5}
-                      borderWidth={0}
-                      spread={30}
-                      glow={true}
-                      variant="default"
-                    />
-                  </Box>
+                    <Box
+                      sx={{
+                        width: 16,
+                        height: 16,
+                        borderRadius: "50%",
+                        backgroundColor: theme.palette.info.main,
+                        border: "3px solid",
+                        borderColor: theme.palette.background.paper,
+                        position: "relative",
+                        zIndex: 2
+                      }}
+                    >
+                      <GlowingEffect
+                        blur={8}
+                        borderWidth={0}
+                        spread={30}
+                        glow={true}
+                        variant="default"
+                      />
+                    </Box>
+                  </motion.div>
                 </Box>
 
                 {/* Empty space */}
@@ -452,11 +616,7 @@ const AboutClient = () => {
         variants={staggerContainer}
         className="mb-16"
       >
-        <Typography
-          variant="h3"
-          align="center"
-          sx={{ color: theme.palette.info.main, fontWeight: 700, mb: 6 }}
-        >
+        <Typography variant="h3" sx={sectionHeaderStyle}>
           {t("about.education.title")}
         </Typography>
 
@@ -472,8 +632,10 @@ const AboutClient = () => {
               key={idx}
               custom={idx}
               variants={fadeInUp}
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.3 }}
+              whileHover={{ 
+                y: -8,
+                transition: { duration: 0.3 }
+              }}
             >
               <Box sx={{ position: "relative", height: "100%" }}>
                 <Box className="absolute inset-0 rounded-2xl -z-10">
@@ -483,7 +645,6 @@ const AboutClient = () => {
                     spread={20}
                     glow={true}
                     disabled={true}
-                  // proximity={100}
                   />
                 </Box>
 
@@ -491,20 +652,28 @@ const AboutClient = () => {
                   sx={{
                     ...glassCardStyle,
                     height: "100%",
-                    color: theme.palette.text.primary
+                    color: theme.palette.text.primary,
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      transform: "translateY(-8px)",
+                      boxShadow: theme.palette.mode === "dark" 
+                        ? `0 20px 30px ${theme.palette.info.main}22` 
+                        : "0 20px 30px rgba(0,0,0,0.1)",
+                    }
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 3 }}>
                     <Box
                       sx={{
-                        width: 40,
-                        height: 40,
+                        width: 50,
+                        height: 50,
                         borderRadius: "50%",
-                        backgroundColor: theme.palette.info.main,
+                        background: `linear-gradient(135deg, ${theme.palette.info.light}, ${theme.palette.info.main})`,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        flexShrink: 0
+                        flexShrink: 0,
+                        boxShadow: `0 4px 10px ${theme.palette.info.main}55`,
                       }}
                     >
                       <Typography variant="h6" sx={{ color: '#fff' }}>
@@ -527,7 +696,7 @@ const AboutClient = () => {
                       px: 2,
                       py: 0.5,
                       borderRadius: 50,
-                      backgroundColor: theme.palette.mode === "dark" ? "rgba(0,173,181,0.15)" : "rgba(0,173,181,0.1)"
+                      background: `linear-gradient(90deg, ${theme.palette.info.main}20, ${theme.palette.info.main}10)`
                     }}
                   >
                     <Typography
@@ -545,81 +714,6 @@ const AboutClient = () => {
               </Box>
             </motion.div>
           ))}
-        </Box>
-      </motion.div>
-
-      {/* Certifications with SimpleMacBook */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-        className="mb-8"
-      >
-        <Typography
-          variant="h3"
-          align="center"
-          sx={{ color: theme.palette.info.main, fontWeight: 700, mb: 6 }}
-        >
-          {t("about.certifications.title")}
-        </Typography>
-
-        {/* Animation developer  */}
-        {developerAnimation && (
-          <Box sx={{ maxWidth: "750px", mx: "auto", my: 4, position: "relative" }}>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <Lottie
-                animationData={developerAnimation}
-                loop={true}
-                style={{ width: "100%", height: "300px" }}
-              />
-            </motion.div>
-          </Box>
-        )}
-
-        {/* Certificate chips */}
-        <Box sx={{ mt: 4, textAlign: "center" }}>
-          <Typography variant="h6" gutterBottom sx={{ color: theme.palette.text.secondary }}>
-            {t("about.certifications.clickToView")}
-          </Typography>
-          <Stack
-            direction="row"
-            spacing={1.5}
-            useFlexGap
-            flexWrap="wrap"
-            justifyContent="center"
-            sx={{ mt: 2 }}
-          >
-            {Certifs.map((cert, idx) => (
-              <SimpleTooltip key={idx} title={cert.title}>
-                <LinkPreview
-                  url={cert.LinkCert}          
-                  className="font-bold"
-                >
-                  
-
-                  <Chip
-                    label={cert.title.length > 15 ? `${cert.title.substring(0, 15)}...` : cert.title}
-                    onClick={() => window.open(cert.LinkCert, '_blank')}
-                    sx={{
-                      bgcolor: theme.palette.info.main,
-                      color: "#fff",
-                      fontWeight: 500,
-                      '&:hover': {
-                        bgcolor: theme.palette.info.dark,
-                      },
-                      my: 0.5
-                    }}
-                    clickable
-                  />
-                </LinkPreview>{" "}
-              </SimpleTooltip>
-            ))}
-          </Stack>
         </Box>
       </motion.div>
     </Container>
