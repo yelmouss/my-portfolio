@@ -32,6 +32,31 @@ const nextConfig = {
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
         minimumCacheTTL: 60,
     },
+    
+    // Disable server-side rendering for specific packages that use browser APIs
+    transpilePackages: ["react-schemaorg", "schema-dts"],
+    
+    // Configure Webpack to handle browser-only modules
+    webpack: (config, { isServer }) => {
+        // Add condition to handle browser-only modules
+        if (isServer) {
+            // For modules that should be skipped during SSR
+            const origExternal = config.externals;
+            config.externals = [
+                ...(Array.isArray(origExternal) ? origExternal : [origExternal]),
+                "react-schemaorg", 
+                "schema-dts"
+            ];
+        }
+        
+        return config;
+    },
+    
+    // Set strict mode for React development
+    reactStrictMode: true,
+    
+    // Enable SWC minification for improved performance
+    swcMinify: true,
 }
 
 module.exports = nextConfig

@@ -15,6 +15,14 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import { GlowingEffect } from "../../components/ui/glowing-effect";
+// Import dynamic for client-side only components
+import dynamic from "next/dynamic";
+
+// Dynamically import react-schemaorg with no SSR
+const DynamicSchemaOrg = dynamic(
+  () => import('react-schemaorg'),
+  { ssr: false } // This ensures the component only renders on client side
+);
 
 // Styled components for cleaner code
 const ContactCard = styled(Paper)(({ theme }) => ({
