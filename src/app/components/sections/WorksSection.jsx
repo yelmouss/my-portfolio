@@ -19,27 +19,26 @@ import { CardContainer, CardBody, CardItem } from "../ui/3d-card";
 import Image from "next/image";
 
 const projects = [
-
   {
     id: 0,
     title: "Let'stalkJob",
-    description:
-      "Le 1er Podcast Emploi au Maroc avec Mehdi Griny",
+    description: "Le 1er Podcast Emploi au Maroc avec Mehdi Griny",
     image: "/projects/letstalk.PNG",
     tags: ["Next.js", "React", "Material UI", "Framer Motion"],
     github: "https://github.com/yelmouss",
     demo: "https://letstalkjobs.vercel.app/",
     category: "web",
-  }, 
+  },
   {
     id: 0,
     title: "HOPE Maroc website",
-    description: "Aide aux chercheurs d'emploi, porteurs de projets, formation et mentorat.",
+    description:
+      "Aide aux chercheurs d'emploi, porteurs de projets, formation et mentorat.",
     image: "/projects/hope.PNG",
     tags: ["Next.js", "React", "Material UI", "Framer Motion"],
     demo: "https://hope-three-xi.vercel.app/",
   },
-   {
+  {
     id: 1,
     title: "Portfolio v2",
     description:
@@ -64,7 +63,13 @@ const projects = [
     title: "Petit Iguane",
     description: "Surf and Yoga retreat in Morocco",
     image: "/projects/petitiguane.png",
-    tags: ["Next.js", "Google analytics", "Material UI", "Framer Motion", "SEO"],
+    tags: [
+      "Next.js",
+      "Google analytics",
+      "Material UI",
+      "Framer Motion",
+      "SEO",
+    ],
     github: "https://github.com/yelmouss",
     demo: "https://petitiguane.com",
     category: "web",
@@ -74,7 +79,13 @@ const projects = [
     title: "Edukalis",
     description: "Formation • Orientation • Développement professionnel",
     image: "/projects/edukalis.png",
-    tags: ["Next.js", "Google analytics", "Material UI", "Framer Motion", "SEO"],
+    tags: [
+      "Next.js",
+      "Google analytics",
+      "Material UI",
+      "Framer Motion",
+      "SEO",
+    ],
     github: "https://github.com/yelmouss",
     demo: "https://edukalis.com",
     category: "web",
@@ -84,7 +95,13 @@ const projects = [
     title: "Touzar.ma",
     description: "The best traditional and modern Moroccan dishes",
     image: "/projects/touzar.png",
-    tags: ["Next.js", "Google analytics", "Material UI", "Framer Motion", "SEO"],
+    tags: [
+      "Next.js",
+      "Google analytics",
+      "Material UI",
+      "Framer Motion",
+      "SEO",
+    ],
     demo: "https://touzar.ma",
     category: "web",
   },
@@ -101,7 +118,8 @@ const projects = [
     id: 7,
     title: "P7",
     description: "Studies Project Openclassrooms",
-    image: "https://p7-yelmouss.vercel.app/static/media/logo-kasa.bb1c78bdbf97911cf6044e13e0c4f670.svg",
+    image:
+      "https://p7-yelmouss.vercel.app/static/media/logo-kasa.bb1c78bdbf97911cf6044e13e0c4f670.svg",
     tags: ["React JS"],
     demo: "https://p7-yelmouss.vercel.app/",
   },
@@ -141,7 +159,12 @@ const ProjectCard = ({ project }) => (
         >
           {project.description}
         </CardItem>
-        <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full mt-4">
+        <CardItem
+          translateZ="100"
+          rotateX={20}
+          rotateZ={-10}
+          className="w-full mt-4"
+        >
           <Image
             src={project.image}
             height={400}
@@ -200,7 +223,7 @@ const ProjectCard = ({ project }) => (
 const WorksSection = () => {
   const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("all");
-  const theme = useTheme()
+  const theme = useTheme();
 
   const filteredProjects = projects.filter(
     (project) => activeCategory === "all" || project.category === activeCategory
@@ -216,9 +239,10 @@ const WorksSection = () => {
             fontSize: { xs: "3rem", md: "4.5rem" },
             fontWeight: 800,
             mb: 2,
-            textShadow: theme.palette.mode === "dark"
-              ? "0 0 40px rgba(0,173,181,0.3)"
-              : "none"
+            textShadow:
+              theme.palette.mode === "dark"
+                ? "0 0 40px rgba(0,173,181,0.3)"
+                : "none",
           }}
         >
           {t("works.title")}
