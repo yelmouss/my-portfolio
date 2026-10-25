@@ -174,7 +174,7 @@
     "stackTicketAriaLabel": "Déchirer le ticket pour afficher la stack technique"
   },
   "work": { "eyebrow": "Portfolio", "title": "Des projets conçus pour avoir un impact.", "description": "Une sélection d'applications web, de sites et de projets d'étude.", "filters": { "all": "Tous les projets", "web": "Applications web", "mobile": "Applications mobiles", "desktop": "Applications desktop" } },
-  "contact": { "eyebrow": "Contact", "title": "Construisons quelque chose d'utile.", "description": "Parlez-moi de votre contexte, de vos objectifs et de ce que vous voulez créer.", "email": "M'écrire" },
+  "contact": { "eyebrow": "Contact", "title": "Construisons quelque chose d'utile.", "description": "Parlez-moi de votre contexte, de vos objectifs et de ce que vous voulez créer.", "email": "M'écrire", "form": { "name": "Votre nom", "email": "Votre e-mail", "subject": "Sujet du projet", "message": "Parlez-moi de votre projet", "submit": "Envoyer le message", "sending": "Envoi en cours...", "success": "Votre message a été envoyé.", "error": "Une erreur est survenue. Réessayez." } },
   "nav": { "home": "Accueil", "about": "À propos", "work": "Projets", "contact": "Contact", "call": "Appeler", "theme": "Changer de thème", "whatsapp": "Discuter sur WhatsApp" },
   "languages": { "fr": "Français", "en": "English", "ar": "العربية" }
 }

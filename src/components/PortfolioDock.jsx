@@ -4,13 +4,13 @@ import { FR, GB, SA } from "country-flag-icons/react/3x2";
 import {
   House,
   Mail,
-  MessageCircle,
   Moon,
   Phone,
   Sun,
   UserRound,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 import { useColorMode } from "@/components/ThemeRegistry";
 import { FloatingDock } from "@/components/ui/floating-dock";
@@ -113,9 +113,16 @@ export default function PortfolioDock({ locale, messages }) {
         rel="noreferrer noopener"
         aria-label={messages.nav.whatsapp}
         title={messages.nav.whatsapp}
-        className="fixed bottom-4 left-4 z-50 flex h-12 w-12 items-center justify-center rounded-full border-2 border-lime-300 bg-lime-400 text-zinc-950 shadow-xl shadow-black/40 transition-transform hover:scale-105 md:bottom-6 md:left-auto md:right-6"
+        className="fixed bottom-4 left-4 z-50 flex h-14 w-14 items-center justify-center transition-transform hover:scale-110 md:bottom-6 md:left-auto md:right-6"
       >
-        <MessageCircle aria-hidden="true" size={22} />
+        <Image
+          src="/whatsapp.svg"
+          alt=""
+          aria-hidden="true"
+          width={40}
+          height={40}
+          className="h-10 w-10 object-contain"
+        />
       </a>
     </>
   );

@@ -26,10 +26,17 @@ export default function SmoothScrollProvider({ children }) {
       setIsLoading(true);
     });
     const isAboutPage = pathname.split("?")[0].endsWith("/about");
+    const isContactPage = pathname.split("?")[0].endsWith("/contact");
     const modelPath = isAboutPage
       ? "/3d/realistic_human_skull.glb"
-      : "/3d/rigged_hand_-_game_model.glb";
-    const modelLabel = isAboutPage ? "background skull" : "background hand";
+      : isContactPage
+        ? "/3d/laptop_free.glb"
+        : "/3d/rigged_hand_-_game_model.glb";
+    const modelLabel = isAboutPage
+      ? "background skull"
+      : isContactPage
+        ? "background laptop"
+        : "background hand";
 
     const setupScene = async () => {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -91,7 +98,7 @@ export default function SmoothScrollProvider({ children }) {
       let model = null;
       let modelMaterials = [];
       let modelVisible = 0;
-      let modelTargetVisible = isAboutPage ? 1 : 0;
+      let modelTargetVisible = isAboutPage || isContactPage ? 1 : 0;
       const modelLoader = new GLTFLoader();
       modelLoader.load(
         modelPath,
@@ -106,7 +113,11 @@ export default function SmoothScrollProvider({ children }) {
 
           model.scale.setScalar(scale);
           model.position.set(-center.x * scale, -center.y * scale, -center.z * scale);
-          model.rotation.set(isAboutPage ? 0.05 : 0.08, isAboutPage ? 0.2 : -0.35, -0.12);
+          model.rotation.set(
+            isAboutPage ? 0.05 : isContactPage ? -0.12 : 0.08,
+            isAboutPage ? 0.2 : isContactPage ? -0.3 : -0.35,
+            -0.12,
+          );
 
           model.traverse((object) => {
             if (!object.isMesh) return;
@@ -179,7 +190,7 @@ export default function SmoothScrollProvider({ children }) {
         const elapsed = time * 0.00035;
         const direction = Number(sceneRef.current?.style.getPropertyValue("--scroll-direction")) || 1;
         scroll.value += (scroll.target - scroll.value) * 0.075;
-        if (!isAboutPage) {
+        if (!isAboutPage && !isContactPage) {
           const expertiseSection = document.querySelector("[data-expertise-section]");
           const expertiseTop = expertiseSection
             ? expertiseSection.getBoundingClientRect().top + window.scrollY
@@ -195,10 +206,14 @@ export default function SmoothScrollProvider({ children }) {
         root.rotation.z = 0;
         if (model) {
           modelRoot.visible = modelVisible > 0.01;
-          modelRoot.position.set(0, isAboutPage ? -0.7 : -1.45 + modelVisible * 0.28, 0.65);
-          modelRoot.rotation.y = scroll.value * 0.0007;
+          modelRoot.position.set(
+            0,
+            isAboutPage ? -0.7 : isContactPage ? -0.95 : -1.45 + modelVisible * 0.28,
+            0.65,
+          );
+          modelRoot.rotation.y = scroll.value * (isContactPage ? 0.001 : 0.0007);
           modelRoot.rotation.x = Math.sin(elapsed * 0.8) * 0.04;
-          modelRoot.scale.setScalar(isAboutPage ? 1.35 : 1.35 + modelVisible * 0.15);
+          modelRoot.scale.setScalar(isAboutPage || isContactPage ? 1.35 : 1.35 + modelVisible * 0.15);
           modelMaterials.forEach((material) => {
             material.opacity = modelVisible * 0.28;
           });

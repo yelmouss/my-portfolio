@@ -50,3 +50,18 @@ The UI is organized around Material UI in `src/theme/theme.js`, with a
 client-side light/dark mode toggle. The portfolio home is composed of reusable
 sections, and placeholder pages are available at `/[locale]/work` and
 `/[locale]/contact`. Language switching uses `country-flag-icons`.
+
+## Contact email
+
+The contact form sends messages through Gmail using Nodemailer. Configure these
+server-only environment variables locally and in the deployment provider:
+
+```env
+GMAIL_USER=your-gmail-address
+GMAIL_APP_PASSWORD=your-16-character-google-app-password
+CONTACT_RECIPIENT=address-that-receives-messages
+```
+
+Use a Google App Password rather than a regular Gmail password. The form posts
+to `src/app/api/contact/route.js`, and these variables must never be exposed
+with a `NEXT_PUBLIC_` prefix.

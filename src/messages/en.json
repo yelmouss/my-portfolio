@@ -171,7 +171,7 @@
     "stackTicketAriaLabel": "Tear off the stub to reveal the technical stack"
   },
   "work": { "eyebrow": "Portfolio", "title": "Projects designed to make an impact.", "description": "A selection of web applications, websites and study projects.", "filters": { "all": "All projects", "web": "Web apps", "mobile": "Mobile apps", "desktop": "Desktop apps" } },
-  "contact": { "eyebrow": "Contact", "title": "Let's build something useful.", "description": "Tell me about your context, goals and what you want to create.", "email": "Email me" },
+  "contact": { "eyebrow": "Contact", "title": "Let's build something useful.", "description": "Tell me about your context, goals and what you want to create.", "email": "Email me", "form": { "name": "Your name", "email": "Your email", "subject": "Project subject", "message": "Tell me about your project", "submit": "Send message", "sending": "Sending...", "success": "Your message has been sent.", "error": "Something went wrong. Please try again." } },
   "nav": { "home": "Home", "about": "About", "work": "Work", "contact": "Contact", "call": "Call", "theme": "Change theme", "whatsapp": "Chat on WhatsApp" },
   "languages": { "fr": "Français", "en": "English", "ar": "العربية" }
 }
