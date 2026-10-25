@@ -1,0 +1,177 @@
+{
+  "metadata": { "title": "Yelmouss — Digital experiences", "description": "High-performing websites, custom applications and SEO built around concrete goals." },
+  "home": {
+    "eyebrow": "Digital studio",
+    "title": "I build digital experiences that move businesses forward",
+    "description": "High-performing websites, custom applications and SEO built around concrete goals.",
+    "cta": "Let's talk about your project",
+    "workCta": "View my work",
+    "languageLabel": "Language",
+    "themeToggle": "Change theme",
+    "servicesEyebrow": "Expertise",
+    "servicesTitle": "Everything you need for the next step.",
+    "services": {
+      "design": { "title": "Design & strategy", "description": "Clear, distinctive interfaces designed to convert." },
+      "development": { "title": "Web development", "description": "Fast, accessible and resilient products from prototype to launch." },
+      "seo": { "title": "Visibility & SEO", "description": "A technical and editorial foundation built to be discovered." }
+    },
+    "selectedWorkEyebrow": "Selected work",
+    "selectedWorkTitle": "Useful projects, not just beautiful ones.",
+    "allWork": "All projects",
+    "projects": {
+      "atlas": { "title": "Atlas Studio", "description": "Brand identity and showcase site for a creative team." },
+      "nova": { "title": "Nova Commerce", "description": "An e-commerce experience designed to simplify buying." }
+    },
+    "closingTitle": "Have a digital project in mind?",
+    "introductionEyebrow": "Digital solutions built around your business",
+    "introductionTitle": "The right balance between technology, user experience and visibility",
+    "introductionParagraphs": [
+      "A successful digital project is more than a beautiful website or a functional application. It should answer a real need, provide a smooth experience and help users find the information they need.",
+      "I combine web development, application design and SEO to create coherent, scalable solutions built around each project's goals.",
+      "Whether you are launching a business, modernizing your online presence or improving your visibility on Google, the goal is to turn your needs into a useful and sustainable digital solution."
+    ],
+    "methodEyebrow": "A structured approach",
+    "methodTitle": "From idea to a concrete digital solution",
+    "method": [
+      { "title": "Understand", "description": "We define the need, users, goals and constraints." },
+      { "title": "Design", "description": "We shape the structure, features, experience and technical choices." },
+      { "title": "Build", "description": "I create a fast, accessible solution with SEO fundamentals in place." },
+      { "title": "Improve", "description": "I test, refine and prepare a foundation that can evolve." }
+    ],
+    "locationEyebrow": "Yelmouss — Morocco",
+    "locationTitle": "Digital solutions & upgrades for businesses, independents and founders.",
+    "locationDescription": "I work with businesses, independents and founders who want to create or improve their digital tools. Projects can be discussed remotely according to their scope and working arrangements.",
+    "locationCta": "Let's discuss your project",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Questions about web development and SEO",
+    "faq": [
+      { "question": "What services does Yelmouss offer?", "answer": "Web development, custom applications and SEO, with the scope defined around each project's needs." },
+      { "question": "Can a website be built with SEO in mind from the start?", "answer": "Yes. Structure, metadata, navigation, performance and content can be considered from the beginning, although no specific ranking can be guaranteed." },
+      { "question": "Do you build custom applications?", "answer": "Applications are designed around expected features, target users and project constraints." },
+      { "question": "How do I start a project with Yelmouss?", "answer": "Share your needs, goals and expected features through the contact page to define the scope and next steps." }
+    ],
+    "closingEyebrow": "Your next project starts here",
+    "closingDescription": "Whether you need a website, a custom application or stronger organic visibility, let's discuss your needs and the right approach."
+  },
+  "profile": {
+    "name": "Yassine Elmouss",
+    "displayName": "Yelmouss",
+    "role": "Full Stack Developer",
+    "location": "Rabat, Morocco",
+    "phone": "+212 612 865 681",
+    "email": "yelmouss.devt@gmail.com",
+    "availability": "Available for freelance projects",
+    "degree": "Diploma Level 5 RNCP",
+    "bio": "From writing my first line of code in middle school to building complex web applications, my journey in tech has been driven by curiosity and innovation. I thrive on turning challenges into elegant solutions and staying at the forefront of web development technologies."
+  },
+  "stack": {
+    "eyebrow": "Technology stack",
+    "title": "Tools I use to build useful digital products.",
+    "languages": [
+      { "name": "JavaScript", "image": "/stack/JavaScript.svg", "description": "Interactive interfaces and modern web logic." },
+      { "name": "PHP", "image": "/stack/php.png", "description": "Reliable server-side development and web applications." },
+      { "name": "HTML", "image": "/stack/html5.webp", "description": "Semantic structures built for accessibility and SEO." },
+      { "name": "CSS", "image": "/stack/css.webp", "description": "Responsive layouts, visual systems and polished interfaces." }
+    ],
+    "frameworks": [
+      { "name": "React", "image": "/stack/react.jpg", "description": "Reusable components for interactive digital products." },
+      { "name": "Next.js", "image": "/stack/next.jpg", "description": "Fast, SEO-ready full stack applications." },
+      { "name": "Tailwind CSS", "image": "/stack/tailwind.webp", "description": "Consistent responsive styling with utility classes." },
+      { "name": "Bootstrap", "image": "/stack/bootstrap.jpg", "description": "Practical responsive interfaces and rapid prototypes." },
+      { "name": "Expo", "image": "/stack/expo.webp", "description": "Cross-platform mobile experiences with React Native." },
+      { "name": "Laravel", "image": "/stack/laravel.webp", "description": "Structured PHP backends and business applications." },
+      { "name": "Express", "image": "/stack/express.png", "description": "Lightweight APIs and Node.js backend services." }
+    ],
+    "databases": [
+      { "name": "MySQL", "image": "/stack/mysql.jpg", "description": "Structured relational data for business applications." },
+      { "name": "PostgreSQL", "image": "/stack/postgre.png", "description": "Powerful relational data models and queries." },
+      { "name": "MongoDB", "image": "/stack/mongodb.svg", "description": "Flexible document databases for evolving products." },
+      { "name": "Firebase", "image": "/stack/firebase.png", "description": "Managed authentication, data and application services." }
+    ],
+    "tools": [
+      { "name": "React Native", "image": "/stack/react-native.png", "description": "Native mobile applications from a shared React codebase." }
+    ]
+  },
+  "experience": {
+    "eyebrow": "Professional journey",
+    "title": "Experience built across technology and operations.",
+    "ticketTitle": "Unfold the journey",
+    "ticketHint": "Pull the stub to reveal the projects, roles, and lessons behind the work.",
+    "ticketStub": "TEAR ME",
+    "ticketAriaLabel": "Tear off the stub to reveal the professional journey",
+    "items": [
+      { "role": "Project Manager", "company": "Wehosre", "period": "2026", "logo": "/companies/wehosre.svg", "description": "Leading project delivery, coordinating stakeholders, and turning product goals into clear execution plans." },
+      { "role": "Software Instructor", "company": "GoMyCode", "period": "2023", "logo": "/companies/gomycode.svg", "description": "Teaching web development technologies and mentoring students in software engineering projects." },
+      { "role": "Workforce Manager", "company": "Sitel Group", "period": "2022", "logo": "/companies/sitel-group.svg", "description": "Managing team schedules, forecasting, and optimizing resource allocation for operational efficiency." },
+      { "role": "Web Developer", "company": "Intelcia", "period": "2020", "logo": "/companies/intelcia.svg", "description": "Developing and maintaining web applications using React, Node.js, and other modern technologies." },
+      { "role": "Resource Planner", "company": "Intelcia", "period": "2019", "logo": "/companies/intelcia.svg", "description": "Analyzing staffing needs, creating schedules, and optimizing workforce deployment." },
+      { "role": "Analytics Specialist", "company": "Intelcia", "period": "2017", "logo": "/companies/intelcia.svg", "description": "Analyzing operational data to identify trends and provide insights for business improvement." },
+      { "role": "Real-Time Analyst", "company": "Webhelp Maroc", "period": "2015", "logo": "/companies/webhelp.svg", "description": "Monitoring real-time metrics, making adjustments to staffing, and ensuring service level compliance." }
+    ]
+  },
+  "education": {
+    "eyebrow": "Educational journey",
+    "title": "A path combining technology and business.",
+    "items": [
+      { "title": "MERN Stack Development", "period": "2020 - 2022", "description": "Comprehensive training in modern web development technologies including React, Node.js, Next.js and database management." },
+      { "title": "Baccalaureate in Management", "period": "2015 - 2018", "description": "Focused on business management principles, economics, and organizational behavior." }
+    ]
+  },
+  "certifications": {
+    "eyebrow": "Certifications",
+    "title": "Continuous learning across technology.",
+    "items": [
+      { "title": "Fundamentals of Programming", "image": "/certificates/fundamentals-of-programming.webp" },
+      { "title": "Complete Practical SEO Training", "image": "/certificates/complete-practical-seo-training.webp" },
+      { "title": "DevOps Fundamentals", "image": "/certificates/devops-fundamentals.webp" },
+      { "title": "The PHP 8 Learning Guide", "image": "/certificates/php-8-learning-guide.webp" },
+      { "title": "Data Science and Machine Learning Developer", "image": "/certificates/data-science-machine-learning.webp" },
+      { "title": "Complete Introduction to the Deep/Dark Web 2023", "image": "/certificates/deep-dark-web-2023.webp" },
+      { "title": "Data Manipulation in Python", "image": "/certificates/data-manipulation-python.webp" },
+      { "title": "Cyber Security & Ethical Hacking", "image": "/certificates/cyber-security-ethical-hacking.webp" },
+      { "title": "React Native Bootcamp", "image": "/certificates/react-native-bootcamp.webp" },
+      { "title": "Web Application Penetration Testing", "image": "/certificates/web-application-penetration-testing.webp" },
+      { "title": "Time Management and Goal Planning", "image": "/certificates/time-management-goal-planning.webp" },
+      { "title": "Compact Awareness Guide on Internet Security", "image": "/certificates/internet-security-awareness.webp" }
+    ]
+  },
+  "projects": [
+    { "slug": "letstalkjob", "title": "Let'sTalkJob", "description": "The first employment podcast in Morocco with Mehdi Griny.", "type": "Web app", "stack": ["Next.js", "React", "Material UI", "Framer Motion"], "image": "/projects/letstalkjob.webp", "demo": "https://letstalkjobs.vercel.app/", "source": "https://github.com/yelmouss" },
+    { "slug": "hope-maroc", "title": "HOPE Maroc", "description": "Support for job seekers and project founders through training and mentoring.", "type": "Website", "stack": ["Next.js", "React", "Material UI", "Framer Motion"], "image": "/projects/hope-maroc.webp", "demo": "https://hope-three-xi.vercel.app/" },
+    { "slug": "portfolio-v2", "title": "Portfolio v2", "description": "Personal portfolio website built with Next.js and Material UI.", "type": "Website", "stack": ["Next.js", "React", "Material UI", "Framer Motion"], "image": "/projects/portfolio-v2.webp", "demo": "https://yelmouss.vercel.app", "source": "https://github.com/yelmouss" },
+    { "slug": "paylik", "title": "Paylik", "description": "A platform designed to facilitate payments between employers and employees.", "type": "Web app", "stack": ["Next.js", "React", "Material UI", "Framer Motion", "SEO"], "image": "/projects/paylik.webp", "demo": "https://paylik.ma" },
+    { "slug": "petit-iguane", "title": "Petit Iguane", "description": "Website for a surf and yoga retreat in Morocco.", "type": "Website", "stack": ["Next.js", "Google Analytics", "Material UI", "Framer Motion", "SEO"], "image": "/projects/petit-iguane.webp", "demo": "https://petitiguane.com", "source": "https://github.com/yelmouss" },
+    { "slug": "edukalis", "title": "Edukalis", "description": "Platform for training, orientation and professional development.", "type": "Website", "stack": ["Next.js", "Google Analytics", "Material UI", "Framer Motion", "SEO"], "image": "/projects/edukalis.webp", "demo": "https://edukalis.com", "source": "https://github.com/yelmouss" },
+    { "slug": "touzar", "title": "Touzar.ma", "description": "A showcase of traditional and modern Moroccan dishes.", "type": "Website", "stack": ["Next.js", "Google Analytics", "Material UI", "Framer Motion", "SEO"], "image": "/projects/touzar.webp", "demo": "https://touzar.ma" },
+    { "slug": "kanap", "title": "Kanap", "description": "OpenClassrooms study project.", "type": "Web app", "stack": ["JavaScript"], "image": "/projects/kanap.webp", "demo": "https://kanapro.vercel.app/html/" },
+    { "slug": "p7", "title": "P7", "description": "OpenClassrooms study project.", "type": "Web app", "stack": ["React"], "image": "/projects/p7.webp", "demo": "https://p7-yelmouss.vercel.app/" },
+    { "slug": "agence-la-panthere", "title": "Agence La Panthère", "description": "OpenClassrooms study project focused on web integration and SEO.", "type": "Website", "stack": ["HTML", "CSS", "SEO"], "image": "/projects/agence-la-panthere.webp", "demo": "https://agencelapanthere.vercel.app/" }
+  ],
+  "about": {
+    "eyebrow": "About",
+    "title": "A journey across technology, products and continuous improvement.",
+    "profileEyebrow": "Profile",
+    "profileTitle": "Creating with curiosity and intent.",
+    "profileDescription": "I turn concrete needs into useful, accessible digital experiences that can evolve with each project.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "stackEyebrow": "Technical stack",
+    "stackTitle": "The technologies I use every day.",
+    "certificationsTicketTitle": "Reveal the certifications",
+    "certificationsTicketHint": "Tear the ticket to open the certifications list.",
+    "certificationsTicketStub": "TEAR",
+    "certificationsTicketAriaLabel": "Tear off the stub to reveal certifications",
+    "profileTicketTitle": "Reveal the profile",
+    "profileTicketHint": "Tear the ticket to open the contact and profile details.",
+    "profileTicketStub": "TEAR",
+    "profileTicketAriaLabel": "Tear off the stub to reveal the profile",
+    "stackTicketTitle": "Reveal the toolkit",
+    "stackTicketHint": "Tear the ticket to discover the technologies behind the work.",
+    "stackTicketStub": "TEAR",
+    "stackTicketAriaLabel": "Tear off the stub to reveal the technical stack"
+  },
+  "work": { "eyebrow": "Portfolio", "title": "Projects designed to make an impact.", "description": "A selection of web applications, websites and study projects.", "filters": { "all": "All projects", "web": "Web apps", "mobile": "Mobile apps", "desktop": "Desktop apps" } },
+  "contact": { "eyebrow": "Contact", "title": "Let's build something useful.", "description": "Tell me about your context, goals and what you want to create.", "email": "Email me" },
+  "nav": { "home": "Home", "about": "About", "work": "Work", "contact": "Contact", "call": "Call", "theme": "Change theme", "whatsapp": "Chat on WhatsApp" },
+  "languages": { "fr": "Français", "en": "English", "ar": "العربية" }
+}

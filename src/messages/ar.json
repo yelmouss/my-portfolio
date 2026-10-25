@@ -1,0 +1,177 @@
+{
+  "metadata": { "title": "Yelmouss — تجارب رقمية", "description": "مواقع إلكترونية عالية الأداء وتطبيقات مخصصة وتحسين لمحركات البحث بأهداف واضحة." },
+  "home": {
+    "eyebrow": "استوديو رقمي",
+    "title": "أبني تجارب رقمية تدفع الشركات إلى الأمام.",
+    "description": "مواقع إلكترونية عالية الأداء وتطبيقات مخصصة وتحسين لمحركات البحث بأهداف واضحة.",
+    "cta": "لنتحدث عن مشروعك",
+    "workCta": "شاهد أعمالي",
+    "languageLabel": "اللغة",
+    "themeToggle": "تغيير المظهر",
+    "servicesEyebrow": "الخبرة",
+    "servicesTitle": "كل ما تحتاجه للخطوة التالية.",
+    "services": {
+      "design": { "title": "التصميم والاستراتيجية", "description": "واجهات واضحة ومميزة مصممة لتحقيق النتائج." },
+      "development": { "title": "تطوير الويب", "description": "منتجات سريعة وقوية وسهلة الوصول من النموذج الأولي إلى الإطلاق." },
+      "seo": { "title": "الظهور وتحسين البحث", "description": "أساس تقني ومحتوى مصمم ليكون قابلاً للاكتشاف." }
+    },
+    "selectedWorkEyebrow": "أعمال مختارة",
+    "selectedWorkTitle": "مشاريع مفيدة، وليست جميلة فقط.",
+    "allWork": "كل المشاريع",
+    "projects": {
+      "atlas": { "title": "Atlas Studio", "description": "هوية وموقع تعريفي لفريق إبداعي." },
+      "nova": { "title": "Nova Commerce", "description": "تجربة تجارة إلكترونية تجعل الشراء أبسط." }
+    },
+    "closingTitle": "هل لديك مشروع رقمي؟",
+    "introductionEyebrow": "حلول رقمية مصممة لنشاطك",
+    "introductionTitle": "التوازن الصحيح بين التقنية وتجربة المستخدم والظهور",
+    "introductionParagraphs": [
+      "لا يقتصر نجاح المشروع الرقمي على موقع جميل أو تطبيق عملي، بل يجب أن يستجيب لحاجة حقيقية ويقدم تجربة سلسة ويساعد المستخدمين على الوصول إلى المعلومات.",
+      "أجمع بين تطوير الويب وتصميم التطبيقات وتحسين محركات البحث لبناء حلول متناسقة وقابلة للتطور.",
+      "سواء كنت تطلق نشاطًا جديدًا أو تطور حضورك الرقمي أو تحسن ظهورك على Google، فالهدف هو تحويل احتياجاتك إلى حل رقمي مفيد ومستدام."
+    ],
+    "methodEyebrow": "منهجية منظمة",
+    "methodTitle": "من الفكرة إلى حل رقمي ملموس",
+    "method": [
+      { "title": "الفهم", "description": "نحدد الحاجة والمستخدمين والأهداف والقيود." },
+      { "title": "التصميم", "description": "نحدد الهيكل والوظائف وتجربة المستخدم والاختيارات التقنية." },
+      { "title": "التطوير", "description": "أبني حلاً سريعًا وسهل الاستخدام مع مراعاة أساسيات SEO." },
+      { "title": "التطوير المستمر", "description": "أختبر الحل وأحسنه وأجهز قاعدة قابلة للتطور." }
+    ],
+    "locationEyebrow": "Yelmouss — المغرب",
+    "locationTitle": "حلول رقمية للشركات في المغرب",
+    "locationDescription": "أرافق الشركات والمستقلين وأصحاب المشاريع الذين يرغبون في إنشاء أو تحسين أدواتهم الرقمية. يمكن مناقشة المشاريع عن بُعد حسب طبيعتها وطريقة العمل المتفق عليها.",
+    "locationCta": "لنتحدث عن مشروعك",
+    "faqEyebrow": "الأسئلة الشائعة",
+    "faqTitle": "أسئلتكم حول تطوير الويب وSEO",
+    "faq": [
+      { "question": "ما الخدمات التي تقدمها Yelmouss؟", "answer": "تطوير المواقع والتطبيقات حسب الطلب وتحسين محركات البحث، مع تحديد نطاق العمل حسب احتياجات المشروع." },
+      { "question": "هل يمكن بناء موقع مع مراعاة SEO منذ البداية؟", "answer": "نعم، يمكن مراعاة الهيكل والبيانات الوصفية والتنقل والأداء والمحتوى منذ التصميم، دون ضمان ترتيب محدد." },
+      { "question": "هل تطورون تطبيقات مخصصة؟", "answer": "نصمم التطبيقات وفق الوظائف المطلوبة والمستخدمين والقيود الخاصة بالمشروع." },
+      { "question": "كيف أبدأ مشروعًا مع Yelmouss؟", "answer": "أرسل احتياجاتك وأهدافك والوظائف المطلوبة عبر صفحة التواصل لتحديد نطاق المشروع والخطوات التالية." }
+    ],
+    "closingEyebrow": "مشروعك القادم يبدأ هنا",
+    "closingDescription": "إذا كنت ترغب في إنشاء موقع أو تطوير تطبيق أو تحسين ظهورك في نتائج البحث، يمكننا مناقشة احتياجاتك والحل المناسب."
+  },
+  "profile": {
+    "name": "ياسين الموس",
+    "displayName": "Yelmouss",
+    "role": "مطور Full Stack",
+    "location": "الرباط، المغرب",
+    "phone": "+212 612 865 681",
+    "email": "yelmouss.devt@gmail.com",
+    "availability": "متاح لمشاريع العمل الحر",
+    "degree": "دبلوم المستوى الخامس RNCP",
+    "bio": "من كتابة أول سطر برمجي في المرحلة الإعدادية إلى بناء تطبيقات ويب معقدة، كان مساري في التكنولوجيا مدفوعًا بالفضول والابتكار. أستمتع بتحويل التحديات إلى حلول أنيقة ومواكبة أحدث تقنيات الويب."
+  },
+  "stack": {
+    "eyebrow": "المجموعة التقنية",
+    "title": "الأدوات التي أستخدمها لبناء منتجات رقمية مفيدة.",
+    "languages": [
+      { "name": "JavaScript", "image": "/stack/JavaScript.svg", "description": "واجهات تفاعلية ومنطق ويب حديث." },
+      { "name": "PHP", "image": "/stack/php.png", "description": "تطوير موثوق للخوادم وتطبيقات الويب." },
+      { "name": "HTML", "image": "/stack/html5.webp", "description": "هياكل دلالية تراعي سهولة الوصول وSEO." },
+      { "name": "CSS", "image": "/stack/css.webp", "description": "تصاميم متجاوبة وواجهات مصقولة." }
+    ],
+    "frameworks": [
+      { "name": "React", "image": "/stack/react.jpg", "description": "مكونات قابلة لإعادة الاستخدام لمنتجات تفاعلية." },
+      { "name": "Next.js", "image": "/stack/next.jpg", "description": "تطبيقات Full Stack سريعة ومهيأة لمحركات البحث." },
+      { "name": "Tailwind CSS", "image": "/stack/tailwind.webp", "description": "تنسيق متجاوب ومتناسق باستخدام أصناف مساعدة." },
+      { "name": "Bootstrap", "image": "/stack/bootstrap.jpg", "description": "واجهات متجاوبة ونماذج أولية سريعة." },
+      { "name": "Expo", "image": "/stack/expo.webp", "description": "تجارب محمولة متعددة المنصات باستخدام React Native." },
+      { "name": "Laravel", "image": "/stack/laravel.webp", "description": "خلفيات PHP منظمة وتطبيقات أعمال." },
+      { "name": "Express", "image": "/stack/express.png", "description": "واجهات API وخدمات خلفية خفيفة باستخدام Node.js." }
+    ],
+    "databases": [
+      { "name": "MySQL", "image": "/stack/mysql.jpg", "description": "بيانات علائقية منظمة لتطبيقات الأعمال." },
+      { "name": "PostgreSQL", "image": "/stack/postgre.png", "description": "نماذج بيانات علائقية واستعلامات قوية." },
+      { "name": "MongoDB", "image": "/stack/mongodb.svg", "description": "قواعد بيانات مرنة للمنتجات القابلة للتطور." },
+      { "name": "Firebase", "image": "/stack/firebase.png", "description": "مصادقة وبيانات وخدمات تطبيقية مُدارة." }
+    ],
+    "tools": [
+      { "name": "React Native", "image": "/stack/react-native.png", "description": "تطبيقات محمولة أصلية من قاعدة React مشتركة." }
+    ]
+  },
+  "experience": {
+    "eyebrow": "المسار المهني",
+    "title": "خبرة تجمع بين التكنولوجيا والعمليات.",
+    "ticketTitle": "اكتشف المسار",
+    "ticketHint": "اسحب الجزء الجانبي من التذكرة لاكتشاف الخبرات والدروس التي شكلت هذا المسار.",
+    "ticketStub": "اسحب",
+    "ticketAriaLabel": "تمزيق التذكرة لعرض المسار المهني",
+    "items": [
+      { "role": "مدير مشاريع", "company": "Wehosre", "period": "2026", "logo": "/companies/wehosre.svg", "description": "قيادة المشاريع وتنسيق أصحاب المصلحة وتحويل أهداف المنتج إلى خطط تنفيذ واضحة." },
+      { "role": "مدرب برمجيات", "company": "GoMyCode", "period": "2023", "logo": "/companies/gomycode.svg", "description": "تدريس تقنيات تطوير الويب ومرافقة الطلاب في مشاريع هندسة البرمجيات." },
+      { "role": "مدير القوى العاملة", "company": "Sitel Group", "period": "2022", "logo": "/companies/sitel-group.svg", "description": "إدارة جداول الفرق والتنبؤ وتحسين توزيع الموارد لتحقيق الكفاءة التشغيلية." },
+      { "role": "مطور ويب", "company": "Intelcia", "period": "2020", "logo": "/companies/intelcia.svg", "description": "تطوير وصيانة تطبيقات الويب باستخدام React وNode.js وتقنيات حديثة أخرى." },
+      { "role": "مخطط الموارد", "company": "Intelcia", "period": "2019", "logo": "/companies/intelcia.svg", "description": "تحليل احتياجات الموظفين وإنشاء الجداول وتحسين توزيع الموارد." },
+      { "role": "أخصائي تحليلات", "company": "Intelcia", "period": "2017", "logo": "/companies/intelcia.svg", "description": "تحليل البيانات التشغيلية لاكتشاف الاتجاهات وتقديم رؤى لتحسين أداء الأعمال." },
+      { "role": "محلل في الوقت الفعلي", "company": "Webhelp Maroc", "period": "2015", "logo": "/companies/webhelp.svg", "description": "مراقبة المؤشرات الفورية وتعديل توزيع الموظفين وضمان احترام مستويات الخدمة." }
+    ]
+  },
+  "education": {
+    "eyebrow": "المسار الأكاديمي",
+    "title": "مسار يجمع بين التكنولوجيا والإدارة.",
+    "items": [
+      { "title": "تطوير MERN Stack", "period": "2020 - 2022", "description": "تكوين شامل في تقنيات تطوير الويب الحديثة، بما في ذلك React وNode.js وNext.js وإدارة قواعد البيانات." },
+      { "title": "بكالوريا في الإدارة", "period": "2015 - 2018", "description": "دراسة مبادئ إدارة الأعمال والاقتصاد والسلوك التنظيمي." }
+    ]
+  },
+  "certifications": {
+    "eyebrow": "الشهادات",
+    "title": "تعلم مستمر في مجالات التكنولوجيا.",
+    "items": [
+      { "title": "Fundamentals of Programming", "image": "/certificates/fundamentals-of-programming.webp" },
+      { "title": "Complete Practical SEO Training", "image": "/certificates/complete-practical-seo-training.webp" },
+      { "title": "DevOps Fundamentals", "image": "/certificates/devops-fundamentals.webp" },
+      { "title": "The PHP 8 Learning Guide", "image": "/certificates/php-8-learning-guide.webp" },
+      { "title": "Data Science and Machine Learning Developer", "image": "/certificates/data-science-machine-learning.webp" },
+      { "title": "Complete Introduction to the Deep/Dark Web 2023", "image": "/certificates/deep-dark-web-2023.webp" },
+      { "title": "Data Manipulation in Python", "image": "/certificates/data-manipulation-python.webp" },
+      { "title": "Cyber Security & Ethical Hacking", "image": "/certificates/cyber-security-ethical-hacking.webp" },
+      { "title": "React Native Bootcamp", "image": "/certificates/react-native-bootcamp.webp" },
+      { "title": "Web Application Penetration Testing", "image": "/certificates/web-application-penetration-testing.webp" },
+      { "title": "Time Management and Goal Planning", "image": "/certificates/time-management-goal-planning.webp" },
+      { "title": "Compact Awareness Guide on Internet Security", "image": "/certificates/internet-security-awareness.webp" }
+    ]
+  },
+  "projects": [
+    { "slug": "letstalkjob", "title": "Let'sTalkJob", "description": "أول بودكاست للتوظيف في المغرب مع مهدي جريني.", "type": "تطبيق ويب", "stack": ["Next.js", "React", "Material UI", "Framer Motion"], "image": "/projects/letstalkjob.webp", "demo": "https://letstalkjobs.vercel.app/", "source": "https://github.com/yelmouss" },
+    { "slug": "hope-maroc", "title": "HOPE Maroc", "description": "مساعدة الباحثين عن عمل وأصحاب المشاريع من خلال التدريب والإرشاد.", "type": "موقع ويب", "stack": ["Next.js", "React", "Material UI", "Framer Motion"], "image": "/projects/hope-maroc.webp", "demo": "https://hope-three-xi.vercel.app/" },
+    { "slug": "portfolio-v2", "title": "Portfolio v2", "description": "موقع شخصي مبني باستخدام Next.js وMaterial UI.", "type": "موقع ويب", "stack": ["Next.js", "React", "Material UI", "Framer Motion"], "image": "/projects/portfolio-v2.webp", "demo": "https://yelmouss.vercel.app", "source": "https://github.com/yelmouss" },
+    { "slug": "paylik", "title": "Paylik", "description": "حل لتسهيل عمليات الدفع بين أصحاب العمل والموظفين.", "type": "تطبيق ويب", "stack": ["Next.js", "React", "Material UI", "Framer Motion", "SEO"], "image": "/projects/paylik.webp", "demo": "https://paylik.ma" },
+    { "slug": "petit-iguane", "title": "Petit Iguane", "description": "موقع لمنتجع ركوب الأمواج واليوغا في المغرب.", "type": "موقع ويب", "stack": ["Next.js", "Google Analytics", "Material UI", "Framer Motion", "SEO"], "image": "/projects/petit-iguane.webp", "demo": "https://petitiguane.com", "source": "https://github.com/yelmouss" },
+    { "slug": "edukalis", "title": "Edukalis", "description": "منصة للتكوين والتوجيه والتطوير المهني.", "type": "موقع ويب", "stack": ["Next.js", "Google Analytics", "Material UI", "Framer Motion", "SEO"], "image": "/projects/edukalis.webp", "demo": "https://edukalis.com", "source": "https://github.com/yelmouss" },
+    { "slug": "touzar", "title": "Touzar.ma", "description": "موقع للأطباق المغربية التقليدية والعصرية.", "type": "موقع ويب", "stack": ["Next.js", "Google Analytics", "Material UI", "Framer Motion", "SEO"], "image": "/projects/touzar.webp", "demo": "https://touzar.ma" },
+    { "slug": "kanap", "title": "Kanap", "description": "مشروع دراسي من OpenClassrooms.", "type": "تطبيق ويب", "stack": ["JavaScript"], "image": "/projects/kanap.webp", "demo": "https://kanapro.vercel.app/html/" },
+    { "slug": "p7", "title": "P7", "description": "مشروع دراسي من OpenClassrooms.", "type": "تطبيق ويب", "stack": ["React"], "image": "/projects/p7.webp", "demo": "https://p7-yelmouss.vercel.app/" },
+    { "slug": "agence-la-panthere", "title": "Agence La Panthère", "description": "مشروع دراسي من OpenClassrooms يركز على دمج الويب وتحسين محركات البحث.", "type": "موقع ويب", "stack": ["HTML", "CSS", "SEO"], "image": "/projects/agence-la-panthere.webp", "demo": "https://agencelapanthere.vercel.app/" }
+  ],
+  "about": {
+    "eyebrow": "نبذة عني",
+    "title": "مسار يجمع بين التقنية والمنتجات والتحسين المستمر.",
+    "profileEyebrow": "الملف الشخصي",
+    "profileTitle": "أبتكر بفضول وهدف واضح.",
+    "profileDescription": "أحوّل الاحتياجات الواقعية إلى تجارب رقمية مفيدة وسهلة الوصول وقابلة للتطور مع كل مشروع.",
+    "emailLabel": "البريد الإلكتروني",
+    "phoneLabel": "الهاتف",
+    "stackEyebrow": "المجموعة التقنية",
+    "stackTitle": "التقنيات التي أستخدمها يوميًا.",
+    "certificationsTicketTitle": "اكتشف الشهادات",
+    "certificationsTicketHint": "مزق التذكرة لفتح قائمة الشهادات.",
+    "certificationsTicketStub": "اسحب",
+    "certificationsTicketAriaLabel": "تمزيق التذكرة لعرض الشهادات",
+    "profileTicketTitle": "اكتشف الملف الشخصي",
+    "profileTicketHint": "مزق التذكرة لفتح معلومات الملف الشخصي والتواصل.",
+    "profileTicketStub": "اسحب",
+    "profileTicketAriaLabel": "تمزيق التذكرة لعرض الملف الشخصي",
+    "stackTicketTitle": "اكتشف الأدوات",
+    "stackTicketHint": "مزق التذكرة لاكتشاف التقنيات المستخدمة.",
+    "stackTicketStub": "اسحب",
+    "stackTicketAriaLabel": "تمزيق التذكرة لعرض التقنيات"
+  },
+  "work": { "eyebrow": "الأعمال", "title": "مشاريع صممت لإحداث أثر.", "description": "مجموعة من تطبيقات الويب والمواقع والمشاريع الدراسية.", "filters": { "all": "كل المشاريع", "web": "تطبيقات الويب", "mobile": "تطبيقات الهاتف", "desktop": "تطبيقات سطح المكتب" } },
+  "contact": { "eyebrow": "تواصل", "title": "لنبنِ شيئًا مفيدًا.", "description": "أخبرني عن سياقك وأهدافك وما تريد إنشاءه.", "email": "راسلني" },
+  "nav": { "home": "الرئيسية", "about": "نبذة عني", "work": "الأعمال", "contact": "تواصل", "call": "اتصل", "theme": "تغيير المظهر", "whatsapp": "تواصل عبر واتساب" },
+  "languages": { "fr": "Français", "en": "English", "ar": "العربية" }
+}

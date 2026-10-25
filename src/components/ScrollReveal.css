@@ -1,0 +1,75 @@
+.scroll-reveal {
+  margin: 20px 0;
+  overflow: visible;
+}
+
+.scroll-reveal-text {
+  display: block;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.scroll-reveal-word,
+.scroll-reveal-piece {
+  display: inline-block;
+}
+
+.scroll-reveal.introduction-reveal {
+  margin: 0 0 1rem;
+}
+
+.scroll-reveal.introduction-title-reveal {
+  margin: 0 0 1.5rem;
+}
+
+.scroll-reveal.introduction-title-reveal .scroll-reveal-text {
+  display: block;
+  color: var(--foreground);
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.scroll-reveal.introduction-reveal .scroll-reveal-text {
+  color: var(--muted-foreground);
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.scroll-reveal.page-title-reveal {
+  margin: 0 0 1rem;
+}
+
+.scroll-reveal.page-title-reveal .scroll-reveal-text {
+  display: block;
+  font-size: clamp(2.7rem, 8vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.scroll-reveal.section-title-reveal {
+  margin: 0 0 2rem;
+}
+
+.scroll-reveal.section-title-reveal .scroll-reveal-text {
+  display: block;
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.scroll-reveal.card-title-reveal {
+  margin: 0 0 0.5rem;
+}
+
+.scroll-reveal.card-title-reveal .scroll-reveal-text {
+  display: block;
+  font-size: clamp(1.25rem, 3vw, 2.125rem);
+  line-height: 1.2;
+  font-weight: 600;
+}

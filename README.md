@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Localisation
+
+The application uses `next-intl` with locale-prefixed routes:
+
+- [Français](http://localhost:3000/fr)
+- [English](http://localhost:3000/en)
+- [العربية](http://localhost:3000/ar)
+
+Translations live in `src/messages/`. The Arabic route automatically uses
+right-to-left document direction.
+
+The UI is organized around Material UI in `src/theme/theme.js`, with a
+client-side light/dark mode toggle. The portfolio home is composed of reusable
+sections, and placeholder pages are available at `/[locale]/work` and
+`/[locale]/contact`. Language switching uses `country-flag-icons`.
