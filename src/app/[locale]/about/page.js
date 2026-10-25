@@ -17,7 +17,6 @@ import ExperienceJourney from "@/components/ExperienceJourney";
 import RevealTicketSection from "@/components/RevealTicketSection";
 import DriftWall from "@/components/DriftWall";
 import TechText from "@/components/TechText";
-import { Link } from "@/i18n/navigation";
 
 export default async function AboutPage({ params }) {
   const { locale } = await params;
@@ -96,10 +95,10 @@ function AboutPageContent({ locale, messages, t, profile, experience, certificat
         <Stack
           sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 2, mb: 3 }}
         >
-          <Button component={Link} href="/work" variant="contained" endIcon={<ArrowOutwardRounded />}>
+          <Button href={`/${locale}/work`} variant="contained" endIcon={<ArrowOutwardRounded />}>
             {messages.home.workCta}
           </Button>
-          <Button component={Link} href="/contact" variant="outlined">
+          <Button href={`/${locale}/contact`} variant="outlined">
             {messages.home.cta}
           </Button>
         </Stack>
