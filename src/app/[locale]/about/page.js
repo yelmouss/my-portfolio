@@ -12,10 +12,13 @@ import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 
 import PortfolioDock from "@/components/PortfolioDock";
+import dynamic from "next/dynamic";
+
 import ExperienceJourney from "@/components/ExperienceJourney";
-import RevealTicketSection from "@/components/RevealTicketSection";
-import DriftWall from "@/components/DriftWall";
+import LazyDriftWall from "@/components/LazyDriftWall";
 import TechText from "@/components/TechText";
+
+const RevealTicketSection = dynamic(() => import("@/components/RevealTicketSection"));
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }) {
@@ -96,7 +99,7 @@ function AboutPageContent({ locale, messages, t, profile, experience, certificat
         <Stack
           sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 2, mb: 3 }}
         >
-          <Button href={`/${locale}/contact`} variant="contained" endIcon={<ArrowOutwardRounded />}>
+          <Button href={`/${locale}/contact`} title={messages.home.cta} variant="contained" endIcon={<ArrowOutwardRounded />}>
             {messages.home.cta}
           </Button>
         </Stack>
@@ -182,7 +185,7 @@ function AboutPageContent({ locale, messages, t, profile, experience, certificat
                   backgroundColor: "rgba(10, 10, 13, 0.18)",
                 }}
               >
-                <DriftWall
+                <LazyDriftWall
                   items={technologies.map((technology) => ({
                     image: technology.image,
                     title: technology.name,

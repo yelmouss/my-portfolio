@@ -148,6 +148,7 @@ export default function ExpertiseCards({ items }) {
             <CardActionArea
               component={Link}
               href={href}
+              title={title}
               sx={{ height: "100%", borderRadius: 3, "&:focus-visible": { outline: "2px solid", outlineColor: "primary.main" } }}
             >
               <CardContent sx={{ p: 3 }}>

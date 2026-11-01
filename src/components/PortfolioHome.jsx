@@ -22,10 +22,13 @@ import ExpandMoreRounded from "@mui/icons-material/ExpandMoreRounded";
 import TechText from "@/components/TechText";
 import ScrambledText from "@/components/ScrambledText";
 import ScrollReveal from "@/components/ScrollReveal";
-import CircularCarousel from "@/components/CircularCarousel";
-import FlexCarousel from "@/components/FlexCarousel";
-import HorizontalApproach from "@/components/HorizontalApproach";
-import ExpertiseCards from "@/components/ExpertiseCards";
+import dynamic from "next/dynamic";
+import LazyOnView from "@/components/LazyOnView";
+
+const CircularCarousel = dynamic(() => import("@/components/CircularCarousel"), { ssr: false });
+const FlexCarousel = dynamic(() => import("@/components/FlexCarousel"), { ssr: false });
+const HorizontalApproach = dynamic(() => import("@/components/HorizontalApproach"));
+const ExpertiseCards = dynamic(() => import("@/components/ExpertiseCards"));
 import { useColorMode } from "@/components/ThemeRegistry";
 import PortfolioDock from "@/components/PortfolioDock";
 import { Link } from "@/i18n/navigation";
@@ -165,7 +168,7 @@ export default function PortfolioHome({ locale, messages }) {
                   intro
                   className="hero-scrambled-segment"
                 >
-                  digital experiences
+                  websites &amp; web applications
                 </ScrambledText>{" "}
                 <ScrambledText
                   duration={1.8}
@@ -175,7 +178,7 @@ export default function PortfolioHome({ locale, messages }) {
                   intro
                   className="hero-scrambled-segment"
                 >
-                  {" that move "}
+                  {" that grow "}
                 </ScrambledText>
                 <ScrambledText
                   duration={1.8}
@@ -186,7 +189,7 @@ export default function PortfolioHome({ locale, messages }) {
                   intro
                   className="hero-scrambled-segment"
                 >
-                  businesses forward
+                  your business online
                 </ScrambledText>
                 .
               </Box>
@@ -212,6 +215,7 @@ export default function PortfolioHome({ locale, messages }) {
             <Button
               component={Link}
               href="/contact"
+              title={t("cta")}
               variant="contained"
               endIcon={<ArrowOutwardRounded />}
             >
@@ -337,6 +341,7 @@ export default function PortfolioHome({ locale, messages }) {
               },
             }}
           >
+            <LazyOnView>
             <CircularCarousel
               items={projects.map((project) => ({
                 src: project.image,
@@ -373,6 +378,7 @@ export default function PortfolioHome({ locale, messages }) {
               innerShade={0.12}
               cornerRadius={18}
             />
+            </LazyOnView>
           </Box>
           <Grid container spacing={2} sx={{ mt: 2 }}>
             {projects.map((project) => (
@@ -393,6 +399,7 @@ export default function PortfolioHome({ locale, messages }) {
                     {project.demo && (
                       <Button
                         href={project.demo}
+                        title={`${project.title} – ${content.projectLink}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         endIcon={<ArrowOutwardRounded />}
@@ -456,6 +463,7 @@ export default function PortfolioHome({ locale, messages }) {
               },
             }}
           >
+            <LazyOnView>
             <FlexCarousel
               items={[...stack.languages, ...stack.frameworks, ...stack.databases, ...stack.tools].map((technology) => ({
                 src: technology.image,
@@ -487,6 +495,7 @@ export default function PortfolioHome({ locale, messages }) {
               interval={4}
               captureWheel
             />
+            </LazyOnView>
           </Box>
         </Box>
 
@@ -512,7 +521,7 @@ export default function PortfolioHome({ locale, messages }) {
               ["seo", "referencement-seo"],
               ["sites", "creation-site-internet"],
             ].map(([key, path]) => (
-              <Button key={path} component={Link} href={`/${path}`} variant="outlined" sx={{ textAlign: "center", lineHeight: 1.4, py: 1.25, minWidth: 0 }}>
+              <Button key={path} component={Link} href={`/${path}`} title={content.servicePageLinks[key]} variant="outlined" sx={{ textAlign: "center", lineHeight: 1.4, py: 1.25, minWidth: 0 }}>
                 {content.servicePageLinks[key]}
               </Button>
             ))}
@@ -549,7 +558,7 @@ export default function PortfolioHome({ locale, messages }) {
           </ScrollReveal>
           <Typography color="text.secondary" sx={{ lineHeight: 1.8, mb: 2 }}>{t("locationDescription")}</Typography>
           <Typography color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>{t("locationExtra")}</Typography>
-          <Button component={Link} href="/contact" variant="outlined" endIcon={<ArrowOutwardRounded />}>{t("locationCta")}</Button>
+          <Button component={Link} href="/contact" title={t("locationCta")} variant={<ArrowOutwardRounded />}>{t("locationCta")}</Button>
         </Box>
 
         <Box component="section" sx={{ mb: { xs: 10, md: 16 }, maxWidth: 820 }}>
@@ -602,6 +611,7 @@ export default function PortfolioHome({ locale, messages }) {
           <Button
             component={Link}
             href="/contact"
+            title={t("cta")}
             variant="contained"
             endIcon={<ArrowOutwardRounded />}
           >

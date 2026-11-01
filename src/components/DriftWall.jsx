@@ -242,7 +242,7 @@ const DriftWall = ({
     };
     if (item.href) {
       return (
-        <a key={id} href={item.href} target="_blank" rel="noreferrer noopener" {...commonProps}>
+        <a key={id} href={item.href} title={item.title} target="_blank" rel="noreferrer noopener" {...commonProps}>
           {inner}
         </a>
       );

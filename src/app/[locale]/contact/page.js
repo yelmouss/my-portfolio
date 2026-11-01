@@ -35,7 +35,7 @@ export default async function ContactPage({ params }) {
           <Typography variant="overline" color="primary">{t("eyebrow")}</Typography>
           <Typography variant="h1" sx={{ fontSize: { xs: "3rem", md: "5rem" }, my: 2 }}>{t("title")}</Typography>
           <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>{t("description")}</Typography>
-          <Button variant="contained" href={`mailto:${contactEmail}`}>{t("email")}</Button>
+          <Button variant="contained" href={`mailto:${contactEmail}`} title={t("email")}>{t("email")}</Button>
         </Box>
         <Card
           variant="outlined"

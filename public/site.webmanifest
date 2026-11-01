@@ -1,0 +1,13 @@
+{
+  "name": "Yelmouss — Développeur web & SEO au Maroc",
+  "short_name": "Yelmouss",
+  "description": "Développement web, applications sur mesure, SEO et GEO au Maroc.",
+  "start_url": "/fr",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0A0A0D",
+  "background_color": "#0A0A0D",
+  "display": "standalone"
+}

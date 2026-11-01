@@ -84,6 +84,7 @@ export default async function ServicePage({ params }) {
         </Stack>
         <Button
           href={`/${locale}/contact`}
+          title={t("email")}
           variant="contained"
           endIcon={<ArrowOutwardRounded />}
           sx={{ mt: 6 }}

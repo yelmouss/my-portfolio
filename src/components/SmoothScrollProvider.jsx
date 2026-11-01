@@ -241,7 +241,22 @@ export default function SmoothScrollProvider({ children }) {
       sceneRef.current.__threeScroll = scroll;
     };
 
-    setupScene();
+    // The loader no longer waits for the 3D model, and the scene starts once the browser is idle.
+    const loaderTimer = window.setTimeout(() => {
+      setLoadingProgress(100);
+      setIsLoading(false);
+    }, 400);
+    const isSmallScreen = window.matchMedia("(max-width: 767px)").matches;
+    const startScene = () => {
+      if (!disposed && !isSmallScreen) setupScene();
+    };
+    let idleHandle;
+    let idleTimer;
+    if ("requestIdleCallback" in window) {
+      idleHandle = window.requestIdleCallback(startScene, { timeout: 2500 });
+    } else {
+      idleTimer = window.setTimeout(startScene, 1200);
+    }
 
     const lenis = new Lenis({
       autoRaf: false,
@@ -279,6 +294,9 @@ export default function SmoothScrollProvider({ children }) {
       if (window.__portfolioLenis === lenis) delete window.__portfolioLenis;
       disposed = true;
       window.clearTimeout(hideLoaderTimer);
+      window.clearTimeout(loaderTimer);
+      window.clearTimeout(idleTimer);
+      if (idleHandle !== undefined) window.cancelIdleCallback(idleHandle);
       window.cancelAnimationFrame(resetLoaderFrame);
       cleanupScene();
     };

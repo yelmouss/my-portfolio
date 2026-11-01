@@ -60,6 +60,7 @@ const FloatingDockMobile = ({
                   href={item.href}
                   onClick={item.onClick}
                   aria-label={item.title}
+                  title={item.title}
                   key={item.title}
                   className={cn(
                     "flex h-11 w-11 items-center justify-center rounded-full border border-lime-300 bg-lime-400 text-zinc-950 shadow-lg shadow-black/30 dark:bg-lime-400 dark:text-zinc-950",
@@ -158,7 +159,7 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href} onClick={onClick} aria-label={title}>
+    <a href={href} onClick={onClick} aria-label={title} title={title}>
       <span className="sr-only">{title}</span>
       <motion.div
         ref={ref}
