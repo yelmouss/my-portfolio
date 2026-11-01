@@ -1,22 +1,18 @@
 import { routing } from "@/i18n/routing";
+import { serviceSlugs } from "@/lib/service-pages";
 import { siteUrl } from "@/lib/seo";
 
 const pages = [
   "",
   "/about",
   "/contact",
-  "/developpement-web",
-  "/applications-sur-mesure",
-  "/referencement-seo",
-  "/creation-site-internet",
+  ...serviceSlugs.map((slug) => `/${slug}`),
 ];
 
 export default function sitemap() {
-  const lastModified = new Date();
   return routing.locales.flatMap((locale) =>
     pages.map((page) => ({
       url: `${siteUrl}/${locale}${page}`,
-      lastModified,
       changeFrequency: "monthly",
       priority: page === "" ? 1 : 0.7,
       alternates: {
