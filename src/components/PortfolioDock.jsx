@@ -35,7 +35,7 @@ export default function PortfolioDock({ locale, messages }) {
     const Flag = flags[targetLocale];
     return {
       title: messages.languages[targetLocale],
-      icon: <Flag aria-hidden="true" />,
+      icon: <Flag aria-hidden="true" width={24} height={16} />,
       href: `/${targetLocale}`,
     };
   });
@@ -94,9 +94,14 @@ export default function PortfolioDock({ locale, messages }) {
               locale={targetLocale}
               aria-label={messages.languages[targetLocale]}
               title={messages.languages[targetLocale]}
-              className="flex h-7 w-8 items-center justify-center rounded-md p-1 transition hover:bg-lime-400/20"
+              className="flex h-7 w-8 shrink-0 items-center justify-center rounded-md p-1 transition hover:bg-lime-400/20"
             >
-              <Flag aria-hidden="true" />
+              <Flag
+                aria-hidden="true"
+                width={24}
+                height={16}
+                style={{ display: "block", width: 24, height: 16, flexShrink: 0 }}
+              />
             </Link>
           );
         })}
