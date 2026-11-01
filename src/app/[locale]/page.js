@@ -1,7 +1,8 @@
 import { getMessages, setRequestLocale } from "next-intl/server";
 
 import PortfolioHome from "@/components/PortfolioHome";
-import { buildPageMetadata, siteName, siteUrl } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
+import { buildHomeJsonLd, serializeJsonLd } from "@/lib/structured-data";
 
 const homeSeo = {
   fr: {
@@ -32,22 +33,13 @@ export default async function Home({ params }) {
   setRequestLocale(locale);
 
   const messages = await getMessages();
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: siteName,
-    url: `${siteUrl}/${locale}`,
-    image: `${siteUrl}/Mascotte B.png`,
-    description: homeSeo[locale].description,
-    areaServed: "MA",
-    knowsAbout: ["Web development", "SEO", "Custom applications"],
-  };
+  const jsonLd = buildHomeJsonLd({ locale, messages, description: homeSeo[locale].description });
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <PortfolioHome locale={locale} messages={messages} />
     </>

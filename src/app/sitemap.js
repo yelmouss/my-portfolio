@@ -1,7 +1,7 @@
 import { routing } from "@/i18n/routing";
 import { siteUrl } from "@/lib/seo";
 
-const pages = ["", "/about", "/work", "/contact"];
+const pages = ["", "/about", "/contact"];
 
 export default function sitemap() {
   const lastModified = new Date();

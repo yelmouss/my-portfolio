@@ -96,10 +96,7 @@ function AboutPageContent({ locale, messages, t, profile, experience, certificat
         <Stack
           sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 2, mb: 3 }}
         >
-          <Button href={`/${locale}/work`} variant="contained" endIcon={<ArrowOutwardRounded />}>
-            {messages.home.workCta}
-          </Button>
-          <Button href={`/${locale}/contact`} variant="outlined">
+          <Button href={`/${locale}/contact`} variant="contained" endIcon={<ArrowOutwardRounded />}>
             {messages.home.cta}
           </Button>
         </Stack>

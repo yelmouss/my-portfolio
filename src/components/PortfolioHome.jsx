@@ -211,13 +211,6 @@ export default function PortfolioHome({ locale, messages }) {
             >
               {t("cta")}
             </Button>
-            <Button
-              component={Link}
-              href="/work"
-              variant="outlined"
-            >
-              {t("workCta")}
-            </Button>
           </Stack>
         </Box>
 
@@ -308,14 +301,7 @@ export default function PortfolioHome({ locale, messages }) {
               containerClassName="section-title-reveal"
             >
               {t("selectedWorkTitle")}
-            </ScrollReveal>
-            <Button
-              component={Link}
-              href="/work"
-              endIcon={<ArrowOutwardRounded />}
-            >
-              {t("allWork")}
-            </Button>
+          </ScrollReveal>
           </Stack>
           <Box
             sx={{
