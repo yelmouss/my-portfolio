@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono, Noto_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import {
   getMessages,
   getTranslations,
@@ -14,6 +13,7 @@ import { routing } from "@/i18n/routing";
 import { siteUrl } from "@/lib/seo";
 import ThemeRegistry from "@/components/ThemeRegistry";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,13 +72,13 @@ export default async function RootLayout({ children, params }) {
     >
       <body className="min-h-full flex flex-col">
         <ThemeRegistry>
+          <CookieConsentBanner locale={locale} gaId={process.env.NEXT_PUBLIC_GA_ID} />
           <SmoothScrollProvider>
             <NextIntlClientProvider messages={messages}>
               {children}
             </NextIntlClientProvider>
           </SmoothScrollProvider>
         </ThemeRegistry>
-        {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />}
       </body>
     </html>
   );
