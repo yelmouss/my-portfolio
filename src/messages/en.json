@@ -18,6 +18,13 @@
     "selectedWorkEyebrow": "Selected work",
     "selectedWorkTitle": "Useful projects, not just beautiful ones.",
     "allWork": "All projects",
+    "projectLink": "View project",
+    "servicePageLinks": {
+      "web": "Web development",
+      "apps": "Custom applications",
+      "seo": "SEO services",
+      "sites": "Website creation"
+    },
     "projects": {
       "atlas": { "title": "Atlas Studio", "description": "Brand identity and showcase site for a creative team." },
       "nova": { "title": "Nova Commerce", "description": "An e-commerce experience designed to simplify buying." }
@@ -44,7 +51,7 @@
     "locationExtra": "Based in Rabat, I work with clients in Morocco and abroad. We can communicate in French, English or Arabic by video call, phone, WhatsApp or email, so collaboration stays efficient whatever the distance.",
     "locationCta": "Let's discuss your project",
     "servicesDetailEyebrow": "My services",
-    "servicesDetailTitle": "Web developer in Rabat: websites, applications and SEO",
+    "servicesDetailTitle": "Web developer in Morocco: websites, applications and SEO",
     "servicesDetailIntro": "Every project is approached as a whole: a solid technical foundation, a clear user experience and a structure designed to be found by search engines and AI assistants alike.",
     "servicesDetail": [
       {
@@ -83,7 +90,7 @@
       { "question": "Can a website be built with SEO in mind from the start?", "answer": "Yes. Structure, metadata, navigation, performance and content can be considered from the beginning, although no specific ranking can be guaranteed." },
       { "question": "Do you build custom applications?", "answer": "Applications are designed around expected features, target users and project constraints." },
       { "question": "How do I start a project with Yelmouss?", "answer": "Share your needs, goals and expected features through the contact page to define the scope and next steps." },
-      { "question": "Are you a web developer based in Rabat?", "answer": "Yes, Yelmouss is based in Rabat, Morocco. Projects can be run remotely for clients anywhere in Morocco or abroad." },
+      { "question": "Which regions do you serve?", "answer": "Based in Rabat, Yelmouss works remotely with clients across Morocco and internationally." },
       { "question": "What is GEO and how is it different from SEO?", "answer": "SEO aims to rank a website in search engine results. GEO (Generative Engine Optimization) aims to make a website understandable and citable by AI assistants such as ChatGPT, Perplexity or Gemini. The two approaches are complementary." },
       { "question": "Which technologies do you use?", "answer": "Mainly Next.js, React, Node.js, Express, MongoDB, MySQL, PHP, Laravel, Tailwind CSS and Material UI. The choice depends on the needs and constraints of each project." },
       { "question": "Do you build websites in several languages?", "answer": "Yes. I build websites in French, English and Arabic, with language-specific URLs, hreflang tags and right-to-left support." },
@@ -139,7 +146,7 @@
     "ticketStub": "TEAR ME",
     "ticketAriaLabel": "Tear off the stub to reveal the professional journey",
     "items": [
-      { "role": "Project Manager", "company": "Wehosre", "period": "2026", "logo": "/companies/wehosre.svg", "description": "Leading project delivery, coordinating stakeholders, and turning product goals into clear execution plans." },
+      { "role": "Project Manager", "company": "Weshore", "period": "2026", "logo": "/companies/wehosre.svg", "description": "Leading project delivery, coordinating stakeholders, and turning product goals into clear execution plans." },
       { "role": "Software Instructor", "company": "GoMyCode", "period": "2023", "logo": "/companies/gomycode.svg", "description": "Teaching web development technologies and mentoring students in software engineering projects." },
       { "role": "Workforce Manager", "company": "Sitel Group", "period": "2022", "logo": "/companies/sitel-group.svg", "description": "Managing team schedules, forecasting, and optimizing resource allocation for operational efficiency." },
       { "role": "Web Developer", "company": "Intelcia", "period": "2020", "logo": "/companies/intelcia.svg", "description": "Developing and maintaining web applications using React, Node.js, and other modern technologies." },

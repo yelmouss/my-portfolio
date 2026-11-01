@@ -1,6 +1,6 @@
 import { routing } from "@/i18n/routing";
 
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://yelmouss.ma").replace(/\/$/, "");
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.yelmouss.ma").replace(/\/$/, "");
 export const siteName = "Yelmouss";
 
 const ogLocales = { fr: "fr_MA", en: "en_US", ar: "ar_MA" };

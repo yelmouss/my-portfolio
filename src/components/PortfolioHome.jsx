@@ -36,6 +36,12 @@ const services = [
   { icon: SearchRounded, key: "seo" },
 ];
 
+const servicePaths = {
+  design: "creation-site-internet",
+  development: "developpement-web",
+  seo: "referencement-seo",
+};
+
 export default function PortfolioHome({ locale, messages }) {
   const theme = useColorMode();
   const t = (key) =>
@@ -261,6 +267,7 @@ export default function PortfolioHome({ locale, messages }) {
               icon: Icon,
               title: t(`services.${key}.title`),
               description: t(`services.${key}.description`),
+              href: `/${servicePaths[key]}`,
             })),
           }}
         />
@@ -367,6 +374,38 @@ export default function PortfolioHome({ locale, messages }) {
               cornerRadius={18}
             />
           </Box>
+          <Grid container spacing={2} sx={{ mt: 2 }}>
+            {projects.map((project) => (
+              <Grid key={project.slug} size={{ xs: 12, sm: 6 }}>
+                <Card variant="outlined" sx={{ height: "100%" }}>
+                  <CardContent sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", height: "100%", gap: 1.5 }}>
+                    <Typography component="h3" variant="h6" fontWeight={800}>
+                      {project.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {project.description}
+                    </Typography>
+                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.75 }}>
+                      {project.stack.map((technology) => (
+                        <Chip key={technology} size="small" label={technology} variant="outlined" />
+                      ))}
+                    </Box>
+                    {project.demo && (
+                      <Button
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        endIcon={<ArrowOutwardRounded />}
+                        sx={{ mt: "auto", px: 0 }}
+                      >
+                        {content.projectLink}
+                      </Button>
+                    )}
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </Box>
 
         <Box component="section" data-stack-section sx={{ mb: { xs: 10, md: 16 }, maxWidth: { xs: 820, md: 1080 }, mx: "auto" }}>
@@ -466,6 +505,18 @@ export default function PortfolioHome({ locale, messages }) {
             {t("servicesDetailTitle")}
           </ScrollReveal>
           <Typography color="text.secondary" sx={{ lineHeight: 1.8, mb: 5 }}>{t("servicesDetailIntro")}</Typography>
+          <Box sx={{ display: "grid", gridTemplateColumns: { xs: "repeat(2, minmax(0, 1fr))", md: "repeat(4, auto)" }, justifyContent: { md: "start" }, gap: 1.5, mb: 5 }}>
+            {[
+              ["web", "developpement-web"],
+              ["apps", "applications-sur-mesure"],
+              ["seo", "referencement-seo"],
+              ["sites", "creation-site-internet"],
+            ].map(([key, path]) => (
+              <Button key={path} component={Link} href={`/${path}`} variant="outlined" sx={{ textAlign: "center", lineHeight: 1.4, py: 1.25, minWidth: 0 }}>
+                {content.servicePageLinks[key]}
+              </Button>
+            ))}
+          </Box>
           <Stack spacing={5}>
             {content.servicesDetail.map((service) => (
               <Box key={service.title} component="article">
