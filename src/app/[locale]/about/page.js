@@ -16,10 +16,21 @@ import dynamic from "next/dynamic";
 
 import ExperienceJourney from "@/components/ExperienceJourney";
 import LazyDriftWall from "@/components/LazyDriftWall";
+import ScrollReveal from "@/components/ScrollReveal";
 import TechText from "@/components/TechText";
 
 const RevealTicketSection = dynamic(() => import("@/components/RevealTicketSection"));
 import { buildPageMetadata } from "@/lib/seo";
+
+const titleReveal = {
+  mode: "scrub",
+  effect: "rise",
+  baseOpacity: 0.12,
+  baseOffset: 24,
+  stagger: 0.08,
+  smoothing: 0.45,
+  containerClassName: "section-title-reveal",
+};
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -112,9 +123,9 @@ function AboutPageContent({ locale, messages, t, profile, experience, certificat
 
         <Box component="section" sx={{ mb: { xs: 10, md: 16 } }}>
           <Typography variant="overline" color="primary">{experience.eyebrow}</Typography>
-          <Typography variant="h2" sx={{ mt: 1, mb: 5, maxWidth: 820 }}>
+          <ScrollReveal as="h2" {...titleReveal}>
             {experience.title}
-          </Typography>
+          </ScrollReveal>
           <ExperienceJourney experience={experience} />
         </Box>
 
@@ -122,7 +133,7 @@ function AboutPageContent({ locale, messages, t, profile, experience, certificat
           <Grid size={{ xs: 12, md: 6 }}>
             <Box component="section" sx={{ height: "100%" }}>
               <Typography variant="overline" color="primary">{certifications.eyebrow}</Typography>
-              <Typography variant="h2" sx={{ mt: 1, mb: 4 }}>{certifications.title}</Typography>
+              <ScrollReveal as="h2" {...titleReveal}>{certifications.title}</ScrollReveal>
               <RevealTicketSection
                 title={t("certificationsTicketTitle")}
                 hint={t("certificationsTicketHint")}
@@ -149,7 +160,7 @@ function AboutPageContent({ locale, messages, t, profile, experience, certificat
           <Grid size={{ xs: 12, md: 6 }}>
             <Box component="section">
               <Typography variant="overline" color="primary">{t("profileEyebrow")}</Typography>
-              <Typography variant="h2" sx={{ mt: 1, mb: 4 }}>{t("profileTitle")}</Typography>
+              <ScrollReveal as="h2" {...titleReveal}>{t("profileTitle")}</ScrollReveal>
               <RevealTicketSection
                 title={t("profileTicketTitle")}
                 hint={t("profileTicketHint")}
@@ -171,7 +182,7 @@ function AboutPageContent({ locale, messages, t, profile, experience, certificat
 
         <Box component="section">
           <Typography variant="overline" color="primary">{t("stackEyebrow")}</Typography>
-          <Typography variant="h2" sx={{ mt: 1, mb: 5, maxWidth: 820 }}>{t("stackTitle")}</Typography>
+          <ScrollReveal as="h2" {...titleReveal}>{t("stackTitle")}</ScrollReveal>
           <Grid container spacing={2}>
             <Grid size={12}>
               <Box
