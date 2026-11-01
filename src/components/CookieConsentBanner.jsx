@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import * as CookieConsent from "vanilla-cookieconsent";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 
@@ -81,7 +81,7 @@ const buildTranslation = (c) => ({
   },
 });
 
-export default function CookieConsentBanner({ locale, gaId }) {
+export default function CookieConsentBanner({ locale, gaId, gtmId }) {
   const { mode } = useColorMode();
   const [analyticsAllowed, setAnalyticsAllowed] = useState(false);
 
@@ -125,5 +125,8 @@ export default function CookieConsentBanner({ locale, gaId }) {
     if (CookieConsent.validConsent()) CookieConsent.setLanguage(locale in texts ? locale : "fr");
   }, [locale]);
 
-  return analyticsAllowed && gaId ? <GoogleAnalytics gaId={gaId} /> : null;
+  if (!analyticsAllowed) return null;
+  // GTM takes priority: GA4 should then be configured inside GTM to avoid double counting.
+  if (gtmId) return <GoogleTagManager gtmId={gtmId} />;
+  return gaId ? <GoogleAnalytics gaId={gaId} /> : null;
 }

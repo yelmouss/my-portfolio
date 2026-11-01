@@ -72,7 +72,11 @@ export default async function RootLayout({ children, params }) {
     >
       <body className="min-h-full flex flex-col">
         <ThemeRegistry>
-          <CookieConsentBanner locale={locale} gaId={process.env.NEXT_PUBLIC_GA_ID} />
+          <CookieConsentBanner
+            locale={locale}
+            gaId={process.env.NEXT_PUBLIC_GA_ID}
+            gtmId={process.env.NEXT_PUBLIC_GTM_ID || "GTM-NQ835PCS"}
+          />
           <SmoothScrollProvider>
             <NextIntlClientProvider messages={messages}>
               {children}
