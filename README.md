@@ -72,3 +72,17 @@ Use a Google App Password rather than a regular Gmail password. The form posts
 to `src/app/api/contact/route.js`, and these variables must never be exposed
 with a `NEXT_PUBLIC_` prefix. Contact requests are delivered to
 `yelmouss.devt@gmail.com`.
+
+Google reviews use the Featurable API from the server. Configure:
+
+```env
+FEATURABLE_API_KEY=your-server-side-featurable-api-key
+FEATURABLE_WIDGET_ID=your-featurable-widget-uuid
+GOOGLE_PLACE_ID=your-public-google-place-id # optional map-link fallback
+```
+
+Create a widget for the Google Business Profile in the Featurable dashboard,
+then copy its UUID from **Embed > API**. The Google Place ID is optional and is
+only used as a fallback for the public Google Maps link. Keep
+`FEATURABLE_API_KEY` server-only: never add a `NEXT_PUBLIC_` prefix. The reviews
+endpoint uses the Featurable Node SDK and does not cache review responses.

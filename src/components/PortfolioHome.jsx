@@ -20,6 +20,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreRounded from "@mui/icons-material/ExpandMoreRounded";
 
 import TechText from "@/components/TechText";
+import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import ScrambledText from "@/components/ScrambledText";
 import ScrollReveal from "@/components/ScrollReveal";
 import dynamic from "next/dynamic";
@@ -586,6 +587,8 @@ export default function PortfolioHome({ locale, messages }) {
             </Accordion>
           ))}
         </Box>
+
+        <GoogleReviewsSection locale={locale} />
 
         <Divider sx={{ mb: 6 }} />
         <Box

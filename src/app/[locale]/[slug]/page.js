@@ -8,6 +8,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
 import PortfolioDock from "@/components/PortfolioDock";
+import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import { routing } from "@/i18n/routing";
 import { servicePages, serviceSlugs } from "@/lib/service-pages";
 import { buildPageMetadata } from "@/lib/seo";
@@ -111,6 +112,7 @@ export default async function ServicePage({ params }) {
             </Stack>
           </Box>
         )}
+        <GoogleReviewsSection locale={locale} />
         <Button
           href={`/${locale}/contact`}
           title={page.ctaLabel || t("email")}
