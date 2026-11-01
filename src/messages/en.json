@@ -41,14 +41,53 @@
     "locationEyebrow": "Yelmouss — Morocco",
     "locationTitle": "Digital solutions & upgrades for businesses, independents and founders.",
     "locationDescription": "I work with businesses, independents and founders who want to create or improve their digital tools. Projects can be discussed remotely according to their scope and working arrangements.",
+    "locationExtra": "Based in Rabat, I work with clients in Morocco and abroad. We can communicate in French, English or Arabic by video call, phone, WhatsApp or email, so collaboration stays efficient whatever the distance.",
     "locationCta": "Let's discuss your project",
+    "servicesDetailEyebrow": "My services",
+    "servicesDetailTitle": "Web developer in Rabat: websites, applications and SEO",
+    "servicesDetailIntro": "Every project is approached as a whole: a solid technical foundation, a clear user experience and a structure designed to be found by search engines and AI assistants alike.",
+    "servicesDetail": [
+      {
+        "title": "Custom websites and web applications",
+        "paragraphs": [
+          "I build showcase websites, platforms and web applications with modern technologies such as Next.js, React, Node.js and Laravel. The goal is to deliver products that are fast, accessible and easy to evolve.",
+          "Every interface is responsive and mobile-first, with particular attention to loading performance and accessibility."
+        ]
+      },
+      {
+        "title": "Technical and editorial SEO",
+        "paragraphs": [
+          "SEO starts at design time: page structure, semantic markup, metadata, canonical URLs, hreflang tags, sitemap and structured data are built into development rather than added afterwards.",
+          "This helps Google and other search engines understand the site more easily. No specific ranking can be guaranteed, but the technical foundations are laid properly."
+        ]
+      },
+      {
+        "title": "AI search optimization (GEO)",
+        "paragraphs": [
+          "More and more people ask ChatGPT, Perplexity, Gemini or Claude for answers. GEO (Generative Engine Optimization) makes your site readable and citable by these assistants.",
+          "It relies on clear, factual content, structured questions and answers, Schema.org structured data, an llms.txt file and explicit access for AI crawlers."
+        ]
+      },
+      {
+        "title": "Multilingual websites: French, English and Arabic",
+        "paragraphs": [
+          "I design multilingual websites with clean language handling: dedicated URLs per language, hreflang tags, translated content and right-to-left support for Arabic.",
+          "It is an asset for reaching Moroccan, French-speaking and international audiences with a single website."
+        ]
+      }
+    ],
     "faqEyebrow": "FAQ",
     "faqTitle": "Questions about web development and SEO",
     "faq": [
       { "question": "What services does Yelmouss offer?", "answer": "Web development, custom applications and SEO, with the scope defined around each project's needs." },
       { "question": "Can a website be built with SEO in mind from the start?", "answer": "Yes. Structure, metadata, navigation, performance and content can be considered from the beginning, although no specific ranking can be guaranteed." },
       { "question": "Do you build custom applications?", "answer": "Applications are designed around expected features, target users and project constraints." },
-      { "question": "How do I start a project with Yelmouss?", "answer": "Share your needs, goals and expected features through the contact page to define the scope and next steps." }
+      { "question": "How do I start a project with Yelmouss?", "answer": "Share your needs, goals and expected features through the contact page to define the scope and next steps." },
+      { "question": "Are you a web developer based in Rabat?", "answer": "Yes, Yelmouss is based in Rabat, Morocco. Projects can be run remotely for clients anywhere in Morocco or abroad." },
+      { "question": "What is GEO and how is it different from SEO?", "answer": "SEO aims to rank a website in search engine results. GEO (Generative Engine Optimization) aims to make a website understandable and citable by AI assistants such as ChatGPT, Perplexity or Gemini. The two approaches are complementary." },
+      { "question": "Which technologies do you use?", "answer": "Mainly Next.js, React, Node.js, Express, MongoDB, MySQL, PHP, Laravel, Tailwind CSS and Material UI. The choice depends on the needs and constraints of each project." },
+      { "question": "Do you build websites in several languages?", "answer": "Yes. I build websites in French, English and Arabic, with language-specific URLs, hreflang tags and right-to-left support." },
+      { "question": "Which languages can we communicate in?", "answer": "We can communicate in French, English or Arabic, depending on your preference." }
     ],
     "closingEyebrow": "Your next project starts here",
     "closingDescription": "Whether you need a website, a custom application or stronger organic visibility, let's discuss your needs and the right approach."

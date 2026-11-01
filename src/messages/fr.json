@@ -44,14 +44,53 @@
     "locationEyebrow": "Yelmouss — Maroc",
     "locationTitle": "Des solutions digitales pour les entreprises au Maroc",
     "locationDescription": "J'accompagne les entreprises, les indépendants et les porteurs de projets qui souhaitent créer ou améliorer leurs outils numériques. Les projets peuvent être étudiés à distance, selon leur nature et les modalités d'intervention convenues.",
+    "locationExtra": "Basé à Rabat, je travaille avec des clients au Maroc comme à l'international. Les échanges se font en français, en anglais ou en arabe, par visioconférence, téléphone, WhatsApp ou email, ce qui permet de collaborer efficacement sans contrainte de distance.",
     "locationCta": "Discutons de votre projet",
+    "servicesDetailEyebrow": "Mes services",
+    "servicesDetailTitle": "Développeur web à Rabat : sites, applications et référencement",
+    "servicesDetailIntro": "Chaque projet est abordé comme un tout : une base technique solide, une expérience utilisateur claire et une structure pensée pour être trouvée, aussi bien par les moteurs de recherche que par les assistants IA.",
+    "servicesDetail": [
+      {
+        "title": "Création de sites web et applications sur mesure",
+        "paragraphs": [
+          "Je développe des sites vitrines, des plateformes et des applications web avec des technologies modernes comme Next.js, React, Node.js et Laravel. L'objectif est de livrer des produits rapides, accessibles et faciles à faire évoluer.",
+          "Chaque interface est responsive et pensée pour le mobile en priorité, avec une attention particulière portée aux performances de chargement et à l'accessibilité."
+        ]
+      },
+      {
+        "title": "Référencement naturel (SEO) technique et éditorial",
+        "paragraphs": [
+          "Le SEO commence dès la conception : structure des pages, balisage sémantique, métadonnées, URL canoniques, balises hreflang, sitemap et données structurées sont intégrés au développement plutôt qu'ajoutés après coup.",
+          "Un site peut ainsi être compris plus facilement par Google et par les autres moteurs. Aucun positionnement précis n'est garanti, mais les fondations techniques sont posées correctement."
+        ]
+      },
+      {
+        "title": "Optimisation pour les moteurs IA (GEO)",
+        "paragraphs": [
+          "De plus en plus d'utilisateurs posent leurs questions à ChatGPT, Perplexity, Gemini ou Claude. Le GEO (Generative Engine Optimization) consiste à rendre votre site lisible et citable par ces assistants.",
+          "Cela passe par des contenus clairs et factuels, des questions-réponses structurées, des données structurées Schema.org, un fichier llms.txt et une autorisation explicite des robots d'indexation IA."
+        ]
+      },
+      {
+        "title": "Sites multilingues : français, anglais et arabe",
+        "paragraphs": [
+          "Je conçois des sites multilingues avec une gestion propre des langues : URL dédiées par langue, balises hreflang, contenus traduits et prise en charge de l'écriture de droite à gauche pour l'arabe.",
+          "C'est un atout pour toucher une clientèle marocaine, francophone et internationale avec un seul site."
+        ]
+      }
+    ],
     "faqEyebrow": "FAQ",
     "faqTitle": "Vos questions sur le développement web et le SEO",
     "faq": [
       { "question": "Quels services propose Yelmouss ?", "answer": "Yelmouss propose du développement web, des applications sur mesure et du référencement naturel SEO. Le périmètre est défini selon les besoins du projet." },
       { "question": "Peut-on créer un site optimisé pour le SEO dès le départ ?", "answer": "Oui. La structure, les métadonnées, la navigation, les performances et les contenus peuvent être pensés dès la conception. Aucun positionnement précis ne peut toutefois être garanti." },
       { "question": "Développez-vous des applications sur mesure ?", "answer": "Les applications sont conçues selon les fonctionnalités attendues, les utilisateurs visés et les contraintes du projet." },
-      { "question": "Comment démarrer un projet avec Yelmouss ?", "answer": "Présentez votre besoin, vos objectifs et les fonctionnalités envisagées via la page de contact pour préciser le périmètre et les prochaines étapes." }
+      { "question": "Comment démarrer un projet avec Yelmouss ?", "answer": "Présentez votre besoin, vos objectifs et les fonctionnalités envisagées via la page de contact pour préciser le périmètre et les prochaines étapes." },
+      { "question": "Êtes-vous développeur web à Rabat ?", "answer": "Oui, Yelmouss est basé à Rabat, au Maroc. Les projets peuvent être menés à distance pour des clients situés partout au Maroc ou à l'étranger." },
+      { "question": "Qu'est-ce que le GEO et en quoi diffère-t-il du SEO ?", "answer": "Le SEO vise à bien positionner un site dans les résultats des moteurs de recherche. Le GEO (Generative Engine Optimization) vise à rendre un site compréhensible et citable par les assistants IA comme ChatGPT, Perplexity ou Gemini. Les deux démarches sont complémentaires." },
+      { "question": "Quelles technologies utilisez-vous ?", "answer": "Principalement Next.js, React, Node.js, Express, MongoDB, MySQL, PHP, Laravel, Tailwind CSS et Material UI. Le choix dépend des besoins et des contraintes de chaque projet." },
+      { "question": "Réalisez-vous des sites en plusieurs langues ?", "answer": "Oui. Je développe des sites en français, anglais et arabe, avec des URL par langue, les balises hreflang et la prise en charge de l'écriture de droite à gauche." },
+      { "question": "Dans quelles langues puis-je échanger avec vous ?", "answer": "Les échanges se font en français, en anglais ou en arabe, selon votre préférence." }
     ],
     "closingEyebrow": "Votre prochain projet commence ici",
     "closingDescription": "Que vous souhaitiez créer un site web, développer une application ou améliorer votre visibilité sur Google, parlons de vos besoins et des solutions possibles."

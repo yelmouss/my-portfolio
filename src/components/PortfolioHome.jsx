@@ -451,6 +451,37 @@ export default function PortfolioHome({ locale, messages }) {
           </Box>
         </Box>
 
+        <Box component="section" sx={{ mb: { xs: 10, md: 16 }, maxWidth: 900 }}>
+          <Typography variant="overline" color="primary">{t("servicesDetailEyebrow")}</Typography>
+          <ScrollReveal
+            as="h2"
+            mode="scrub"
+            effect="rise"
+            baseOpacity={0.12}
+            baseOffset={24}
+            stagger={0.08}
+            smoothing={0.45}
+            containerClassName="section-title-reveal"
+          >
+            {t("servicesDetailTitle")}
+          </ScrollReveal>
+          <Typography color="text.secondary" sx={{ lineHeight: 1.8, mb: 5 }}>{t("servicesDetailIntro")}</Typography>
+          <Stack spacing={5}>
+            {content.servicesDetail.map((service) => (
+              <Box key={service.title} component="article">
+                <Typography component="h3" variant="h5" sx={{ fontWeight: 800, mb: 1.5 }}>
+                  {service.title}
+                </Typography>
+                {service.paragraphs.map((paragraph) => (
+                  <Typography key={paragraph} color="text.secondary" sx={{ lineHeight: 1.8, mb: 1.5 }}>
+                    {paragraph}
+                  </Typography>
+                ))}
+              </Box>
+            ))}
+          </Stack>
+        </Box>
+
         <Box component="section" sx={{ mb: { xs: 10, md: 16 }, maxWidth: 820 }}>
           <Typography variant="overline" color="primary">{t("locationEyebrow")}</Typography>
           <ScrollReveal
@@ -465,7 +496,8 @@ export default function PortfolioHome({ locale, messages }) {
           >
             {t("locationTitle")}
           </ScrollReveal>
-          <Typography color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>{t("locationDescription")}</Typography>
+          <Typography color="text.secondary" sx={{ lineHeight: 1.8, mb: 2 }}>{t("locationDescription")}</Typography>
+          <Typography color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>{t("locationExtra")}</Typography>
           <Button component={Link} href="/contact" variant="outlined" endIcon={<ArrowOutwardRounded />}>{t("locationCta")}</Button>
         </Box>
 
