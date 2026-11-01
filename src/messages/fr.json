@@ -21,6 +21,13 @@
     "selectedWorkEyebrow": "Sélection",
     "selectedWorkTitle": "Des projets utiles, pas juste beaux.",
     "allWork": "Tous les projets",
+    "projectLink": "Voir le projet",
+    "servicePageLinks": {
+      "web": "Développement web",
+      "apps": "Applications sur mesure",
+      "seo": "Référencement SEO",
+      "sites": "Création de site internet"
+    },
     "projects": {
       "atlas": { "title": "Atlas Studio", "description": "Identité et site vitrine pour une équipe créative." },
       "nova": { "title": "Nova Commerce", "description": "Expérience e-commerce pensée pour simplifier l'achat." }
@@ -47,7 +54,7 @@
     "locationExtra": "Basé à Rabat, je travaille avec des clients au Maroc comme à l'international. Les échanges se font en français, en anglais ou en arabe, par visioconférence, téléphone, WhatsApp ou email, ce qui permet de collaborer efficacement sans contrainte de distance.",
     "locationCta": "Discutons de votre projet",
     "servicesDetailEyebrow": "Mes services",
-    "servicesDetailTitle": "Développeur web à Rabat : sites, applications et référencement",
+    "servicesDetailTitle": "Développeur web au Maroc : sites, applications et référencement",
     "servicesDetailIntro": "Chaque projet est abordé comme un tout : une base technique solide, une expérience utilisateur claire et une structure pensée pour être trouvée, aussi bien par les moteurs de recherche que par les assistants IA.",
     "servicesDetail": [
       {
@@ -86,7 +93,7 @@
       { "question": "Peut-on créer un site optimisé pour le SEO dès le départ ?", "answer": "Oui. La structure, les métadonnées, la navigation, les performances et les contenus peuvent être pensés dès la conception. Aucun positionnement précis ne peut toutefois être garanti." },
       { "question": "Développez-vous des applications sur mesure ?", "answer": "Les applications sont conçues selon les fonctionnalités attendues, les utilisateurs visés et les contraintes du projet." },
       { "question": "Comment démarrer un projet avec Yelmouss ?", "answer": "Présentez votre besoin, vos objectifs et les fonctionnalités envisagées via la page de contact pour préciser le périmètre et les prochaines étapes." },
-      { "question": "Êtes-vous développeur web à Rabat ?", "answer": "Oui, Yelmouss est basé à Rabat, au Maroc. Les projets peuvent être menés à distance pour des clients situés partout au Maroc ou à l'étranger." },
+      { "question": "Dans quelle région intervenez-vous ?", "answer": "Basé à Rabat, Yelmouss accompagne à distance des clients partout au Maroc et à l'international." },
       { "question": "Qu'est-ce que le GEO et en quoi diffère-t-il du SEO ?", "answer": "Le SEO vise à bien positionner un site dans les résultats des moteurs de recherche. Le GEO (Generative Engine Optimization) vise à rendre un site compréhensible et citable par les assistants IA comme ChatGPT, Perplexity ou Gemini. Les deux démarches sont complémentaires." },
       { "question": "Quelles technologies utilisez-vous ?", "answer": "Principalement Next.js, React, Node.js, Express, MongoDB, MySQL, PHP, Laravel, Tailwind CSS et Material UI. Le choix dépend des besoins et des contraintes de chaque projet." },
       { "question": "Réalisez-vous des sites en plusieurs langues ?", "answer": "Oui. Je développe des sites en français, anglais et arabe, avec des URL par langue, les balises hreflang et la prise en charge de l'écriture de droite à gauche." },
@@ -142,7 +149,7 @@
     "ticketStub": "TIREZ",
     "ticketAriaLabel": "Déchirer le ticket pour afficher le parcours professionnel",
     "items": [
-      { "role": "Chef de projet", "company": "Wehosre", "period": "2026", "logo": "/companies/wehosre.svg", "description": "Pilotage de projets, coordination des parties prenantes et transformation des objectifs produit en plans d'exécution clairs." },
+      { "role": "Chef de projet", "company": "Weshore", "period": "2026", "logo": "/companies/wehosre.svg", "description": "Pilotage de projets, coordination des parties prenantes et transformation des objectifs produit en plans d'exécution clairs." },
       { "role": "Formateur logiciel", "company": "GoMyCode", "period": "2023", "logo": "/companies/gomycode.svg", "description": "Formation aux technologies web et accompagnement des étudiants sur leurs projets logiciels." },
       { "role": "Workforce Manager", "company": "Sitel Group", "period": "2022", "logo": "/companies/sitel-group.svg", "description": "Gestion des plannings, prévisions et optimisation de l'allocation des ressources." },
       { "role": "Développeur web", "company": "Intelcia", "period": "2020", "logo": "/companies/intelcia.svg", "description": "Développement et maintenance d'applications web avec React, Node.js et des technologies modernes." },

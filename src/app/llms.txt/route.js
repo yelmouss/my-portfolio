@@ -20,6 +20,10 @@ export function GET() {
 - [Home (Arabic)](${siteUrl}/ar): Services, approach, projects, stack and FAQ
 - [About](${siteUrl}/en/about): Experience, certifications and technology stack
 - [Contact](${siteUrl}/en/contact): Project inquiries
+- [Web development](${siteUrl}/fr/developpement-web)
+- [Custom applications](${siteUrl}/fr/applications-sur-mesure)
+- [SEO and AI search visibility](${siteUrl}/fr/referencement-seo)
+- [Website creation](${siteUrl}/fr/creation-site-internet)
 
 ## Services
 ${services}

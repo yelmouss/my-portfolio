@@ -5,8 +5,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
+import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import { Link } from "@/i18n/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,7 +126,7 @@ export default function ExpertiseCards({ items }) {
           perspective: 1200,
         }}
       >
-        {items.cards.map(({ icon: Icon, title, description }) => (
+        {items.cards.map(({ icon: Icon, title, description, href }) => (
           <Card
             key={title}
             variant="outlined"
@@ -143,11 +145,17 @@ export default function ExpertiseCards({ items }) {
               boxShadow: "0 24px 70px rgba(0,0,0,0.22)",
             }}
           >
-            <CardContent sx={{ p: 3 }}>
-              <Icon color="primary" sx={{ fontSize: 34, mb: 5 }} />
-              <Typography variant="h5" component="h3" sx={{ fontWeight: 800, mb: 2 }}>{title}</Typography>
-              <Typography color="text.secondary">{description}</Typography>
-            </CardContent>
+            <CardActionArea
+              component={Link}
+              href={href}
+              sx={{ height: "100%", borderRadius: 3, "&:focus-visible": { outline: "2px solid", outlineColor: "primary.main" } }}
+            >
+              <CardContent sx={{ p: 3 }}>
+                <Icon color="primary" sx={{ fontSize: 34, mb: 5 }} />
+                <Typography variant="h5" component="h3" sx={{ fontWeight: 800, mb: 2 }}>{title}</Typography>
+                <Typography color="text.secondary">{description}</Typography>
+              </CardContent>
+            </CardActionArea>
           </Card>
         ))}
       </Box>
