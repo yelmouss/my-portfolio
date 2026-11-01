@@ -189,6 +189,7 @@ export default function PortfolioHome({ locale, messages }) {
             )}
           </Typography>
           <Typography
+            component="p"
             variant="h6"
             color="text.secondary"
             sx={{ maxWidth: 680, lineHeight: 1.7, mb: 4 }}

@@ -883,7 +883,7 @@ const CircularCarousel = ({
           <img
             className="circular-carousel__photo"
             src={item.src}
-            alt=""
+            alt={item.alt || item.title || ''}
             draggable={false}
             decoding="async"
             style={photoStyle}
@@ -893,7 +893,7 @@ const CircularCarousel = ({
               key={`leaving-${leaving.id}`}
               className="circular-carousel__photo circular-carousel__photo--leaving"
               src={gone.src}
-              alt=""
+              alt={gone.alt || gone.title || ''}
               draggable={false}
               decoding="async"
               style={{ ...photoStyle, animationDelay: `${Math.round(leaving.delays[index])}ms` }}

@@ -123,6 +123,7 @@ export default function PortfolioDock({ locale, messages }) {
                 height={16}
                 style={{ display: "block", width: 24, height: 16, flexShrink: 0 }}
               />
+              <span className="sr-only">{messages.languages[targetLocale]}</span>
             </Link>
           );
         })}
@@ -149,6 +150,7 @@ export default function PortfolioDock({ locale, messages }) {
           height={40}
           className="h-10 w-10 object-contain"
         />
+        <span className="sr-only">{messages.nav.whatsapp}</span>
       </a>
     </>
   );

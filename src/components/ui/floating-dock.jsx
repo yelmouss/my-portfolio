@@ -67,6 +67,7 @@ const FloatingDockMobile = ({
                   )}
                 >
                   <div className="h-4 w-4">{item.icon}</div>
+                  <span className="sr-only">{item.title}</span>
                 </a>
               </motion.div>
             ))}
@@ -158,6 +159,7 @@ function IconContainer({
 
   return (
     <a href={href} onClick={onClick} aria-label={title}>
+      <span className="sr-only">{title}</span>
       <motion.div
         ref={ref}
         style={{ width, height }}
