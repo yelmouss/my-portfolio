@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Noto_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import {
   getMessages,
   getTranslations,
@@ -67,6 +68,7 @@ export default async function RootLayout({ children, params }) {
             </NextIntlClientProvider>
           </SmoothScrollProvider>
         </ThemeRegistry>
+        {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />}
       </body>
     </html>
   );
