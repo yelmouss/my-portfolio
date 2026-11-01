@@ -505,18 +505,18 @@ export default function PortfolioHome({ locale, messages }) {
             {t("servicesDetailTitle")}
           </ScrollReveal>
           <Typography color="text.secondary" sx={{ lineHeight: 1.8, mb: 5 }}>{t("servicesDetailIntro")}</Typography>
-          <Stack direction="row" useFlexGap flexWrap="wrap" spacing={1} sx={{ mb: 5 }}>
+          <Box sx={{ display: "grid", gridTemplateColumns: { xs: "repeat(2, minmax(0, 1fr))", md: "repeat(4, auto)" }, justifyContent: { md: "start" }, gap: 1.5, mb: 5 }}>
             {[
               ["web", "developpement-web"],
               ["apps", "applications-sur-mesure"],
               ["seo", "referencement-seo"],
               ["sites", "creation-site-internet"],
             ].map(([key, path]) => (
-              <Button key={path} component={Link} href={`/${path}`} variant="outlined">
+              <Button key={path} component={Link} href={`/${path}`} variant="outlined" sx={{ textAlign: "center", lineHeight: 1.4, py: 1.25, minWidth: 0 }}>
                 {content.servicePageLinks[key]}
               </Button>
             ))}
-          </Stack>
+          </Box>
           <Stack spacing={5}>
             {content.servicesDetail.map((service) => (
               <Box key={service.title} component="article">
