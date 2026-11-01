@@ -7,6 +7,18 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import PortfolioDock from "@/components/PortfolioDock";
 import ContactForm from "@/components/ContactForm";
+import { buildPageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+  return buildPageMetadata({
+    locale,
+    path: "/contact",
+    title: `${t("title")} | Yelmouss`,
+    description: t("description"),
+  });
+}
 
 export default async function ContactPage({ params }) {
   const { locale } = await params;

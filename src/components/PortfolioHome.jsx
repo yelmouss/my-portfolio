@@ -18,7 +18,6 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreRounded from "@mui/icons-material/ExpandMoreRounded";
-import Image from "next/image";
 
 import TechText from "@/components/TechText";
 import ScrambledText from "@/components/ScrambledText";
@@ -76,26 +75,6 @@ export default function PortfolioHome({ locale, messages }) {
         </Stack> */}
 
         <Box component="section" sx={{ mb: { xs: 10, md: 16 }, maxWidth: 900 }}>
-          <Box
-            sx={{
-              mb: 2,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
-              height: { xs: 96, md: 120 },
-              textAlign: "left",
-            }}
-          >
-            <Image
-              src={theme.mode === "dark" ? "/Mascotte B.png" : "/Mascotte Noir.png"}
-              alt="Yelmouss"
-              width={120}
-              height={120}
-              priority
-              style={{ width: "auto", height: "100%", objectFit: "contain" }}
-            />
-          </Box>
-        
           <Box
             sx={{
               width: '100%',

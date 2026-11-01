@@ -81,9 +81,30 @@ export default function PortfolioDock({ locale, messages }) {
 
   return (
     <>
+      <div aria-hidden="true" className="h-[76px] w-full md:h-24" />
+      <div
+        aria-hidden="true"
+        className="fixed inset-x-0 top-0 z-40 h-[76px] border-b border-white/10 bg-black/30 backdrop-blur-xl md:h-24 dark:bg-zinc-950/50"
+      />
+      <Link
+        href="/"
+        locale={locale}
+        aria-label="Yelmouss"
+        title="Yelmouss"
+        className="fixed top-3 left-4 z-50 flex h-14 items-center md:top-4 md:h-16"
+      >
+        <Image
+          src={mode === "dark" ? "/Mascotte B.png" : "/Mascotte Noir.png"}
+          alt="Yelmouss"
+          width={120}
+          height={120}
+          priority
+          style={{ width: "auto", height: "100%", objectFit: "contain" }}
+        />
+      </Link>
       <nav
         aria-label="Language selection"
-        className="fixed top-4 right-4 z-50 flex items-center gap-1 rounded-xl border border-white/15 bg-white/10 p-1.5 shadow-lg backdrop-blur-xl md:hidden dark:border-white/10 dark:bg-zinc-900/60"
+        className="fixed top-3.5 right-4 z-50 flex items-center gap-1 rounded-xl border border-white/15 bg-white/10 p-1.5 shadow-lg backdrop-blur-xl md:hidden dark:border-white/10 dark:bg-zinc-900/60"
       >
         {routing.locales.map((targetLocale) => {
           const Flag = flags[targetLocale];

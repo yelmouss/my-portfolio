@@ -1,5 +1,7 @@
 import nodemailer from "nodemailer";
 
+import { buildOwnerEmail, buildVisitorEmail } from "@/lib/contact-emails";
+
 const MAX_LENGTHS = {
   name: 120,
   email: 254,
@@ -12,16 +14,6 @@ function getField(body, field) {
   return value.slice(0, MAX_LENGTHS[field]);
 }
 
-function escapeHtml(value) {
-  return value.replace(/[&<>"']/g, (character) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;",
-  })[character]);
-}
-
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -29,6 +21,7 @@ export async function POST(request) {
     const email = getField(body, "email");
     const subject = getField(body, "subject");
     const message = getField(body, "message");
+    const locale = ["fr", "en", "ar"].includes(body?.locale) ? body.locale : "fr";
 
     if (!name || !email || !subject || !message) {
       return Response.json({ error: "All fields are required." }, { status: 400 });
@@ -51,14 +44,26 @@ export async function POST(request) {
       },
     });
 
+    const owner = buildOwnerEmail({ locale, name, email, subject, message });
+    const visitor = buildVisitorEmail({ locale, name, subject, message });
+
     await transporter.sendMail({
       from: `"Portfolio contact" <${process.env.GMAIL_USER}>`,
       to: process.env.CONTACT_RECIPIENT,
       replyTo: email,
-      subject: `[Portfolio] ${subject}`,
-      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-      html: `<p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><hr /><p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>`,
+      ...owner,
     });
+
+    try {
+      await transporter.sendMail({
+        from: `"Yelmouss" <${process.env.GMAIL_USER}>`,
+        to: email,
+        replyTo: process.env.CONTACT_RECIPIENT,
+        ...visitor,
+      });
+    } catch (confirmationError) {
+      console.error("Unable to send confirmation email.", confirmationError);
+    }
 
     return Response.json({ ok: true });
   } catch (error) {

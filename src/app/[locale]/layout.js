@@ -10,6 +10,7 @@ import {
 import "../globals.css";
 
 import { routing } from "@/i18n/routing";
+import { siteUrl } from "@/lib/seo";
 import ThemeRegistry from "@/components/ThemeRegistry";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
@@ -34,8 +35,10 @@ export async function generateMetadata({ params }) {
 
   const t = await getTranslations({ locale, namespace: "metadata" });
   return {
+    metadataBase: new URL(siteUrl),
     title: t("title"),
     description: t("description"),
+    icons: { apple: "/apple-icon.png" },
   };
 }
 

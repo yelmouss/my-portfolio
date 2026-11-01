@@ -1,8 +1,7 @@
 import { getMessages, setRequestLocale } from "next-intl/server";
 
 import PortfolioHome from "@/components/PortfolioHome";
-
-const siteUrl = "https://yelmouss.vercel.app";
+import { buildPageMetadata, siteName, siteUrl } from "@/lib/seo";
 
 const homeSeo = {
   fr: {
@@ -25,25 +24,7 @@ const homeSeo = {
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const seo = homeSeo[locale];
-
-  return {
-    metadataBase: new URL(siteUrl),
-    title: seo.title,
-    description: seo.description,
-    alternates: {
-      canonical: `/${locale}`,
-      languages: { fr: "/fr", en: "/en", ar: "/ar", "x-default": "/fr" },
-    },
-    robots: { index: true, follow: true },
-    openGraph: {
-      type: "website",
-      siteName: "Yelmouss",
-      url: `${siteUrl}/${locale}`,
-      title: seo.title,
-      description: seo.description,
-      locale: locale === "fr" ? "fr_MA" : locale === "ar" ? "ar_MA" : "en",
-    },
-  };
+  return buildPageMetadata({ locale, title: seo.title, description: seo.description });
 }
 
 export default async function Home({ params }) {
@@ -51,6 +32,24 @@ export default async function Home({ params }) {
   setRequestLocale(locale);
 
   const messages = await getMessages();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: siteName,
+    url: `${siteUrl}/${locale}`,
+    image: `${siteUrl}/Mascotte B.png`,
+    description: homeSeo[locale].description,
+    areaServed: "MA",
+    knowsAbout: ["Web development", "SEO", "Custom applications"],
+  };
 
-  return <PortfolioHome locale={locale} messages={messages} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
+      <PortfolioHome locale={locale} messages={messages} />
+    </>
+  );
 }

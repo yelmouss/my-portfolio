@@ -10,13 +10,24 @@ import Chip from "@mui/material/Chip";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
-import Image from "next/image";
 
 import PortfolioDock from "@/components/PortfolioDock";
 import ExperienceJourney from "@/components/ExperienceJourney";
 import RevealTicketSection from "@/components/RevealTicketSection";
 import DriftWall from "@/components/DriftWall";
 import TechText from "@/components/TechText";
+import { buildPageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "about" });
+  return buildPageMetadata({
+    locale,
+    path: "/about",
+    title: `${t("title")} | Yelmouss`,
+    description: t("profileDescription"),
+  });
+}
 
 export default async function AboutPage({ params }) {
   const { locale } = await params;
@@ -52,34 +63,24 @@ function AboutPageContent({ locale, messages, t, profile, experience, certificat
   return (
     <Container maxWidth="lg" sx={{ pt: { xs: 8, md: 10 }, pb: { xs: 8, md: 16 } }}>
       <Box component="header" sx={{ maxWidth: 900, mb: { xs: 10, md: 16 } }}>
-        <Box sx={{ mb: 2, display: "flex", alignItems: "center", height: { xs: 82, md: 108 } }}>
-          <Image
-            src="/Mascotte B.png"
-            alt="Yelmouss"
-            width={120}
-            height={120}
-            priority
-            style={{ width: "auto", height: "100%", objectFit: "contain" }}
-          />
-        </Box>
         <Box sx={{ width: "100%", height: { xs: 70, md: 92 }, mb: 1, color: "text.primary" }}>
           <TechText
-            text="Yelmouss"
-            align="left"
-            fontWeight={900}
-            fontSize={150}
-            reveal="letter"
-            specks={15}
-            intro="none"
-            clickKick
-            guides={false}
-            accentColor="currentColor"
-            color="text.primary"
-            selection
-            labels
-            draggable
-            sweep
-          />
+                      text="Yelmouss"
+                      align="left"
+                      fontWeight={900}
+                      fontSize={150}
+                      reveal="letter"
+                      specks={15}
+                      intro="none"
+                      clickKick
+                      guides={false}
+                      accentColor="currentColor"
+                      color="currentColor"
+                      selection
+                      labels
+                      draggable
+                      sweep
+                    />
         </Box>
         <Chip label={t("eyebrow")} color="primary" sx={{ mb: 1 }} />
         <Typography

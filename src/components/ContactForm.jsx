@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "next-intl";
 import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
@@ -8,6 +9,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
 export default function ContactForm({ copy }) {
+  const locale = useLocale();
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
 
@@ -21,7 +23,7 @@ export default function ContactForm({ copy }) {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        body: JSON.stringify({ ...Object.fromEntries(new FormData(form)), locale }),
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || copy.error);

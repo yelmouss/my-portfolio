@@ -7,6 +7,18 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import PortfolioDock from "@/components/PortfolioDock";
+import { buildPageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "work" });
+  return buildPageMetadata({
+    locale,
+    path: "/work",
+    title: `${t("title")} | Yelmouss`,
+    description: t("description"),
+  });
+}
 
 export default async function WorkPage({ params }) {
   const { locale } = await params;
