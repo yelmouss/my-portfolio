@@ -8,6 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import PortfolioDock from "@/components/PortfolioDock";
 import ContactForm from "@/components/ContactForm";
 import { buildPageMetadata } from "@/lib/seo";
+import { contactEmail } from "@/lib/contact";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -34,7 +35,7 @@ export default async function ContactPage({ params }) {
           <Typography variant="overline" color="primary">{t("eyebrow")}</Typography>
           <Typography variant="h1" sx={{ fontSize: { xs: "3rem", md: "5rem" }, my: 2 }}>{t("title")}</Typography>
           <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>{t("description")}</Typography>
-          <Button variant="contained" href="mailto:hello@yelmouss.com">{t("email")}</Button>
+          <Button variant="contained" href={`mailto:${contactEmail}`}>{t("email")}</Button>
         </Box>
         <Card
           variant="outlined"

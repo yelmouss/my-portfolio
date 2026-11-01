@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 
 import { buildOwnerEmail, buildVisitorEmail } from "@/lib/contact-emails";
+import { contactEmail } from "@/lib/contact";
 
 const MAX_LENGTHS = {
   name: 120,
@@ -31,7 +32,7 @@ export async function POST(request) {
       return Response.json({ error: "Please provide a valid email address." }, { status: 400 });
     }
 
-    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD || !process.env.CONTACT_RECIPIENT) {
+    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
       console.error("Contact email configuration is incomplete.");
       return Response.json({ error: "Email service is not configured." }, { status: 503 });
     }
@@ -49,7 +50,7 @@ export async function POST(request) {
 
     await transporter.sendMail({
       from: `"Portfolio contact" <${process.env.GMAIL_USER}>`,
-      to: process.env.CONTACT_RECIPIENT,
+      to: contactEmail,
       replyTo: email,
       ...owner,
     });
@@ -58,7 +59,7 @@ export async function POST(request) {
       await transporter.sendMail({
         from: `"Yelmouss" <${process.env.GMAIL_USER}>`,
         to: email,
-        replyTo: process.env.CONTACT_RECIPIENT,
+        replyTo: contactEmail,
         ...visitor,
       });
     } catch (confirmationError) {

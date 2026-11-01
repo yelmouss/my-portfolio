@@ -47,9 +47,16 @@ Translations live in `src/messages/`. The Arabic route automatically uses
 right-to-left document direction.
 
 The UI is organized around Material UI in `src/theme/theme.js`, with a
-client-side light/dark mode toggle. The portfolio home is composed of reusable
-sections, and placeholder pages are available at `/[locale]/work` and
-`/[locale]/contact`. Language switching uses `country-flag-icons`.
+client-side light/dark mode toggle. The root route uses French as the default
+locale. Service pages are available in French, English and Arabic:
+
+- `/[locale]/developpement-web`
+- `/[locale]/applications-sur-mesure`
+- `/[locale]/referencement-seo`
+- `/[locale]/creation-site-internet`
+
+Translations live in `src/messages/`. The Arabic route uses right-to-left
+document direction.
 
 ## Contact email
 
@@ -59,9 +66,9 @@ server-only environment variables locally and in the deployment provider:
 ```env
 GMAIL_USER=your-gmail-address
 GMAIL_APP_PASSWORD=your-16-character-google-app-password
-CONTACT_RECIPIENT=address-that-receives-messages
 ```
 
 Use a Google App Password rather than a regular Gmail password. The form posts
 to `src/app/api/contact/route.js`, and these variables must never be exposed
-with a `NEXT_PUBLIC_` prefix.
+with a `NEXT_PUBLIC_` prefix. Contact requests are delivered to
+`yelmouss.devt@gmail.com`.
