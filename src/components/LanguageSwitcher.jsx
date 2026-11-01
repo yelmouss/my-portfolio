@@ -22,9 +22,14 @@ export default function LanguageSwitcher({ label, languages }) {
             locale={locale}
             aria-label={languages(locale)}
             title={languages(locale)}
-            style={{ display: "inline-flex", width: 24, opacity: 0.9 }}
+            style={{ display: "inline-block", width: 24, height: 16, flexShrink: 0, opacity: 0.9 }}
           >
-            <Flag title={languages(locale)} />
+            <Flag
+              title={languages(locale)}
+              width={24}
+              height={16}
+              style={{ display: "block", width: 24, height: 16 }}
+            />
           </Link>
         );
       })}
