@@ -46,6 +46,19 @@ export default async function ServicePage({ params }) {
   const messages = await getMessages();
   const t = await getTranslations("contact");
   const details = messages.home.servicesDetail;
+  const sections = [
+    ...page.sections.map((index) => details[index]),
+    ...(page.contentSections || []),
+  ];
+  const relatedHeading = {
+    fr: "Pages utiles",
+    en: "Related pages",
+    ar: "صفحات ذات صلة",
+  }[locale];
+  const relatedPages = (page.relatedSlugs || []).map((relatedSlug) => ({
+    slug: relatedSlug,
+    page: servicePages[relatedSlug][locale],
+  }));
 
   return (
     <>
@@ -64,32 +77,48 @@ export default async function ServicePage({ params }) {
           </Typography>
         </Box>
         <Stack component="section" spacing={6}>
-          {page.sections.map((index) => {
-            const section = details[index];
-            return (
-              <Box component="article" key={section.title}>
-                <Typography component="h2" variant="h4" sx={{ mb: 2, fontWeight: 800 }}>
-                  {section.title}
-                </Typography>
-                <Stack spacing={2}>
-                  {section.paragraphs.map((paragraph) => (
-                    <Typography key={paragraph} color="text.secondary" sx={{ lineHeight: 1.8 }}>
-                      {paragraph}
-                    </Typography>
-                  ))}
-                </Stack>
-              </Box>
-            );
-          })}
+          {sections.map((section) => (
+            <Box component="article" key={section.title}>
+              <Typography component="h2" variant="h4" sx={{ mb: 2, fontWeight: 800 }}>
+                {section.title}
+              </Typography>
+              <Stack spacing={2}>
+                {section.paragraphs.map((paragraph) => (
+                  <Typography key={paragraph} color="text.secondary" sx={{ lineHeight: 1.8 }}>
+                    {paragraph}
+                  </Typography>
+                ))}
+              </Stack>
+            </Box>
+          ))}
         </Stack>
+        {relatedPages.length > 0 && (
+          <Box component="nav" aria-label={relatedHeading} sx={{ mt: 6 }}>
+            <Typography component="h2" variant="h5" sx={{ mb: 2, fontWeight: 800 }}>
+              {relatedHeading}
+            </Typography>
+            <Stack direction="row" useFlexGap flexWrap="wrap" spacing={1}>
+              {relatedPages.map(({ slug, page: relatedPage }) => (
+                <Button
+                  key={slug}
+                  href={`/${locale}/${slug}`}
+                  title={relatedPage.heading}
+                  variant="outlined"
+                >
+                  {relatedPage.heading}
+                </Button>
+              ))}
+            </Stack>
+          </Box>
+        )}
         <Button
           href={`/${locale}/contact`}
-          title={t("email")}
+          title={page.ctaLabel || t("email")}
           variant="contained"
           endIcon={<ArrowOutwardRounded />}
           sx={{ mt: 6 }}
         >
-          {t("email")}
+          {page.ctaLabel || t("email")}
         </Button>
       </Container>
     </>
