@@ -17,7 +17,7 @@ export const legalContent = {
           "p": [
             "Le présent site est édité par Yassine EL MOUSS, entrepreneur individuel (auto-entrepreneur) exerçant à Rabat et Marrakech, Maroc.",
             "Directeur de la publication : Yassine EL MOUSS.",
-            "Contact : yelmouss.devt@gmail.com — Téléphone : +212 6 12 86 56 81."
+            "Contact : yelmouss.devt@gmail.com. Téléphone : +212 6 12 86 56 81."
           ]
         },
         {
@@ -31,7 +31,7 @@ export const legalContent = {
         {
           "h": "Hébergement",
           "p": [
-            "Le site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis — https://vercel.com."
+            "Le site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis (https://vercel.com)."
           ]
         },
         {
@@ -69,7 +69,7 @@ export const legalContent = {
         {
           "h": "Responsable du traitement",
           "p": [
-            "Yassine EL MOUSS, Rabat et Marrakech, Maroc — yelmouss.devt@gmail.com."
+            "Yassine EL MOUSS, Rabat et Marrakech, Maroc, yelmouss.devt@gmail.com."
           ]
         },
         {
@@ -145,7 +145,7 @@ export const legalContent = {
           "p": [
             "This website is published by Yassine EL MOUSS, sole proprietor (auto-entrepreneur) operating in Rabat and Marrakech, Morocco.",
             "Publication director: Yassine EL MOUSS.",
-            "Contact: yelmouss.devt@gmail.com — Phone: +212 6 12 86 56 81."
+            "Contact: yelmouss.devt@gmail.com. Phone: +212 6 12 86 56 81."
           ]
         },
         {
@@ -159,7 +159,7 @@ export const legalContent = {
         {
           "h": "Hosting",
           "p": [
-            "The website is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA — https://vercel.com."
+            "The website is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA (https://vercel.com)."
           ]
         },
         {
@@ -197,7 +197,7 @@ export const legalContent = {
         {
           "h": "Data controller",
           "p": [
-            "Yassine EL MOUSS, Rabat and Marrakech, Morocco — yelmouss.devt@gmail.com."
+            "Yassine EL MOUSS, Rabat and Marrakech, Morocco, yelmouss.devt@gmail.com."
           ]
         },
         {
@@ -273,7 +273,7 @@ export const legalContent = {
           "p": [
             "يُدير هذا الموقع Yassine EL MOUSS، مقاول ذاتي (auto-entrepreneur) يمارس نشاطه بالرباط ومراكش، المغرب.",
             "مدير النشر: Yassine EL MOUSS.",
-            "للتواصل: yelmouss.devt@gmail.com — الهاتف: +212 6 12 86 56 81."
+            "للتواصل: yelmouss.devt@gmail.com. الهاتف: +212 6 12 86 56 81."
           ]
         },
         {
@@ -287,7 +287,7 @@ export const legalContent = {
         {
           "h": "الاستضافة",
           "p": [
-            "يُستضاف الموقع لدى Vercel Inc.، 440 N Barranca Ave #4133, Covina, CA 91723، الولايات المتحدة — https://vercel.com."
+            "يُستضاف الموقع لدى Vercel Inc.، 440 N Barranca Ave #4133, Covina, CA 91723، الولايات المتحدة (https://vercel.com)."
           ]
         },
         {
@@ -325,7 +325,7 @@ export const legalContent = {
         {
           "h": "المسؤول عن المعالجة",
           "p": [
-            "Yassine EL MOUSS، الرباط ومراكش، المغرب — yelmouss.devt@gmail.com."
+            "Yassine EL MOUSS، الرباط ومراكش، المغرب، yelmouss.devt@gmail.com."
           ]
         },
         {
