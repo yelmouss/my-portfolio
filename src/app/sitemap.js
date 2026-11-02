@@ -6,6 +6,8 @@ const pages = [
   "",
   "/about",
   "/contact",
+  "/legal",
+  "/privacy",
   ...serviceSlugs.map((slug) => `/${slug}`),
 ];
 
