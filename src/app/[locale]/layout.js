@@ -13,6 +13,8 @@ import { routing } from "@/i18n/routing";
 import { siteUrl } from "@/lib/seo";
 import ThemeRegistry from "@/components/ThemeRegistry";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import SiteFooter from "@/components/SiteFooter";
+import { legalContent } from "@/lib/legal-content";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 
 const geistSans = Geist({
@@ -82,6 +84,7 @@ export default async function RootLayout({ children, params }) {
           <SmoothScrollProvider>
             <NextIntlClientProvider messages={messages}>
               {children}
+              <SiteFooter labels={legalContent[locale].footer} />
             </NextIntlClientProvider>
           </SmoothScrollProvider>
         </ThemeRegistry>
