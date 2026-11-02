@@ -39,6 +39,7 @@ export async function generateMetadata({ params }) {
     metadataBase: new URL(siteUrl),
     title: t("title"),
     description: t("description"),
+    other: { "google-adsense-account": "ca-pub-8676346410264412" },
     manifest: "/site.webmanifest",
     icons: {
       icon: [
@@ -70,18 +71,12 @@ export default async function RootLayout({ children, params }) {
       dir={locale === "ar" ? "rtl" : "ltr"}
       className={`${geistSans.variable} ${geistMono.variable} ${notoArabic.variable} h-full antialiased`}
     >
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8676346410264412"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className="min-h-full flex flex-col">
         <ThemeRegistry>
           <CookieConsentBanner
             locale={locale}
             gaId={process.env.NEXT_PUBLIC_GA_ID}
+            adsenseClient="ca-pub-8676346410264412"
             gtmId={process.env.NEXT_PUBLIC_GTM_ID || "GTM-NQ835PCS"}
           />
           <SmoothScrollProvider>

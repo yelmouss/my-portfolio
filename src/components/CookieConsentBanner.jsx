@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Script from "next/script";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import * as CookieConsent from "vanilla-cookieconsent";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
@@ -13,7 +14,7 @@ const texts = {
   fr: {
     title: "Nous respectons votre vie privée",
     description:
-      "Nous utilisons des cookies de mesure d'audience (Google Analytics) pour améliorer le site. Ils ne sont déposés qu'avec votre accord.",
+      "Nous utilisons des cookies de mesure d'audience (Google Analytics) et publicitaires (Google AdSense). Ils ne sont déposés qu'avec votre accord.",
     acceptAll: "Tout accepter",
     rejectAll: "Tout refuser",
     manage: "Personnaliser",
@@ -23,13 +24,15 @@ const texts = {
     necessaryDesc: "Indispensables au fonctionnement du site (langue, thème). Ils ne peuvent pas être désactivés.",
     analyticsTitle: "Mesure d'audience",
     analyticsDesc: "Google Analytics nous aide à comprendre comment le site est utilisé, de manière agrégée.",
+    adsTitle: "Publicité",
+    adsDesc: "Google AdSense affiche des annonces et peut utiliser des cookies pour les personnaliser.",
     moreTitle: "Plus d'informations",
     moreDesc: "Pour toute question sur cette politique, contactez-nous via la page contact.",
   },
   en: {
     title: "We respect your privacy",
     description:
-      "We use analytics cookies (Google Analytics) to improve the website. They are only set with your consent.",
+      "We use analytics cookies (Google Analytics) and advertising cookies (Google AdSense). They are only set with your consent.",
     acceptAll: "Accept all",
     rejectAll: "Reject all",
     manage: "Customize",
@@ -39,13 +42,15 @@ const texts = {
     necessaryDesc: "Required for the site to work (language, theme). They cannot be disabled.",
     analyticsTitle: "Analytics",
     analyticsDesc: "Google Analytics helps us understand, in aggregate, how the site is used.",
+    adsTitle: "Advertising",
+    adsDesc: "Google AdSense displays ads and may use cookies to personalize them.",
     moreTitle: "More information",
     moreDesc: "For any question about this policy, contact us through the contact page.",
   },
   ar: {
     title: "نحترم خصوصيتك",
     description:
-      "نستخدم ملفات تعريف الارتباط التحليلية (Google Analytics) لتحسين الموقع، ولا يتم تفعيلها إلا بموافقتك.",
+      "نستخدم ملفات تعريف الارتباط التحليلية (Google Analytics) والإعلانية (Google AdSense)، ولا يتم تفعيلها إلا بموافقتك.",
     acceptAll: "قبول الكل",
     rejectAll: "رفض الكل",
     manage: "تخصيص",
@@ -55,6 +60,8 @@ const texts = {
     necessaryDesc: "لازمة لعمل الموقع (اللغة، المظهر) ولا يمكن تعطيلها.",
     analyticsTitle: "التحليلات",
     analyticsDesc: "تساعدنا Google Analytics على فهم كيفية استخدام الموقع بشكل مجمّع.",
+    adsTitle: "الإعلانات",
+    adsDesc: "تعرض Google AdSense إعلانات وقد تستخدم ملفات تعريف الارتباط لتخصيصها.",
     moreTitle: "مزيد من المعلومات",
     moreDesc: "لأي استفسار حول هذه السياسة، تواصل معنا عبر صفحة الاتصال.",
   },
@@ -76,21 +83,26 @@ const buildTranslation = (c) => ({
     sections: [
       { title: c.necessaryTitle, description: c.necessaryDesc, linkedCategory: "necessary" },
       { title: c.analyticsTitle, description: c.analyticsDesc, linkedCategory: "analytics" },
+      { title: c.adsTitle, description: c.adsDesc, linkedCategory: "advertising" },
       { title: c.moreTitle, description: c.moreDesc },
     ],
   },
 });
 
-export default function CookieConsentBanner({ locale, gaId, gtmId }) {
+export default function CookieConsentBanner({ locale, gaId, gtmId, adsenseClient }) {
   const { mode } = useColorMode();
   const [analyticsAllowed, setAnalyticsAllowed] = useState(false);
+  const [adsAllowed, setAdsAllowed] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle("cc--darkmode", mode === "dark");
   }, [mode]);
 
   useEffect(() => {
-    const sync = () => setAnalyticsAllowed(CookieConsent.acceptedCategory("analytics"));
+    const sync = () => {
+      setAnalyticsAllowed(CookieConsent.acceptedCategory("analytics"));
+      setAdsAllowed(CookieConsent.acceptedCategory("advertising"));
+    };
 
     CookieConsent.run({
       revision: 1,
@@ -100,6 +112,11 @@ export default function CookieConsentBanner({ locale, gaId, gtmId }) {
       },
       categories: {
         necessary: { enabled: true, readOnly: true },
+        advertising: {
+          autoClear: {
+            cookies: [{ name: /^(__gads|__gpi|IDE|test_cookie)/ }],
+          },
+        },
         analytics: {
           autoClear: {
             cookies: [{ name: /^(_ga|_gid)/ }],
@@ -125,8 +142,27 @@ export default function CookieConsentBanner({ locale, gaId, gtmId }) {
     if (CookieConsent.validConsent()) CookieConsent.setLanguage(locale in texts ? locale : "fr");
   }, [locale]);
 
-  if (!analyticsAllowed) return null;
-  // GTM takes priority: GA4 should then be configured inside GTM to avoid double counting.
-  if (gtmId) return <GoogleTagManager gtmId={gtmId} />;
-  return gaId ? <GoogleAnalytics gaId={gaId} /> : null;
+  const analytics = !analyticsAllowed
+    ? null
+    : // GTM takes priority: GA4 should then be configured inside GTM to avoid double counting.
+      gtmId
+      ? <GoogleTagManager gtmId={gtmId} />
+      : gaId
+        ? <GoogleAnalytics gaId={gaId} />
+        : null;
+
+  return (
+    <>
+      {analytics}
+      {adsAllowed && adsenseClient && (
+        <Script
+          id="adsense-loader"
+          async
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
+        />
+      )}
+    </>
+  );
 }

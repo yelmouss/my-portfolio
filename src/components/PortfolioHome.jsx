@@ -20,6 +20,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreRounded from "@mui/icons-material/ExpandMoreRounded";
 
 import TechText from "@/components/TechText";
+import AdBanner from "@/components/AdBanner";
 import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import ScrambledText from "@/components/ScrambledText";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -588,6 +589,7 @@ export default function PortfolioHome({ locale, messages }) {
           ))}
         </Box>
 
+        <AdBanner />
         <GoogleReviewsSection locale={locale} />
 
         <Divider sx={{ mb: 6 }} />
