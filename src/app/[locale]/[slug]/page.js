@@ -8,6 +8,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
 import PortfolioDock from "@/components/PortfolioDock";
+import AdBanner from "@/components/AdBanner";
 import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import { routing } from "@/i18n/routing";
 import { servicePages, serviceSlugs } from "@/lib/service-pages";
@@ -119,6 +120,7 @@ export default async function ServicePage({ params }) {
             </Box>
           </Box>
         )}
+        <AdBanner />
         <GoogleReviewsSection locale={locale} />
         <Button
           href={`/${locale}/contact`}
