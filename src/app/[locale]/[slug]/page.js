@@ -98,18 +98,25 @@ export default async function ServicePage({ params }) {
             <Typography component="h2" variant="h5" sx={{ mb: 2, fontWeight: 800 }}>
               {relatedHeading}
             </Typography>
-            <Stack direction="row" useFlexGap flexWrap="wrap" spacing={1}>
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(auto-fit, minmax(220px, 1fr))" },
+                gap: 1.5,
+              }}
+            >
               {relatedPages.map(({ slug, page: relatedPage }) => (
                 <Button
                   key={slug}
                   href={`/${locale}/${slug}`}
                   title={relatedPage.heading}
                   variant="outlined"
+                  sx={{ justifyContent: "flex-start", textAlign: "left", py: 1.25, px: 2, lineHeight: 1.35 }}
                 >
                   {relatedPage.heading}
                 </Button>
               ))}
-            </Stack>
+            </Box>
           </Box>
         )}
         <GoogleReviewsSection locale={locale} />
