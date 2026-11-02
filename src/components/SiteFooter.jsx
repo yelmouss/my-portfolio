@@ -13,15 +13,24 @@ export default function SiteFooter({ labels }) {
   return (
     <Box
       component="footer"
-      sx={{ borderTop: 1, borderColor: "divider", mt: "auto", pt: 4, pb: { xs: 14, md: 12 } }}
+      sx={{ borderTop: 1, borderColor: "divider", mt: "auto", py: { xs: 3, md: 2 }, pb: { xs: 12, md: 2 } }}
     >
-      <Container maxWidth="lg">
+      <Container
+        maxWidth="lg"
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: { xs: "flex-start", md: "center" },
+          justifyContent: "space-between",
+          gap: { xs: 1.5, md: 3 },
+        }}
+      >
         <Stack
           component="nav"
           aria-label={labels.nav}
-          direction={{ xs: "column", sm: "row" }}
-          spacing={{ xs: 1.5, sm: 3 }}
-          sx={{ mb: 2, alignItems: "flex-start" }}
+          direction={{ xs: "column", md: "row" }}
+          spacing={{ xs: 1, md: 3 }}
+          sx={{ alignItems: "flex-start" }}
         >
           <Link component={IntlLink} href="/legal" color="text.secondary" underline="hover" variant="body2">
             {labels.legal}
