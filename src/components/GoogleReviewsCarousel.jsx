@@ -63,7 +63,7 @@ export default function GoogleReviewsCarousel({ locale, reviews }) {
           scrollSnapType: "x mandatory",
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": { display: "none" },
-          pb: 1,
+          py: 0.5,
         }}
       >
         {items.map((review, index) => {
@@ -84,15 +84,18 @@ export default function GoogleReviewsCarousel({ locale, reviews }) {
                 scrollSnapAlign: "start",
                 display: "flex",
                 flexDirection: "column",
-                gap: 2,
-                p: 3,
-                minHeight: 240,
+                gap: 1.5,
+                p: 2,
+                minHeight: 180,
                 border: 1,
                 borderColor: "divider",
                 borderRadius: 4,
                 backgroundColor: "color-mix(in srgb, var(--card) 55%, transparent)",
-                transition: "border-color 0.2s, transform 0.2s",
-                "&:hover": { borderColor: "primary.main", transform: "translateY(-3px)" },
+                transition: "border-color 0.2s, box-shadow 0.2s",
+                "&:hover": {
+                  borderColor: "primary.main",
+                  boxShadow: "0 0 0 1px var(--mui-palette-primary-main)",
+                },
               }}
             >
               <Stack direction="row" alignItems="center" justifyContent="space-between">
@@ -106,18 +109,18 @@ export default function GoogleReviewsCarousel({ locale, reviews }) {
                   whiteSpace: "pre-wrap",
                   overflowWrap: "anywhere",
                   display: "-webkit-box",
-                  WebkitLineClamp: 6,
+                  WebkitLineClamp: 4,
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
                 }}
               >
                 {review.comment}
               </Typography>
-              <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mt: "auto" }}>
+              <Stack direction="row" spacing={1.5} alignItems="center">
                 <Avatar
                   src={author.profilePhotoUrl || undefined}
                   alt=""
-                  sx={{ width: 40, height: 40 }}
+                  sx={{ width: 36, height: 36 }}
                 >
                   {author.displayName.charAt(0)}
                 </Avatar>

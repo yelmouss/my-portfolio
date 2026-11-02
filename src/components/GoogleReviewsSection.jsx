@@ -89,7 +89,7 @@ export default function GoogleReviewsSection({ locale }) {
     <Box
       component="section"
       aria-labelledby="google-reviews-title"
-      sx={{ mb: { xs: 10, md: 16 }, minWidth: 0 }}
+      sx={{ mb: { xs: 8, md: 10 }, minWidth: 0 }}
     >
       <Typography variant="overline" color="primary">
         {text.eyebrow}

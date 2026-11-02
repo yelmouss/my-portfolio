@@ -417,7 +417,7 @@ export default function PortfolioHome({ locale, messages }) {
           </Grid>
         </Box>
 
-        <Box component="section" data-stack-section sx={{ mb: { xs: 10, md: 16 }, maxWidth: { xs: 820, md: 1080 }, mx: "auto" }}>
+        <Box component="section" data-stack-section sx={{ mb: { xs: 8, md: 10 }, maxWidth: { xs: 820, md: 1080 }, mx: "auto" }}>
           <Typography variant="overline" color="primary">{stack.eyebrow}</Typography>
           <ScrollReveal
             as="h2"
@@ -500,6 +500,8 @@ export default function PortfolioHome({ locale, messages }) {
             </LazyOnView>
           </Box>
         </Box>
+
+        <GoogleReviewsSection locale={locale} />
 
         <Box component="section" sx={{ mb: { xs: 10, md: 16 }, maxWidth: 900 }}>
           <Typography variant="overline" color="primary">{t("servicesDetailEyebrow")}</Typography>
@@ -590,7 +592,6 @@ export default function PortfolioHome({ locale, messages }) {
         </Box>
 
         <AdBanner />
-        <GoogleReviewsSection locale={locale} />
 
         <Divider sx={{ mb: 6 }} />
         <Box
