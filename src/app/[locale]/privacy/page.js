@@ -12,6 +12,7 @@ export async function generateMetadata({ params }) {
     path: "/privacy",
     title: `${page.title} | Yelmouss`,
     description: page.description,
+    index: false,
   });
 }
 

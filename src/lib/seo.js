@@ -9,7 +9,7 @@ export function localizedPath(locale, path = "") {
   return `/${locale}${path}`;
 }
 
-export function buildPageMetadata({ locale, path = "", title, description }) {
+export function buildPageMetadata({ locale, path = "", title, description, index = true }) {
   const languages = Object.fromEntries(
     routing.locales.map((l) => [l, localizedPath(l, path)]),
   );
@@ -20,7 +20,7 @@ export function buildPageMetadata({ locale, path = "", title, description }) {
     title,
     description,
     alternates: { canonical: localizedPath(locale, path), languages },
-    robots: { index: true, follow: true },
+    robots: { index, follow: true },
     openGraph: {
       type: "website",
       siteName,
