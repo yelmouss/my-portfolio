@@ -118,6 +118,29 @@ export const servicePages = {
       intro:
         "Un site internet doit présenter clairement votre activité et fonctionner sur tous les écrans. Je construis des sites adaptés à vos objectifs et à votre contenu.",
       sections: [0],
+      contentSections: [
+        {
+          title: "Choisir le bon périmètre avant de commencer",
+          paragraphs: [
+            "Pour présenter une activité et recevoir des demandes, un site vitrine avec des pages de services, des réalisations et un contact peut suffire. Si les visiteurs doivent commander, réserver ou gérer un compte, il faut aussi prévoir les parcours, les données et les règles associés.",
+            "Pour chaque public, notez l'action attendue et les informations nécessaires avant cette action. Par exemple, une demande de devis suppose d'expliquer la prestation, de montrer des exemples pertinents et de proposer un moyen de contact accessible sur mobile.",
+          ],
+        },
+        {
+          title: "Préparer les contenus et la navigation",
+          paragraphs: [
+            "Listez les questions auxquelles chaque page répond, puis rassemblez les textes, images autorisées et coordonnées à jour. Une page de service gagne à préciser à qui elle s'adresse, ce qu'elle comprend et comment démarrer, plutôt que de répéter la même présentation pour chaque mot-clé.",
+            "Organisez les pages autour des besoins des visiteurs et reliez celles qui se complètent. Pour plusieurs langues, prévoyez une traduction vérifiée de chaque page et un accès clair aux versions correspondantes.",
+          ],
+        },
+        {
+          title: "Vérifier la mise en ligne et prévoir la suite",
+          paragraphs: [
+            "Avant publication, testez les liens, le formulaire et les principales pages sur téléphone et sur ordinateur. Vérifiez aussi que le domaine, les accès d'administration, les sauvegardes et le renouvellement de l'hébergement sont attribués à des responsables identifiés.",
+            "Après publication, mettez à jour les informations et contrôlez régulièrement les formulaires et les pages importantes. Search Console peut aider à repérer des problèmes d'indexation ; être indexé ne garantit toutefois ni classement ni trafic.",
+          ],
+        },
+      ],
       relatedSlugs: ["creation-site-ecommerce", "site-wordpress", "prix-site-web", "developpeur-web-rabat-marrakech"],
     },
     en: {
@@ -128,6 +151,29 @@ export const servicePages = {
       intro:
         "A website should communicate your business clearly and work across screen sizes. I build websites shaped around your goals and content.",
       sections: [0],
+      contentSections: [
+        {
+          title: "Choose the right scope before starting",
+          paragraphs: [
+            "To present a business and receive enquiries, a showcase site with service pages, project examples and contact details may be enough. If visitors need to order, book or manage an account, the associated journeys, data and rules also need planning.",
+            "For each audience, write down the action you want them to take and the information they need first. For example, a quote request calls for an explanation of the service, relevant examples and a contact method that works on mobile.",
+          ],
+        },
+        {
+          title: "Prepare content and navigation",
+          paragraphs: [
+            "List the questions each page should answer, then gather the text, images you have permission to use and current contact details. A service page should explain who it is for, what it includes and how to get started, rather than repeat the same introduction for every keyword.",
+            "Organise pages around visitors' needs and link complementary pages. For a multilingual site, plan a reviewed translation for each page and clear links to its corresponding versions.",
+          ],
+        },
+        {
+          title: "Check the launch and plan maintenance",
+          paragraphs: [
+            "Before publishing, test links, the form and key pages on phones and computers. Make sure named people are responsible for the domain, administration access, backups and hosting renewal.",
+            "After launch, keep information current and regularly check forms and important pages. Search Console can help identify indexing problems, but being indexed does not guarantee rankings or traffic.",
+          ],
+        },
+      ],
       relatedSlugs: ["creation-site-ecommerce", "site-wordpress", "prix-site-web", "developpeur-web-rabat-marrakech"],
     },
     ar: {
@@ -138,6 +184,29 @@ export const servicePages = {
       intro:
         "ينبغي للموقع أن يعرض نشاطك بوضوح ويعمل على مختلف الشاشات. أبني مواقع تتناسب مع أهدافك ومحتواك.",
       sections: [0],
+      contentSections: [
+        {
+          title: "تحديد نطاق الموقع قبل البدء",
+          paragraphs: [
+            "قد يكفي موقع تعريفي يضم صفحات الخدمات وأمثلة الأعمال ووسيلة اتصال لعرض النشاط واستقبال الطلبات. أما إذا احتاج الزائر إلى الطلب أو الحجز أو إدارة حساب، فيجب التخطيط أيضاً للخطوات والبيانات والقواعد المرتبطة بذلك.",
+            "حدد لكل فئة من الزوار الإجراء المطلوب والمعلومات التي تحتاجها قبله. فطلب عرض سعر مثلاً يتطلب شرح الخدمة وعرض أمثلة مناسبة وتوفير وسيلة اتصال تعمل على الهاتف.",
+          ],
+        },
+        {
+          title: "تجهيز المحتوى والتنقل",
+          paragraphs: [
+            "اكتب الأسئلة التي تجيب عنها كل صفحة، ثم اجمع النصوص والصور المسموح باستخدامها وبيانات الاتصال المحدثة. من المفيد أن توضح صفحة الخدمة لمن تناسب وما تشمله وكيف يبدأ العميل، بدلاً من تكرار العرض نفسه لكل كلمة بحث.",
+            "نظم الصفحات وفق احتياجات الزوار واربط الصفحات المتكاملة. وفي الموقع متعدد اللغات، خطط لترجمة مراجعة لكل صفحة وروابط واضحة إلى النسخ المقابلة.",
+          ],
+        },
+        {
+          title: "التحقق قبل النشر والتخطيط للصيانة",
+          paragraphs: [
+            "قبل النشر، اختبر الروابط والنموذج والصفحات الأساسية على الهاتف والحاسوب. حدد أيضاً المسؤولين عن النطاق وصلاحيات الإدارة والنسخ الاحتياطية وتجديد الاستضافة.",
+            "بعد النشر، حدّث المعلومات وافحص النماذج والصفحات المهمة بانتظام. يمكن أن تساعد Search Console في اكتشاف مشكلات الفهرسة، لكن الفهرسة لا تضمن ترتيباً أو زيارات.",
+          ],
+        },
+      ],
       relatedSlugs: ["creation-site-ecommerce", "site-wordpress", "prix-site-web", "developpeur-web-rabat-marrakech"],
     },
   },

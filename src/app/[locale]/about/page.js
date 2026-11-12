@@ -12,14 +12,10 @@ import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 
 import PortfolioDock from "@/components/PortfolioDock";
-import dynamic from "next/dynamic";
-
-import ExperienceJourney from "@/components/ExperienceJourney";
 import LazyDriftWall from "@/components/LazyDriftWall";
 import ScrollReveal from "@/components/ScrollReveal";
 import TechText from "@/components/TechText";
 
-const RevealTicketSection = dynamic(() => import("@/components/RevealTicketSection"));
 import { buildPageMetadata } from "@/lib/seo";
 
 const titleReveal = {
@@ -66,14 +62,13 @@ export default async function AboutPage({ params }) {
         profile={profile}
         experience={experience}
         certifications={certifications}
-        stack={stack}
         technologies={technologies}
       />
     </>
   );
 }
 
-function AboutPageContent({ locale, messages, t, profile, experience, certifications, stack, technologies }) {
+function AboutPageContent({ locale, messages, t, profile, experience, certifications, technologies }) {
   return (
     <Container maxWidth="lg" sx={{ pt: { xs: 8, md: 10 }, pb: { xs: 8, md: 16 } }}>
       <Box component="header" sx={{ maxWidth: 900, mb: { xs: 10, md: 16 } }}>
@@ -126,7 +121,19 @@ function AboutPageContent({ locale, messages, t, profile, experience, certificat
           <ScrollReveal as="h2" {...titleReveal}>
             {experience.title}
           </ScrollReveal>
-          <ExperienceJourney experience={experience} />
+          <Grid container spacing={2}>
+            {experience.items.map((item) => (
+              <Grid key={`${item.company}-${item.period}-${item.role}`} size={{ xs: 12, md: 6 }}>
+                <Card variant="outlined" sx={{ height: "100%" }}>
+                  <CardContent sx={{ p: 3 }}>
+                    <Typography variant="overline" color="primary">{item.period} · {item.company}</Typography>
+                    <Typography component="h3" variant="h6" fontWeight={800}>{item.role}</Typography>
+                    <Typography color="text.secondary" sx={{ mt: 1, lineHeight: 1.7 }}>{item.description}</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </Box>
 
         <Grid container spacing={3} sx={{ mb: { xs: 10, md: 16 } }}>
@@ -134,48 +141,34 @@ function AboutPageContent({ locale, messages, t, profile, experience, certificat
             <Box component="section" sx={{ height: "100%" }}>
               <Typography variant="overline" color="primary">{certifications.eyebrow}</Typography>
               <ScrollReveal as="h2" {...titleReveal}>{certifications.title}</ScrollReveal>
-              <RevealTicketSection
-                title={t("certificationsTicketTitle")}
-                hint={t("certificationsTicketHint")}
-                stubLabel={t("certificationsTicketStub")}
-                ariaLabel={t("certificationsTicketAriaLabel")}
-              >
-                <Box sx={{ display: "grid", gap: 2 }}>
-                  {certifications.items.map((item, index) => (
-                    <Card key={item.title} variant="outlined">
-                      <CardContent sx={{ p: 2.5, display: "flex", alignItems: "center", gap: 2 }}>
-                        <Typography color="primary" fontWeight={800} sx={{ minWidth: 32 }}>
-                          {String(index + 1).padStart(2, "0")}
-                        </Typography>
-                        <Typography variant="h6" component="h3" fontWeight={800}>
-                          {item.title}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </Box>
-              </RevealTicketSection>
+              <Box sx={{ display: "grid", gap: 2 }}>
+                {certifications.items.map((item, index) => (
+                  <Card key={item.title} variant="outlined">
+                    <CardContent sx={{ p: 2.5, display: "flex", alignItems: "center", gap: 2 }}>
+                      <Typography color="primary" fontWeight={800} sx={{ minWidth: 32 }}>
+                        {String(index + 1).padStart(2, "0")}
+                      </Typography>
+                      <Typography variant="h6" component="h3" fontWeight={800}>
+                        {item.title}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                ))}
+              </Box>
             </Box>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
             <Box component="section">
               <Typography variant="overline" color="primary">{t("profileEyebrow")}</Typography>
               <ScrollReveal as="h2" {...titleReveal}>{t("profileTitle")}</ScrollReveal>
-              <RevealTicketSection
-                title={t("profileTicketTitle")}
-                hint={t("profileTicketHint")}
-                stubLabel={t("profileTicketStub")}
-                ariaLabel={t("profileTicketAriaLabel")}
-              >
-                <Card variant="outlined">
-                  <CardContent sx={{ p: 3 }}>
-                    <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>{t("profileDescription")}</Typography>
-                    <Divider sx={{ my: 3 }} />
-                    <Typography variant="body2"><strong>{t("emailLabel")}:</strong> {profile.email}</Typography>
-                    <Typography variant="body2" sx={{ mt: 1 }}><strong>{t("phoneLabel")}:</strong> {profile.phone}</Typography>
-                  </CardContent>
-                </Card>
-              </RevealTicketSection>
+              <Card variant="outlined">
+                <CardContent sx={{ p: 3 }}>
+                  <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>{t("profileDescription")}</Typography>
+                  <Divider sx={{ my: 3 }} />
+                  <Typography variant="body2"><strong>{t("emailLabel")}:</strong> {profile.email}</Typography>
+                  <Typography variant="body2" sx={{ mt: 1 }}><strong>{t("phoneLabel")}:</strong> {profile.phone}</Typography>
+                </CardContent>
+              </Card>
             </Box>
           </Grid>
         </Grid>
