@@ -58,6 +58,13 @@ locale. Service pages are available in French, English and Arabic:
 Translations live in `src/messages/`. The Arabic route uses right-to-left
 document direction.
 
+## Blog
+
+The blog is available at `/[locale]/blog`. Article content and references are
+kept in `src/app/[locale]/blog/articles.js`, independently of the UI translation
+files. Each article needs a unique slug and content and category labels for
+French, English and Arabic; it is then included in the blog and sitemap.
+
 ## Contact email
 
 The contact form sends messages through Gmail using Nodemailer. Configure these

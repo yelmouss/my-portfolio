@@ -1,11 +1,14 @@
 import { routing } from "@/i18n/routing";
 import { serviceSlugs } from "@/lib/service-pages";
 import { siteUrl } from "@/lib/seo";
+import { articles } from "@/app/[locale]/blog/articles";
 
 const pages = [
   "",
   "/about",
   "/contact",
+  "/blog",
+  ...articles.map((article) => `/blog/${article.slug}`),
   ...serviceSlugs.map((slug) => `/${slug}`),
 ];
 
