@@ -2,6 +2,7 @@
 
 import { FR, GB, SA } from "country-flag-icons/react/3x2";
 import {
+  BookOpen,
   House,
   Mail,
   Moon,
@@ -24,6 +25,8 @@ export default function PortfolioDock({ locale, messages }) {
   const pathname = usePathname();
   const ThemeIcon = mode === "dark" ? Sun : Moon;
   const currentPath = pathname?.replace(/\/$/, "") || `/${locale}`;
+  const blogPath = currentPath.replace(/^\/(fr|en|ar)(?=\/|$)/, "");
+  const languagePath = blogPath === "/blog" || blogPath.startsWith("/blog/") ? blogPath : "";
   const isCurrent = (path) => {
     const normalizedPath = path.replace(/\/$/, "");
     return normalizedPath === `/${locale}`
@@ -36,7 +39,7 @@ export default function PortfolioDock({ locale, messages }) {
     return {
       title: messages.languages[targetLocale],
       icon: <Flag aria-hidden="true" width={24} height={16} />,
-      href: `/${targetLocale}`,
+      href: `/${targetLocale}${languagePath}`,
     };
   });
 
@@ -52,6 +55,12 @@ export default function PortfolioDock({ locale, messages }) {
       icon: <UserRound aria-hidden="true" size={20} />,
       href: `/${locale}/about`,
       active: isCurrent(`/${locale}/about`),
+    },
+    {
+      title: { fr: "Blog", en: "Blog", ar: "المدونة" }[locale],
+      icon: <BookOpen aria-hidden="true" size={20} />,
+      href: `/${locale}/blog`,
+      active: isCurrent(`/${locale}/blog`),
     },
     {
       title: messages.nav.contact,
@@ -111,7 +120,7 @@ export default function PortfolioDock({ locale, messages }) {
           return (
             <Link
               key={targetLocale}
-              href="/"
+              href={languagePath || "/"}
               locale={targetLocale}
               aria-label={messages.languages[targetLocale]}
               title={messages.languages[targetLocale]}
